@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[The_first_blog]]></title>
+    <url>%2F2019%2F04%2F04%2FThe-first-blog%2F</url>
+    <content type="text"><![CDATA[C++基础相关知识一.命名空间在c/c++中，变量、函数、类都是大量存在的，这些函数、变量和类的名称将都存在于全局作用域中，可能会导致很多冲突。使用命名空间的目的是对标识符的名称进行本地化，以避免命名冲突或命名污染，namespace关键字的出现就是为了避免这种问题。 //1.普通的命名空间 namespace N1 //N1为命名空间的名称 { //命名空间的内容，可以定义变量，也可以定义函数 int a; int Add(int left , int right) { return left + right; } } //2.命名空间可以嵌套 namespace N2 { int a; int b; int Add(int left , int left) { return left + right; } namespace N3 { int c; int d; int sub( int left,int right ) { return left - right; } } } //3.同一个工程中允许存在多个相同名称的命名空间 // 编译器最终会合成同一个命名空间中 namespace N1 { int Mul(int left , int right) { return left*right; } } 注意：一个命名空间就定义了一个新的作用域，命名空间中的所有内容都局限与该命名空间中 二.c++输入&amp;输出12345678#include &lt;iostream&gt;using namespace std;int main()&#123; cout&lt;&lt;&quot;hello world!!&quot;&lt;&lt;endl; return 0;] 1.使用cout标准输出（控制台）和cin标准输入（键盘）时，必须包含头文件以及std标准命名空间。 注意：早期标准库将所有功能在全局域中实现，声明在.h后面的头文件中，使用时只需包含对应头文 件即可，后来将其实现在std命名空间下，为了和c头文件区分，也为了正确使用命名空间，规定 c++头文件不带.h;旧编译器（vc 6.0）中还支持&lt;iostream.h&gt;格式，后续编译器已不支持，因此推荐 使用+std的方式。 2.使用c++输入输出更方便，不需增加数据结构的控制。比如：整型-%d，字符-%c。 三. 缺省参数概念：缺省参数就是声明或定义时为函数的参数指定一个默认值。在调用函数时，如果没有指定实参则采用该默认值，否则使用指定实参。 12345678910void TestFunc(int a = 0)&#123; cout&lt;&lt;a&lt;&lt;endl;&#125;int main()&#123; TestFunc();//没有传参时，使用参数的默认值 TestFunc(10);//传参时使用指定实参&#125; 参数缺省分类全缺省参数: 123456void TestFunc(int a = 10,int b = 20, int c = 30)&#123; cout&lt;&lt;&quot;a = &quot;&lt;&lt;a&lt;&lt;endl; cout&lt;&lt;&quot;b = &quot;&lt;&lt;b&lt;&lt;endl; cout&lt;&lt;&quot;c = &quot;&lt;&lt;c&lt;&lt;endl;&#125; 半缺省参数 1234567void TestFunc(int a, int b = 10,int c = 20)&#123; cout&lt;&lt;&quot;a = &quot;&lt;&lt;a&lt;&lt;endl; cout&lt;&lt;&quot;b = &quot;&lt;&lt;b&lt;&lt;endl; cout&lt;&lt;&quot;c = &quot;&lt;&lt;c&lt;&lt;endl;&#125; 注意： 1.半缺省参数必须从右往左依次来给出，不能间隔着来给 2.缺省参数不能在函数声明和定义时同时出现。 123456//a.hvoid TestFunc(int a = 10);//a.cvoid TestFunc()int a = 20)&#123;&#125;//注意：如果声明和定义位置同时出现，恰巧两个位置提供的值不同，那编译器就无法确定到底该用哪个缺省值 3.缺省值必须是常量或者全局变量4.C语言不支持（编译器不支持） 四.函数重载 函数重载的概念：是函数的的一种特殊情况，c++允许在同一作用域中声明几个功能相似的同名函数，这些同名函数的形参列表（参数个数或类型或顺序）必须不同，常用来处理或实现功能类似数据类型不同的问题。 123456789101112131415161718192021int Add(int left,int right)&#123; return left + right;&#125;double Add(double left, double right)&#123; return left + right;&#125;long Add(long left, long right)&#123; return left + right;&#125;int main()&#123; Add(10 , 20); Add(10.0 , 20.0); Add(10L , 20L)； return 0;&#125; extern “C”有时候在c++工程中可能需要将某些函数按照c的风格来编译，在函数前加extern “C”,意思是告诉编译器，将该函数按照C语言规则来编译。 1234567extern &quot;C&quot; int Add(int left, int right);int main()&#123; Add(1,2); return 0;&#125; 链接时报错：error LINK2019：无法解析的外部符号_Add，该符号在函数_main中被引用 引用引用概念：引用不是新定义一个变量，而是给已存在的变量取了一个别名，编译器不会为引用变量开辟内存空间，它和它引用的变量共用同一快内存空间。类型&amp;引用变量名（对象名）= 引用实体 1234567void TestRef()&#123; int a = 10; int&amp; ra = a;//&lt;===定义引用类型 printf(&quot;%p&quot;,&amp;a); printf(&quot;%p&quot;,&amp;ra);&#125; 注意：引用类型必须和引用实体是同种类型。引用特性：1.引用在定义时必须初始化 2.一个变量可以有多个引用 3.引用一旦引用一个实体，再不能引用其他实体]]></content>
+      <categories>
+        <category>c++</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Love You Forever]]></title>
+    <url>%2F2019%2F04%2F03%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Forever! Forever! Forever! How Deep Is Your Love 启窗以望，星瀚凌凌。望无路兮，无以所归。 昔既难忆，企留我心。抬首对穹，平嗓来歌。 裹卷相思，寄我爱人。孤孑一身。泪染两襟。 此出一曲，银河往替。凝眸流火，遥寄千里。 所落之处，记为老故。所思之疆，亦已焉哉。 没于黑弥，不得所终。凝空对唱，此歌凄哀。 告我所爱，知我所爱，可得故思，于此起风。 Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
