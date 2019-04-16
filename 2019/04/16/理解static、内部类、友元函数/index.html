@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="C++基础相关知识一.命名空间在c/c++中，变量、函数、类都是大量存在的，这些函数、变量和类的名称将都存在于全局作用域中，可能会导致很多冲突。使用命名空间的目的是对标识符的名称进行本地化，以避免命名冲突或命名污染，namespace关键字的出现就是为了避免这种问题。 //1.普通的命名空间 namespace N1 //N1为命名空间的名称 {     //命名空间的内容，可以定义变量，也可以定">
+<meta name="description" content="1. 再谈构造函数1.1 构造函数体赋值在创建对象时，编译器通过调用构造函数，给对象各个成员变量一个合适的初始值 123456789101112131415class Date&amp;#123;public:	Date(int year, int month, int day)	&amp;#123;		_year = year;		_month = month;		_day = day;	&amp;#125;	priv">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The_first_blog">
-<meta property="og:url" content="http://MyGloria.com/2019/04/04/The-first-blog/index.html">
+<meta property="og:title" content="理解static、内部类、友元函数">
+<meta property="og:url" content="http://MyGloria.com/2019/04/16/理解static、内部类、友元函数/index.html">
 <meta property="og:site_name" content="MyGloria">
-<meta property="og:description" content="C++基础相关知识一.命名空间在c/c++中，变量、函数、类都是大量存在的，这些函数、变量和类的名称将都存在于全局作用域中，可能会导致很多冲突。使用命名空间的目的是对标识符的名称进行本地化，以避免命名冲突或命名污染，namespace关键字的出现就是为了避免这种问题。 //1.普通的命名空间 namespace N1 //N1为命名空间的名称 {     //命名空间的内容，可以定义变量，也可以定">
+<meta property="og:description" content="1. 再谈构造函数1.1 构造函数体赋值在创建对象时，编译器通过调用构造函数，给对象各个成员变量一个合适的初始值 123456789101112131415class Date&amp;#123;public:	Date(int year, int month, int day)	&amp;#123;		_year = year;		_month = month;		_day = day;	&amp;#125;	priv">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-04T13:55:02.934Z">
+<meta property="og:updated_time" content="2019-04-16T09:19:42.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The_first_blog">
-<meta name="twitter:description" content="C++基础相关知识一.命名空间在c/c++中，变量、函数、类都是大量存在的，这些函数、变量和类的名称将都存在于全局作用域中，可能会导致很多冲突。使用命名空间的目的是对标识符的名称进行本地化，以避免命名冲突或命名污染，namespace关键字的出现就是为了避免这种问题。 //1.普通的命名空间 namespace N1 //N1为命名空间的名称 {     //命名空间的内容，可以定义变量，也可以定">
+<meta name="twitter:title" content="理解static、内部类、友元函数">
+<meta name="twitter:description" content="1. 再谈构造函数1.1 构造函数体赋值在创建对象时，编译器通过调用构造函数，给对象各个成员变量一个合适的初始值 123456789101112131415class Date&amp;#123;public:	Date(int year, int month, int day)	&amp;#123;		_year = year;		_month = month;		_day = day;	&amp;#125;	priv">
 
 
 
@@ -137,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://MyGloria.com/2019/04/04/The-first-blog/">
+  <link rel="canonical" href="http://MyGloria.com/2019/04/16/理解static、内部类、友元函数/">
 
 
 
 
 
-  <title>The_first_blog | MyGloria</title>
+  <title>理解static、内部类、友元函数 | MyGloria</title>
   
 
 
@@ -325,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/04/The-first-blog/">
+    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/16/理解static、内部类、友元函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -342,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">The_first_blog
+          <h1 class="post-title" itemprop="name headline">理解static、内部类、友元函数
               
             
           </h1>
@@ -367,7 +367,7 @@
                 
               
 
-              <time title="创建于：2019-04-04 21:32:38" itemprop="dateCreated datePublished" datetime="2019-04-04T21:32:38+08:00">2019-04-04</time>
+              <time title="创建于：2019-04-16 17:13:41" itemprop="dateCreated datePublished" datetime="2019-04-16T17:13:41+08:00">2019-04-16</time>
             
 
             
@@ -400,9 +400,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/04/The-first-blog/#comments" itemprop="discussionUrl">
+                <a href="/2019/04/16/理解static、内部类、友元函数/#comments" itemprop="discussionUrl">
                 
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/04/The-first-blog/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/16/理解static、内部类、友元函数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,67 +430,55 @@
       
 
       
-        <h1 id="C-基础相关知识"><a href="#C-基础相关知识" class="headerlink" title="C++基础相关知识"></a>C++基础相关知识</h1><h2 id="一-命名空间"><a href="#一-命名空间" class="headerlink" title="一.命名空间"></a>一.命名空间</h2><p>在c/c++中，变量、函数、类都是大量存在的，这些函数、变量和类的名称将都存在于全局作用域中，可能会导致很多冲突。使用命名空间的目的是对<strong>标识符的名称进行本地化，以避免命名冲突或命名污染</strong>，namespace关键字的出现就是为了避免这种问题。</p>
-<pre><code>//1.普通的命名空间
-namespace N1 //N1为命名空间的名称
-{
-    //命名空间的内容，可以定义变量，也可以定义函数
-    int a;
-    int Add(int left , int right)
-    {
-        return left + right;
-    }
-}
-
-//2.命名空间可以嵌套
-namespace N2
-{
-    int a;
-    int b;
-    int Add(int left , int left)
-    {
-        return left + right;
-    }
-    namespace N3
-    {
-        int c;
-        int d;
-        int sub( int left,int right )
-        {
-            return left - right;    
-        }
-    }
-}
-
-//3.同一个工程中允许存在多个相同名称的命名空间
-//  编译器最终会合成同一个命名空间中
-namespace N1
-{
-    int Mul(int left , int right)
-    {
-        return left*right; 
-    }
-}
-</code></pre><p>注意：<strong>一个命名空间就定义了一个新的作用域</strong>，命名空间中的所有内容都局限与该命名空间中</p>
-<h2 id="二-c-输入-amp-输出"><a href="#二-c-输入-amp-输出" class="headerlink" title="二.c++输入&amp;输出"></a>二.c++输入&amp;输出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;&quot;hello world!!&quot;&lt;&lt;endl;</span><br><span class="line">	return 0;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>1.<strong>使用cout标准输出（控制台）和cin标准输入（键盘）时，必须包含<iostream>头文件</iostream></strong>以及std标准命名空间。<br> <strong>注意</strong>：早期标准库将所有功能在全局域中实现，声明在.h后面的头文件中，使用时只需包含对应头文    件即可，后来将其实现在std命名空间下，为了和c头文件区分，也为了正确使用命名空间，规定    c++头文件不带.h;旧编译器（vc 6.0）中还支持&lt;iostream.h&gt;格式，后续编译器已不支持，因此推荐    使用<iostream>+std的方式。<br> 2.<strong>使用c++输入输出更方便，不需增加数据结构的控制</strong>。比如：整型-%d，字符-%c。</iostream></p>
-<h2 id="三-缺省参数"><a href="#三-缺省参数" class="headerlink" title="三. 缺省参数"></a>三. 缺省参数</h2><p>概念：<strong>缺省参数就是声明或定义时为函数的参数指定一个默认值</strong>。在调用函数时，如果没有指定实参则采用该默认值，否则使用指定实参。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void TestFunc(int a = 0)</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;a&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	TestFunc();//没有传参时，使用参数的默认值</span><br><span class="line">	TestFunc(10);//传参时使用指定实参</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>参数缺省分类</strong><br>全缺省参数:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void TestFunc(int a = 10,int b = 20, int c = 30)</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;&quot;a = &quot;&lt;&lt;a&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;&quot;b = &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;&quot;c = &quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>半缺省参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">void TestFunc(int a, int b = 10,int c = 20)</span><br><span class="line">&#123;</span><br><span class="line">	cout&lt;&lt;&quot;a = &quot;&lt;&lt;a&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;&quot;b = &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">	cout&lt;&lt;&quot;c = &quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：<br>    1.半缺省参数必须从右往左依次来给出，不能间隔着来给<br>    2.缺省参数不能在函数声明和定义时同时出现。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//a.h</span><br><span class="line">void TestFunc(int a = 10);</span><br><span class="line">//a.c</span><br><span class="line">void TestFunc()int a = 20)</span><br><span class="line">&#123;&#125;</span><br><span class="line">//注意：如果声明和定义位置同时出现，恰巧两个位置提供的值不同，那编译器就无法确定到底该用哪个缺省值</span><br></pre></td></tr></table></figure>
-<p>3.缺省值必须是常量或者全局变量<br>4.C语言不支持（编译器不支持）</p>
-<h2 id="四-函数重载"><a href="#四-函数重载" class="headerlink" title="四.函数重载"></a>四.函数重载</h2><p> 函数重载的概念：是函数的的一种特殊情况，c++<strong>允许在同一作用域中声明几个功能相似的同名函数，这些同名函数的形参列表（参数个数或类型或顺序）必须不同</strong>，常用来处理或实现功能类似数据类型不同的问题。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">int Add(int left,int right)</span><br><span class="line">&#123;</span><br><span class="line">	return left + right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">double Add(double left, double right)</span><br><span class="line">&#123;</span><br><span class="line">	return left + right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">long Add(long left, long right)</span><br><span class="line">&#123;</span><br><span class="line">	return left + right;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Add(10 , 20);</span><br><span class="line">	Add(10.0 , 20.0);</span><br><span class="line">	Add(10L , 20L)；</span><br><span class="line">  	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>extern “C”</strong><br>有时候在c++工程中可能需要<strong>将某些函数按照c的风格来编译</strong>，在函数前加extern “C”,意思是告诉编译器，将该函数按照C语言规则来编译。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">extern &quot;C&quot; int Add(int left, int right);</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Add(1,2);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>链接时报错：error LINK2019：无法解析的外部符号_Add，该符号在函数_main中被引用</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p><strong>引用概念：</strong>引用不是新定义一个变量，而<strong>是给已存在的变量取了一个别名</strong>，编译器不会为引用变量开辟内存空间，它和它引用的变量<strong>共用同一快内存空间</strong>。<br><strong>类型&amp;引用变量名（对象名）= 引用实体</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void TestRef()</span><br><span class="line">&#123;</span><br><span class="line">	int a = 10;</span><br><span class="line">	int&amp; ra = a;//&lt;===定义引用类型</span><br><span class="line">	printf(&quot;%p&quot;,&amp;a);</span><br><span class="line">	printf(&quot;%p&quot;,&amp;ra);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意：引用类型必须和引用实体是同种类型。</strong><br>引用特性：1.引用在定义时必须初始化<br>          2.一个变量可以有多个引用<br>          3.引用一旦引用一个实体，再不能引用其他实体</p>
+        <h2 id="1-再谈构造函数"><a href="#1-再谈构造函数" class="headerlink" title="1. 再谈构造函数"></a>1. 再谈构造函数</h2><p><strong>1.1 构造函数体赋值</strong><br>在创建对象时，编译器通过调用构造函数，给对象各个成员变量一个合适的初始值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date(int year, int month, int day)</span><br><span class="line">	&#123;</span><br><span class="line">		_year = year;</span><br><span class="line">		_month = month;</span><br><span class="line">		_day = day;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>虽然上述构造函数调用之后，对象中已经有了一个初始值，但是不能将其称作为类对象成员的初始化，<strong>构造函数体中的语句只能将其称作为赋初值</strong>，而不能称作初始化，<strong>因为初始化只能初始化一次，而构造函数体内可以多次赋值。</strong></p>
+<p><strong>1.2 初始化列表</strong><br>初始化列表：以一个<strong>冒号开始</strong>，接着是一个<strong>以逗号分隔的数据成员列表</strong>，每个<strong>成员变量</strong>后面跟一个<strong>放在括号中的初始值或表达式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date(int year, int month, int day)</span><br><span class="line">		:_year(year)</span><br><span class="line">		,_month(month)</span><br><span class="line">		,_day(day)</span><br><span class="line">		&#123;&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>【注意】<br>    1.每个成员变量在初始化列表中<strong>只能出现一次</strong>（初始化只能出现一次）<br>    2.类中包含以下成员，必须放在初始化列表位置进行初始化：<br>    引用成员变量<br>    const成员变量<br>    类类型成员变量（该类没有默认构造函数）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	A(int a)</span><br><span class="line">		:_a(a)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">	int _a;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	B(int a, int ref)</span><br><span class="line">		:_aobj(a)</span><br><span class="line">		,_ref(ref)</span><br><span class="line">		,_n(10)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">	A _aobj; //没有默认构造函数</span><br><span class="line">	int&amp; ref; //引用</span><br><span class="line">	const int _n; //const</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>尽量使用初始化列表初始化， 因为不管你是否使用初始化列表，对于自定义类型成员变量，一定会先使用初始化列表初始化。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Time</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Time(int hour = 0)</span><br><span class="line">		:_hour(hour)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Time()&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int _hour;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date(int day)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _day;</span><br><span class="line">	Time _t;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Date d(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.<strong>成员变量</strong>在类中<strong>声明次序</strong>就是其在初始化列表中的<strong>初始化顺序</strong>，与其在初始化列表中的先后次序无关</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Array</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Array(int size)</span><br><span class="line">		:_size(size)</span><br><span class="line">		,_array((int*)malloc(sizeof(int)*_size))</span><br><span class="line">	&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">	int* _array;</span><br><span class="line">	int _size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.3 <strong>explicit关键字</strong><br>构造函数不仅可以构造与初始化对象，<strong>对于单个参数的构造函数，还具有类型转换的作用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date(int year)</span><br><span class="line">		:_year(year)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">	explicit Date(int year)</span><br><span class="line">		:_year(year)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void TestDate()</span><br><span class="line">&#123;</span><br><span class="line">	Date d1(2018);</span><br><span class="line">	//用一个整型变量给日期类型对象赋值</span><br><span class="line">	//实际编译器背后会用2019构造一个无名对象， 最后用无名对象给d1对象进行赋值</span><br><span class="line">	d1 = 2019;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码可读性不是很好，<strong>用explicit修是构造函数，将会禁止单参构造函数的隐式转换。</strong></p>
+<h2 id="2-static成员"><a href="#2-static成员" class="headerlink" title="2.static成员"></a>2.static成员</h2><p>2.1 <strong>概念</strong><br>声明为<strong>static的类成员</strong>称为<strong>类的静态成员</strong>，用<strong>static</strong>修饰的<strong>成员变量</strong>，称之为<strong>静态成员变量</strong>;用<strong>static修饰</strong>的成员函数，称之为<strong>静态成员函数</strong>。<strong>静态的成员变量一定要在类外进行初始化</strong></p>
+<p>面试题：实现一个类，计算程序中创建出了多少个类对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	A()</span><br><span class="line">	&#123;++_scount;&#125;</span><br><span class="line">	A(const A&amp; t)</span><br><span class="line">	&#123;++_scount;&#125;</span><br><span class="line">	static int GetACount()</span><br><span class="line">	&#123;return _scount;&#125;</span><br><span class="line">private:</span><br><span class="line">	static int _scount;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int Test::_count = 0;</span><br><span class="line"></span><br><span class="line">void TestA()</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; A::GetACount() &lt;&lt; endl;</span><br><span class="line">	A a1, a2;</span><br><span class="line">	A a3(a1);</span><br><span class="line">	cout &lt;&lt; A:: GetACount() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.2 特性<br>    1.<strong>静态成员为所有类对象所共享</strong>，不属于某个具体的实例<br>    2.<strong>静态成员变量</strong>必须在<strong>类外定义</strong>，定义时不添加static关键字<br>    3.类静态成员即可用类名::静态成员或者对象。静态成员来访问<br>    4.静态成员函数<strong>没有</strong>隐藏的<strong>this指针</strong>，不能访问任何非静态成员<br>    5.静态成员和类的普通成员一样，也是public、protected、private3种访问级别，也可以具有返回值，const修饰符等参数。</p>
+<h2 id="3-C-的成员初始化新用法"><a href="#3-C-的成员初始化新用法" class="headerlink" title="3.C++的成员初始化新用法"></a>3.C++的成员初始化新用法</h2><p>c++支持非静态成员变量在声明时，直接初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	B(int b = 0)</span><br><span class="line">		:_b(b)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">	int _b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void Print()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; b._b &lt;&lt;endl;</span><br><span class="line">		cout &lt;&lt; p &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	//非静态成员变量，可以在成员声明时，直接初始化</span><br><span class="line">	int a = 10;</span><br><span class="line">	B b = 20;</span><br><span class="line">	int* p = (int*)malloc(4);</span><br><span class="line">	static int n; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int A::n = 10;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	A a;</span><br><span class="line">	a.Print();</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-友元"><a href="#4-友元" class="headerlink" title="4.友元"></a>4.友元</h2><p>友元分为： <strong>友元函数</strong>和<strong>友元类</strong><br>友元提供了一种突破封装的方式，有时提供了便利，但是友元会增加耦合度，破坏了封装，所以友元不宜多用。<br><strong>4.1 友元函数</strong><br>问题：现在我们尝试去重载operate&lt;&lt;，然后发现我们没办法将operate&lt;&lt;重载成成员函数。<strong>因为cout输出流对象和隐含的this指针抢占第一个参数的位置</strong>。this指针默认是第一个参数也就是左操作数了。但是实际使用中cout需要是第一个形参对象，才能正常使用。所以我们要将operator&lt;&lt;重载成全局函数。但是这样的话，又会导致类外没办法访问成员，那么这里就需要友元来解决。operator&gt;&gt;同理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date(int year, int month,int day)</span><br><span class="line">		:_year(year)</span><br><span class="line">		,_month(month)</span><br><span class="line">		,_day(day)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">	ostream&amp; operator&lt;&lt;(ostream&amp; _cout)</span><br><span class="line">	&#123;</span><br><span class="line">		_cout &lt;&lt; d._year &lt;&lt; &quot;-&quot; &lt;&lt; d._month &lt;&lt; &quot;-&quot; &lt;&lt; d._day;</span><br><span class="line">		return _cout;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Date d(2018, 12, 24);</span><br><span class="line">	d &lt;&lt; cout;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>友元函数</strong>可以<strong>直接访问</strong>类的<strong>私有</strong>成员，它是<strong>定义在类外部</strong>的<strong>普通函数</strong>，不属于任何类，但需要在类的内部声明，声明时需要加<strong>friend</strong>关键字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">friend ostream&amp; operator&lt;&lt;(ostream&amp; _cout, const Date&amp; d);</span><br><span class="line">friend istream&amp; operator&gt;&gt;(istream&amp; _cin,const Date&amp; d);</span><br><span class="line">public:</span><br><span class="line">	Date(int year, int month, int day)</span><br><span class="line">		:_year(year)</span><br><span class="line">		,_month(month)</span><br><span class="line">		,_day(day)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ostream&amp; operator&lt;&lt;(ostream&amp; _cout, const Date&amp; d)</span><br><span class="line">&#123;</span><br><span class="line">	_cout &lt;&lt; d._year &lt;&lt; &quot;-&quot; &lt;&lt; d._month &lt;&lt; &quot;-&quot; &lt;&lt; d._day;</span><br><span class="line">	return _cout;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">istream&amp; operator&gt;&gt;(istream&amp; _cin, const Date&amp; d)</span><br><span class="line">&#123;</span><br><span class="line">	_cin &gt;&gt; d._year;</span><br><span class="line">	_cin &gt;&gt; d._month;</span><br><span class="line">	_cin &gt;&gt; d._day;</span><br><span class="line">	return _cin;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Date d;</span><br><span class="line">	cin &gt;&gt; d;</span><br><span class="line">	cout &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>说明：</strong></p>
+<ul>
+<li><strong>友元函数</strong>可以访问类的私有成员，但<strong>不是类的成员函数</strong></li>
+<li>友元函数<strong>不能用const修饰</strong></li>
+<li>友元函数可以在类定义的任何地方声明，<strong>不受访问限定符限制</strong></li>
+<li>一个函数可以是多个类的友元函数</li>
+<li>友元函数的调用与普通函数的调用和原理相同</li>
+</ul>
+<p><strong>4.2 友元类</strong><br>友元类的所有成员函数都可以是另一个类的友元函数，都可以访问另一个类中的非公有成员</p>
+<ul>
+<li>友元函数是单向的，不具有交换性<br>比如上述Time类和Date类，在Time类中声明Date类为其友元类，那么可以在Date类中直接访问Time类的私有成员变量，但想在Time类中访问Date类中私有的成员变量则不行</li>
+<li>友元关系不能传递<br>如果B是A的友元，C是B的友元，则不能说明C是A的友元</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">class Date; //前置声明</span><br><span class="line">class Time</span><br><span class="line">&#123;</span><br><span class="line">	friend class Date; //声明日期类为时间类的友元类，则在日期类中就直接访问Time类中的私有成员变量</span><br><span class="line">public:</span><br><span class="line">	Time(int hour, int minute, int second)</span><br><span class="line">		: _hour(hour)</span><br><span class="line">		, _minute(minute)</span><br><span class="line">		,_second(second)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _hour;</span><br><span class="line">	int _minute;</span><br><span class="line">	int _second;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date(int year = 1900, int month = 1, int day = 1)</span><br><span class="line">		: _year(year)</span><br><span class="line">		, _month(month)</span><br><span class="line">		, _day(day)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">	void SetTimeOfDate(int hour, int minute, int second)</span><br><span class="line">	&#123;</span><br><span class="line">		//直接访问时间类私有的成员变量</span><br><span class="line">		_t._hour = hour;</span><br><span class="line">		_t._minute = minute;</span><br><span class="line">		_t._second = second;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">	Time _t;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="5-内部类"><a href="#5-内部类" class="headerlink" title="5.内部类"></a>5.内部类</h2><p><strong>5.1 概念及特性</strong><br>概念：如果一个类定义在另一个类的内部，这个内部类就叫做内部类。注意此时这个内部类是一个独立的类，它不属于外部类，更不能通过外部类的对象去调用内部类，外部类对内部类没有任何优越的访问权限。<br>注意：内部类就是外部类的友元类。注意友元类的定义。内部类可以通过外部类的对象参数来访问外部类中的所有成员。但是外部类不是内部类的友元。</p>
+<p>特性：</p>
+<ol>
+<li>内部类可以定义在外部类的public、projected、private都是可以的。</li>
+<li>注意内部类可以直接访问外部类中的static、枚举成员，不需要外部类的对象/类名。</li>
+<li>sizeof(外部类) = 外部类，和内部类没有任何关系。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	static int k;</span><br><span class="line">	int h;</span><br><span class="line">public:</span><br><span class="line">	class B</span><br><span class="line">	&#123;</span><br><span class="line">	public:</span><br><span class="line">		void foo(const A&amp; a)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; k &lt;&lt; endl; //OK</span><br><span class="line">			cout &lt;&lt; a.h &lt;&lt; endl; //OK</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int A::k = 1;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	A::B b;</span><br><span class="line">	b.foo(A());</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-再次理解封装"><a href="#6-再次理解封装" class="headerlink" title="6.再次理解封装"></a>6.再次理解封装</h2><p>c++是基于面向对象的程序，面向对象有三大特性即： 封装、继承、多态。</p>
+<p>c++通过类，将一个对象的属性与行为结合在一起，使其更符合人们对于一件事物的认知，将属于该对象的所有东西打包在一起；通过访问限定符选择性的将其部分功能开放出来与其他对象进行交互，而对于对象内部的一些实现细节，外部用户不需要知道，知道了有些情况下也没用，反而增加了使用或者维护的难度，让整个事情复杂化。</p>
 
       
     </div>
@@ -563,8 +551,8 @@ namespace N1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/03/hello-world/" rel="next" title="Love You Forever">
-                <i class="fa fa-chevron-left"></i> Love You Forever
+              <a href="/2019/04/08/类和对象/" rel="next" title="类和对象">
+                <i class="fa fa-chevron-left"></i> 类和对象
               </a>
             
           </div>
@@ -572,10 +560,6 @@ namespace N1
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/08/类和对象/" rel="prev" title="类和对象">
-                类和对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -775,7 +759,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-基础相关知识"><span class="nav-number">1.</span> <span class="nav-text">C++基础相关知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-命名空间"><span class="nav-number">1.1.</span> <span class="nav-text">一.命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-c-输入-amp-输出"><span class="nav-number">1.2.</span> <span class="nav-text">二.c++输入&amp;输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-缺省参数"><span class="nav-number">1.3.</span> <span class="nav-text">三. 缺省参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-函数重载"><span class="nav-number">1.4.</span> <span class="nav-text">四.函数重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">1.5.</span> <span class="nav-text">引用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-再谈构造函数"><span class="nav-number">1.</span> <span class="nav-text">1. 再谈构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-static成员"><span class="nav-number">2.</span> <span class="nav-text">2.static成员</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-C-的成员初始化新用法"><span class="nav-number">3.</span> <span class="nav-text">3.C++的成员初始化新用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-友元"><span class="nav-number">4.</span> <span class="nav-text">4.友元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-内部类"><span class="nav-number">5.</span> <span class="nav-text">5.内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-再次理解封装"><span class="nav-number">6.</span> <span class="nav-text">6.再次理解封装</span></a></li></ol></div>
             
 
           </div>
@@ -981,9 +965,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://MyGloria.com/2019/04/04/The-first-blog/';
-          this.page.identifier = '2019/04/04/The-first-blog/';
-          this.page.title = 'The_first_blog';
+          this.page.url = 'http://MyGloria.com/2019/04/16/理解static、内部类、友元函数/';
+          this.page.identifier = '2019/04/16/理解static、内部类、友元函数/';
+          this.page.title = '理解static、内部类、友元函数';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
