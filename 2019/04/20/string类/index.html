@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="导航,分享,">
 
 
 
@@ -96,16 +96,18 @@
 
 
 
-<meta name="description" content="Love You Forever">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MyGloria">
-<meta property="og:url" content="http://MyGloria.com/index.html">
+<meta name="description" content="标准库中的string类 字符串是表示字符序列的类 标准的字符串类提供了对此类对象的支持，其接口类似于标准字符容器的接口，但添加了专门用于操作单字节字符字符串的设计特性。 string类是使用char（即作为它的字符类型，使用它的默认char_traits和分配器类型）。 string类是basic_string模板类的一个实例，它使用char来实例化basic_string模板类，并用char_">
+<meta name="keywords" content="导航,分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="string类">
+<meta property="og:url" content="http://MyGloria.com/2019/04/20/string类/index.html">
 <meta property="og:site_name" content="MyGloria">
-<meta property="og:description" content="Love You Forever">
+<meta property="og:description" content="标准库中的string类 字符串是表示字符序列的类 标准的字符串类提供了对此类对象的支持，其接口类似于标准字符容器的接口，但添加了专门用于操作单字节字符字符串的设计特性。 string类是使用char（即作为它的字符类型，使用它的默认char_traits和分配器类型）。 string类是basic_string模板类的一个实例，它使用char来实例化basic_string模板类，并用char_">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-20T10:47:48.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyGloria">
-<meta name="twitter:description" content="Love You Forever">
+<meta name="twitter:title" content="string类">
+<meta name="twitter:description" content="标准库中的string类 字符串是表示字符序列的类 标准的字符串类提供了对此类对象的支持，其接口类似于标准字符容器的接口，但添加了专门用于操作单字节字符字符串的设计特性。 string类是使用char（即作为它的字符类型，使用它的默认char_traits和分配器类型）。 string类是basic_string模板类的一个实例，它使用char来实例化basic_string模板类，并用char_">
 
 
 
@@ -135,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://MyGloria.com/">
+  <link rel="canonical" href="http://MyGloria.com/2019/04/20/string类/">
 
 
 
 
 
-  <title>MyGloria</title>
+  <title>string类 | MyGloria</title>
   
 
 
@@ -160,8 +162,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/John-barca" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -307,9 +308,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -341,11 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/20/string类/" itemprop="url">
-                  string类
-                </a>
+          <h1 class="post-title" itemprop="name headline">string类
               
             
           </h1>
@@ -433,22 +430,159 @@
       
 
       
-        
-          
-          标准库中的string类
-字符串是表示字符序列的类
-标准的字符串类提供了对此类对象的支持，其接口类似于标准字符容器的接口，但添加了专门用于操作单字节字符字符串的设计特性。
-string类是使用char（即作为它的字符类型，使用它的默认char_traits和分配器类型）。
-string类是basic_string模板类的一个实例，它使用char来实例化basic_string模板类，并用char_
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/20/string类/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="标准库中的string类"><a href="#标准库中的string类" class="headerlink" title="标准库中的string类"></a>标准库中的string类</h2><ul>
+<li>字符串是表示字符序列的类</li>
+<li>标准的字符串类提供了对此类对象的支持，其接口类似于标准字符容器的接口，但添加了专门用于操作单字节字符字符串的设计特性。</li>
+<li>string类是使用char（即作为它的字符类型，使用它的默认char_traits和分配器类型）。</li>
+<li>string类是basic_string模板类的一个实例，它使用char来实例化basic_string模板类，并用char_traits和allocator作为basic_string的默认参数。</li>
+<li>注意，这个类独立于所使用的编码来处理字节：如果用来处理多字节或变长字符(如UTF-8)的序列，这个类的所有成员(如长度或大小)以及它的迭代器，将仍然按照字节(而不是实际编码的字符)来操作。<br><strong>总结:</strong></li>
+<li>string是表示字符串的字符串类</li>
+<li>该类的接口与常规容器的接口基本相同，再添加了一些专门用来操作string的常规操作</li>
+<li>string在底层实际是：basic_string模板类的别名，typedef basic_string&lt;char,char_traits,allocator&gt;string;</li>
+<li>不能操作多字节或者变长字符的序列</li>
+</ul>
+<p>在<strong>使用string类时，必须包含头文件以及using namespace std;</strong></p>
+<h2 id="string类的常用接口说明"><a href="#string类的常用接口说明" class="headerlink" title="string类的常用接口说明"></a>string类的常用接口说明</h2><p><strong>1. string类对象的常见构造</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数名称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string()</td>
+<td>构造空的string类对象，即空字符串</td>
+</tr>
+<tr>
+<td>string(const char* s)</td>
+<td>用C-string来构造string类对象</td>
+</tr>
+<tr>
+<td>string(size_t n, char c)</td>
+<td>string类对象中包含n个字符c</td>
+</tr>
+<tr>
+<td>string(const string&amp; s)</td>
+<td>拷贝构造函数</td>
+</tr>
+<tr>
+<td>string(const string&amp; s, size_t n)</td>
+<td>用s中的前n个字符构造新的string类对象</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void TestString()</span><br><span class="line">&#123;</span><br><span class="line">	string s1;	//构造空的string类对象s1</span><br><span class="line">	string s2(&quot;hello world&quot;);	//用C格式字符串构造string类对象s2</span><br><span class="line">	string s3(10,&apos;a&apos;);	//用10个字符&apos;a&apos;构造string类对象s3</span><br><span class="line">	string s4(s2);	//拷贝构造s4</span><br><span class="line">	string s5(s3, 5);	//用s3中前5个字符构造string对象s5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2. string类对象的容量操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数名称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size_t size()const</td>
+<td>返回字符串有效字符长度</td>
+</tr>
+<tr>
+<td>size_t length()const</td>
+<td>返回字符串有效字符长度</td>
+</tr>
+<tr>
+<td>size_t capacity()const</td>
+<td>返回空间总大小</td>
+</tr>
+<tr>
+<td>bool empty()const</td>
+<td>检测字符串是否为空串，是返回true,否则返回false</td>
+</tr>
+<tr>
+<td>void clear()</td>
+<td>清空有效字符</td>
+</tr>
+<tr>
+<td>void resize(size_t n,char c)</td>
+<td>将有效字符的个数改成n个，多出的空间用字符c填充</td>
+</tr>
+<tr>
+<td>void resize(size_t n)</td>
+<td>将有效字符的个数改成n个，多出的空间用0填充</td>
+</tr>
+<tr>
+<td>void reserve(size_t res_arg = 0)</td>
+<td>为字符串预留空间</td>
+</tr>
+</tbody>
+</table>
+<p> 【注意】</p>
+<ol>
+<li>size()与length()方法底层实现原理完全相同，引入size()的原因是为了与其他容器的接口保持一致，一般情况下基本都是用size()。</li>
+<li>clear()只是将string中有效字符清空,不改变底层空间大小。</li>
+<li>reserve(size_t n)与resize(size_t n, char c)都是将字符串中有效字符个数改变到n个，不同的是当字符个数增多时，reserve(n)用0来填充多出的元素空间，reserve(size_t n, char c)用字符c来填充多出的元素空间。注意: <strong>resize在改变元素个数时，如果是将元素个数增多，可能会改变底层容量的大小，如果是将元素个数减少，底层空间总大小不变。</strong></li>
+<li>reserve(size_t res, arg = 0): 为string预留空间，不改变有效元素个数，当reserve的参数小于string的底层空间总大小时，reserve不会改变容量大小。</li>
+</ol>
+<p><strong>3.string类对象的访问操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数名称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char&amp; operator<a href="size_t pos"></a></td>
+<td>返回pos位置的字符，const string类对象调用</td>
+</tr>
+<tr>
+<td>const char&amp; operator<a href="size_t pos"></a> const</td>
+<td>返回pos位置的字符，非const string类对象调用</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void TestString()</span><br><span class="line">&#123;</span><br><span class="line">	String s1(&quot;hello world&quot;);</span><br><span class="line">	const String s2(&quot;hello world&quot;);</span><br><span class="line">	cout &lt;&lt; s1 &lt;&lt; &quot; &quot; &lt;&lt; s2 &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; s1[0] &lt;&lt; &quot; &quot; &lt;&lt; s2[0] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	s1[0] = &apos;H&apos;;</span><br><span class="line">	cout &lt;&lt; s1 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	for(size_t i = 0; i &lt; s1.size(); ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; s1[i] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//s2[0] = &apos;h&apos;;		代码编译失败，因为const类型对象不能修改</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>4.string类对象的修改操作</strong><br>| 函数名称 | 功能说明 |<br>|–|–|<br>| void push_back(char c) | 在字符串后尾插字符c |<br>| string&amp; append(const char<em> s) | 在字符串后追加一个字符串 |<br>| string&amp; operator+=(const string&amp; str) | 在字符串后追加字符串str |<br>| string&amp; operator+=(char c) | 在字符串后追加字符c |<br>| const char</em> c_str()const | 返回C格式字符串 |<br>| size_t find(char c, size_t pos = 0) const| 从字符串pos位置开始往后找字符c，返回该字符在字符串中的位置 |<br>| size_t rfind(char c, size_t pos = npos) | 从字符串pos位置开始往前找字符c，返回该字符在字符串中的位置 |<br>| string substr(size_t pos = 0, size_t n = npos) const| 在str中从pos位置开始，截取n个字符，然后将其返回 |</p>
+<p>【注意】</p>
+<ol>
+<li>在string尾部追加字符时,s.push_back(a)/s.append(1,a)/s += ‘a’三种的实现方式差不多，一般情况下string类的+=操作用的比较多，+=操作不仅可以连接单个字符，还可以连接字符串。</li>
+<li><p>对string操作时，如果能够大概预估到放多少字符，可以先通过reserve把空间预备好。</p>
+<p><strong>5.string类非成员函数</strong></p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator+</td>
+<td>尽量少用，因为效率低</td>
+</tr>
+<tr>
+<td>operator&gt;&gt;</td>
+<td>输入运算符重载</td>
+</tr>
+<tr>
+<td>operator&lt;&lt;</td>
+<td>输出运算符重载</td>
+</tr>
+<tr>
+<td>getline</td>
+<td>获取一行字符串</td>
+</tr>
+<tr>
+<td>relational operators</td>
+<td>大小比较</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
 
@@ -459,370 +593,82 @@ string类是basic_string模板类的一个实例，它使用char来实例化basi
     
 
     
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat.png" alt="HaoDong wechat" style="width: 200px; max-width: 100%;">
+    <div>你的赏识是我的荣幸</div>
+</div>
 
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你喜欢它的话，可以打赏一下哦！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="HaoDong 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="HaoDong 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/19/函数模板、类模板/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/19/函数模板、类模板/" itemprop="url">
-                  函数模板、类模板
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-04-19 19:30:58" itemprop="dateCreated datePublished" datetime="2019-04-19T19:30:58+08:00">2019-04-19</time>
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/导航/" rel="tag"># 导航</a>
           
-
+            <a href="/tags/分享/" rel="tag"># 分享</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/19/函数模板、类模板/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/19/函数模板、类模板/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          1.泛型编程怎样去实现一个通用的交换函数呢？
-12345678910111213141516171819202122void Swap(int&amp; left, int&amp; right)&#123;	int temp = left;	left = right;	right = tmp;&#125;void Swap(double&amp; left, double&amp; right)
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/19/函数模板、类模板/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/19/函数模板、类模板/" rel="next" title="函数模板、类模板">
+                <i class="fa fa-chevron-left"></i> 函数模板、类模板
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/18/C-内存管理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/18/C-内存管理/" itemprop="url">
-                  C++内存管理
-                </a>
-              
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-04-18 16:13:14" itemprop="dateCreated datePublished" datetime="2019-04-18T16:13:14+08:00">2019-04-18</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/18/C-内存管理/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/18/C-内存管理/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          1.C/C++内存分布【说明】
-
-栈又叫堆栈，非静态局部变量/函数参数/返回值等，栈是向下增长的。
-内存映射段是高效的I/O映射方式，用于装载一个共享的动态内存库。用户可使用系统接口创建共享内存，做进程间通信。
-堆用于程序运行时动态内存分配，堆是可以向上增长的。
-数据段-存储全局数据和静态数据。
-代码段-可执行的代码/只读常量。2.C语言中动态内存管理方式2.1 malloc/calloc/rea
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/18/C-内存管理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -832,688 +678,58 @@ string类是basic_string模板类的一个实例，它使用char来实例化basi
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/16/理解static、内部类、友元函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/16/理解static、内部类、友元函数/" itemprop="url">
-                  理解static、内部类、友元函数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-04-16 17:13:41" itemprop="dateCreated datePublished" datetime="2019-04-16T17:13:41+08:00">2019-04-16</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/16/理解static、内部类、友元函数/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/16/理解static、内部类、友元函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          1. 再谈构造函数1.1 构造函数体赋值在创建对象时，编译器通过调用构造函数，给对象各个成员变量一个合适的初始值
-123456789101112131415class Date&#123;public:	Date(int year, int month, int day)	&#123;		_year = year;		_month = month;		_day = day;	&#125;	priv
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/16/理解static、内部类、友元函数/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/08/类和对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/08/类和对象/" itemprop="url">
-                  类和对象
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-04-08 16:51:37" itemprop="dateCreated datePublished" datetime="2019-04-08T16:51:37+08:00">2019-04-08</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/08/类和对象/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/08/类和对象/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          类的六个默认成员函数如果一个类中什么成员都没有，简称为空类。空类中什么都没有吗？并非如此，任何一个类在我们不写的情况下，都会自动生成下面6个默认成员函数。class Date {};
-1.构造函数·1.1 概念    构造函数是一个特殊的成员函数，名字与类名相同，创建类类型对象时由编译器自动调用，保证每个数据成员都有一个合适的初始值，并且在对象的生命周期内只调用一次。1.2 特性    构造函数是
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/08/类和对象/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/04/The-first-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/04/The-first-blog/" itemprop="url">
-                  The_first_blog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-04-04 21:32:38" itemprop="dateCreated datePublished" datetime="2019-04-04T21:32:38+08:00">2019-04-04</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/04/The-first-blog/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/04/The-first-blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          C++基础相关知识一.命名空间在c/c++中，变量、函数、类都是大量存在的，这些函数、变量和类的名称将都存在于全局作用域中，可能会导致很多冲突。使用命名空间的目的是对标识符的名称进行本地化，以避免命名冲突或命名污染，namespace关键字的出现就是为了避免这种问题。
-//1.普通的命名空间
-namespace N1 //N1为命名空间的名称
-{
-    //命名空间的内容，可以定义变量，也可以定
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/04/The-first-blog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/03/hello-world/" itemprop="url">
-                  Love You Forever
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-04-03 20:23:40" itemprop="dateCreated datePublished" datetime="2019-04-03T20:23:40+08:00">2019-04-03</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/03/hello-world/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/03/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Forever! Forever! Forever!</p>
-<h2 id="How-Deep-Is-Your-Love"><a href="#How-Deep-Is-Your-Love" class="headerlink" title="How Deep Is Your Love"></a>How Deep Is Your Love</h2><p> 启窗以望，星瀚凌凌。望无路兮，无以所归。<br> 昔既难忆，企留我心。抬首对穹，平嗓来歌。<br> 裹卷相思，寄我爱人。孤孑一身。泪染两襟。<br> 此出一曲，银河往替。凝眸流火，遥寄千里。<br> 所落之处，记为老故。所思之疆，亦已焉哉。<br> 没于黑弥，不得所终。凝空对唱，此歌凄哀。<br> 告我所爱，知我所爱，可得故思，于此起风。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/03/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
   
 
 
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -1534,8 +750,17 @@ namespace N1 //N1为命名空间的名称
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1627,6 +852,22 @@ namespace N1 //N1为命名空间的名称
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库中的string类"><span class="nav-number">1.</span> <span class="nav-text">标准库中的string类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string类的常用接口说明"><span class="nav-number">2.</span> <span class="nav-text">string类的常用接口说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1803,6 +1044,10 @@ namespace N1 //N1为命名空间的名称
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1820,6 +1065,18 @@ namespace N1 //N1为命名空间的名称
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://MyGloria.com/2019/04/20/string类/';
+          this.page.identifier = '2019/04/20/string类/';
+          this.page.title = 'string类';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
@@ -1839,6 +1096,17 @@ namespace N1 //N1为命名空间的名称
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -2207,26 +1475,6 @@ namespace N1 //N1为命名空间的名称
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
