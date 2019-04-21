@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="MyGloria">
 <meta property="og:description" content="标准库中的string类 字符串是表示字符序列的类 标准的字符串类提供了对此类对象的支持，其接口类似于标准字符容器的接口，但添加了专门用于操作单字节字符字符串的设计特性。 string类是使用char（即作为它的字符类型，使用它的默认char_traits和分配器类型）。 string类是basic_string模板类的一个实例，它使用char来实例化basic_string模板类，并用char_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-20T10:47:48.719Z">
+<meta property="og:updated_time" content="2019-04-21T13:32:11.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="string类">
 <meta name="twitter:description" content="标准库中的string类 字符串是表示字符序列的类 标准的字符串类提供了对此类对象的支持，其接口类似于标准字符容器的接口，但添加了专门用于操作单字节字符字符串的设计特性。 string类是使用char（即作为它的字符类型，使用它的默认char_traits和分配器类型）。 string类是basic_string模板类的一个实例，它使用char来实例化basic_string模板类，并用char_">
@@ -544,7 +544,49 @@
 </tbody>
 </table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void TestString()</span><br><span class="line">&#123;</span><br><span class="line">	String s1(&quot;hello world&quot;);</span><br><span class="line">	const String s2(&quot;hello world&quot;);</span><br><span class="line">	cout &lt;&lt; s1 &lt;&lt; &quot; &quot; &lt;&lt; s2 &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; s1[0] &lt;&lt; &quot; &quot; &lt;&lt; s2[0] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	s1[0] = &apos;H&apos;;</span><br><span class="line">	cout &lt;&lt; s1 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	for(size_t i = 0; i &lt; s1.size(); ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; s1[i] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//s2[0] = &apos;h&apos;;		代码编译失败，因为const类型对象不能修改</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>4.string类对象的修改操作</strong><br>| 函数名称 | 功能说明 |<br>|–|–|<br>| void push_back(char c) | 在字符串后尾插字符c |<br>| string&amp; append(const char<em> s) | 在字符串后追加一个字符串 |<br>| string&amp; operator+=(const string&amp; str) | 在字符串后追加字符串str |<br>| string&amp; operator+=(char c) | 在字符串后追加字符c |<br>| const char</em> c_str()const | 返回C格式字符串 |<br>| size_t find(char c, size_t pos = 0) const| 从字符串pos位置开始往后找字符c，返回该字符在字符串中的位置 |<br>| size_t rfind(char c, size_t pos = npos) | 从字符串pos位置开始往前找字符c，返回该字符在字符串中的位置 |<br>| string substr(size_t pos = 0, size_t n = npos) const| 在str中从pos位置开始，截取n个字符，然后将其返回 |</p>
+<p><strong>4.string类对象的修改操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数名称</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void push_back(char c)</td>
+<td>在字符串后尾插字符c</td>
+</tr>
+<tr>
+<td>string&amp; append(const char* s)</td>
+<td>在字符串后追加一个字符串</td>
+</tr>
+<tr>
+<td>string&amp; operator+=(const string&amp; str)</td>
+<td>在字符串后追加字符串str</td>
+</tr>
+<tr>
+<td>string&amp; operator+=(char c)</td>
+<td>在字符串后追加字符c</td>
+</tr>
+<tr>
+<td>const char* c_str()const</td>
+<td>返回C格式字符串</td>
+</tr>
+<tr>
+<td>size_t find(char c, size_t pos = 0) const</td>
+<td>从字符串pos位置开始往后找字符c，返回该字符在字符串中的位置</td>
+</tr>
+<tr>
+<td>size_t rfind(char c, size_t pos = npos)</td>
+<td>从字符串pos位置开始往前找字符c，返回该字符在字符串中的位置</td>
+</tr>
+<tr>
+<td>string substr(size_t pos = 0, size_t n = npos) const</td>
+<td>在str中从pos位置开始，截取n个字符，然后将其返回</td>
+</tr>
+</tbody>
+</table>
 <p>【注意】</p>
 <ol>
 <li>在string尾部追加字符时,s.push_back(a)/s.append(1,a)/s += ‘a’三种的实现方式差不多，一般情况下string类的+=操作用的比较多，+=操作不仅可以连接单个字符，还可以连接字符串。</li>
