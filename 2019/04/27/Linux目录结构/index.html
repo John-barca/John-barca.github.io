@@ -96,18 +96,20 @@
 
 
 
-<meta name="description" content="1.C/C++内存分布【说明】  栈又叫堆栈，非静态局部变量/函数参数/返回值等，栈是向下增长的。 内存映射段是高效的I/O映射方式，用于装载一个共享的动态内存库。用户可使用系统接口创建共享内存，做进程间通信。 堆用于程序运行时动态内存分配，堆是可以向上增长的。 数据段-存储全局数据和静态数据。 代码段-可执行的代码/只读常量。2.C语言中动态内存管理方式2.1 malloc/calloc/rea">
+<meta name="description" content="Linux目录结构和作用【常见目录说明】   目录      /bin 存放二进制可执行文件(ls,cat,mkdir等),常用命令一般都在这里   /etc 存放系统管理和配置文件   /home 存放所有用户文件的根目录   /usr 用于存放系统应用程序，比较重要的目录/usr/local本地系统管理员软件安装目录(安装系统级的应用)。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++内存管理">
-<meta property="og:url" content="http://MyGloria.com/2019/04/18/C-内存管理/index.html">
+<meta property="og:title" content="Linux目录结构">
+<meta property="og:url" content="http://MyGloria.com/2019/04/27/Linux目录结构/index.html">
 <meta property="og:site_name" content="MyGloria">
-<meta property="og:description" content="1.C/C++内存分布【说明】  栈又叫堆栈，非静态局部变量/函数参数/返回值等，栈是向下增长的。 内存映射段是高效的I/O映射方式，用于装载一个共享的动态内存库。用户可使用系统接口创建共享内存，做进程间通信。 堆用于程序运行时动态内存分配，堆是可以向上增长的。 数据段-存储全局数据和静态数据。 代码段-可执行的代码/只读常量。2.C语言中动态内存管理方式2.1 malloc/calloc/rea">
+<meta property="og:description" content="Linux目录结构和作用【常见目录说明】   目录      /bin 存放二进制可执行文件(ls,cat,mkdir等),常用命令一般都在这里   /etc 存放系统管理和配置文件   /home 存放所有用户文件的根目录   /usr 用于存放系统应用程序，比较重要的目录/usr/local本地系统管理员软件安装目录(安装系统级的应用)。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-18T08:15:33.968Z">
+<meta property="og:image" content="http://mygloria.com/2019/04/27/Linux目录结构/Linux.PNG">
+<meta property="og:updated_time" content="2019-04-27T13:45:47.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++内存管理">
-<meta name="twitter:description" content="1.C/C++内存分布【说明】  栈又叫堆栈，非静态局部变量/函数参数/返回值等，栈是向下增长的。 内存映射段是高效的I/O映射方式，用于装载一个共享的动态内存库。用户可使用系统接口创建共享内存，做进程间通信。 堆用于程序运行时动态内存分配，堆是可以向上增长的。 数据段-存储全局数据和静态数据。 代码段-可执行的代码/只读常量。2.C语言中动态内存管理方式2.1 malloc/calloc/rea">
+<meta name="twitter:title" content="Linux目录结构">
+<meta name="twitter:description" content="Linux目录结构和作用【常见目录说明】   目录      /bin 存放二进制可执行文件(ls,cat,mkdir等),常用命令一般都在这里   /etc 存放系统管理和配置文件   /home 存放所有用户文件的根目录   /usr 用于存放系统应用程序，比较重要的目录/usr/local本地系统管理员软件安装目录(安装系统级的应用)。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录">
+<meta name="twitter:image" content="http://mygloria.com/2019/04/27/Linux目录结构/Linux.PNG">
 
 
 
@@ -137,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://MyGloria.com/2019/04/18/C-内存管理/">
+  <link rel="canonical" href="http://MyGloria.com/2019/04/27/Linux目录结构/">
 
 
 
 
 
-  <title>C++内存管理 | MyGloria</title>
+  <title>Linux目录结构 | MyGloria</title>
   
 
 
@@ -325,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/18/C-内存管理/">
+    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/27/Linux目录结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -342,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++内存管理
+          <h1 class="post-title" itemprop="name headline">Linux目录结构
               
             
           </h1>
@@ -367,7 +369,7 @@
                 
               
 
-              <time title="创建于：2019-04-18 16:13:14" itemprop="dateCreated datePublished" datetime="2019-04-18T16:13:14+08:00">2019-04-18</time>
+              <time title="创建于：2019-04-27 21:32:11" itemprop="dateCreated datePublished" datetime="2019-04-27T21:32:11+08:00">2019-04-27</time>
             
 
             
@@ -385,7 +387,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/c/" itemprop="url" rel="index"><span itemprop="name">c++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -400,9 +402,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/18/C-内存管理/#comments" itemprop="discussionUrl">
+                <a href="/2019/04/27/Linux目录结构/#comments" itemprop="discussionUrl">
                 
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/18/C-内存管理/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/27/Linux目录结构/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,62 +432,135 @@
       
 
       
-        <h2 id="1-C-C-内存分布"><a href="#1-C-C-内存分布" class="headerlink" title="1.C/C++内存分布"></a>1.C/C++内存分布</h2><p>【说明】</p>
-<ol>
-<li><strong>栈</strong>又叫堆栈，非静态局部变量/函数参数/返回值等，栈是向下增长的。</li>
-<li><strong>内存映射段</strong>是高效的I/O映射方式，用于装载一个共享的动态内存库。用户可使用系统接口创建共享内存，做进程间通信。</li>
-<li><strong>堆</strong>用于程序运行时动态内存分配，堆是可以向上增长的。</li>
-<li><strong>数据段</strong>-存储全局数据和静态数据。</li>
-<li><strong>代码段</strong>-可执行的代码/只读常量。<h2 id="2-C语言中动态内存管理方式"><a href="#2-C语言中动态内存管理方式" class="headerlink" title="2.C语言中动态内存管理方式"></a>2.C语言中动态内存管理方式</h2><strong>2.1 malloc/calloc/realloc和free</strong></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void Test()</span><br><span class="line">&#123;</span><br><span class="line">	int *p1 = (int*)malloc(sizeof(int));</span><br><span class="line">	free(p1);</span><br><span class="line"></span><br><span class="line">	int* p2 = (int*)calloc(4, sizeof(int));</span><br><span class="line">	int* p3 = (int*)realloc(p2, sizeof(int)*10);</span><br><span class="line"></span><br><span class="line">	free(p3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-C-内存管理方式"><a href="#3-C-内存管理方式" class="headerlink" title="3.C++内存管理方式"></a>3.C++内存管理方式</h2><p>C语言内存管理方式在C++中可以继续使用，但有些地方就无能为力而且使用起来比较麻烦，因此C++又提出了自己的内存管理方式，<strong>通过new和delete操作符进行动态内存管理</strong>。<br><strong>3.1 new/delete 操作内置类型</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void Test()</span><br><span class="line">&#123;</span><br><span class="line">	//动态申请一个int类型的空间</span><br><span class="line">	int* ptr4 = new int;</span><br><span class="line"></span><br><span class="line">	//动态申请一个int类型的空间并初始化为10</span><br><span class="line">	int* ptr5 = new int(10);</span><br><span class="line"></span><br><span class="line">	//动态申请10个int类型的空间</span><br><span class="line">	int ptr6 = new int[10];</span><br><span class="line"></span><br><span class="line">	delete ptr4;</span><br><span class="line">	delete ptr5;</span><br><span class="line">	delete[] ptr6;</span><br><span class="line">	//注意：申请和释放单个元素的空间，使用new和delete操作符，申请和释放连续的空间，使用new[]和delete[]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>3.2 new和delete操作自定义类型</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Test</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Test()</span><br><span class="line">		:_data(0)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Test():&quot; &lt;&lt; this &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~Test()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;~Test():&quot; &lt;&lt; this &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int _data;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void Test()</span><br><span class="line">&#123;</span><br><span class="line">	//申请单个Test类型的对象</span><br><span class="line">	Test* p1 = new Test;</span><br><span class="line">	delete p1;</span><br><span class="line"></span><br><span class="line">	//申请10个Test类型的对象</span><br><span class="line">	Test* p2 = new Test[10];</span><br><span class="line">	delete[] p2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>【注意】：<strong>在申请自定义类型的空间时，new会调用构造函数，delete会调用析构函数，而malloc和free不会。</strong></p>
-<p><strong>4. operator new与operator delete函数</strong><br><strong>new和delete</strong>是用户进行<strong>动态内存申请和释放的操作符，operator new和operator delete</strong>是系统提供的<strong>全局函数，new在底层调用operator new</strong>全局函数来申请空间，<strong>delete底层通过operator delete全局函数来释放空间</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">operator new: 该函数实际通过malloc来申请空间，</span><br><span class="line">当malloc&apos;申请空间成功时直接返回；申请空间失败，</span><br><span class="line">尝试执行空间不足应对措施，如果改应对措施用户设置了，</span><br><span class="line">则继续申请，否则抛异常</span><br><span class="line">*/</span><br><span class="line">void *_CRTDECL operator new(size_t size) _THROW1(_STD bad_alloc)</span><br><span class="line">&#123;</span><br><span class="line">	//try to allocate size bytes</span><br><span class="line">	void *p;</span><br><span class="line">	while((p == malloc(size)) == 0)</span><br><span class="line">		if(_callnewh(size) == 0)</span><br><span class="line">		&#123;</span><br><span class="line">			// report no memory</span><br><span class="line">			//如果申请内存失败了，这里会抛出bad_alloc 类型异常</span><br><span class="line">			static const std::bad_alloc nomem;</span><br><span class="line">			_RAISE(nomem);</span><br><span class="line">		&#125;</span><br><span class="line">	return (p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>operator new实际也是通过malloc来申请空间，</strong>如果malloc申请空间成功就直接返回，否则执行用户提供的空间不足应对措施，如果用户提供该措施就继续申请，否则就抛异常。<strong>operator delete最终是通过free来释放空间的</strong></p>
-<p>下面代码演示了，针对链表的节点ListNode通过<strong>重载类专属operator new/operator delete</strong>,实现链表节点使用内存池申请和释放内存，提高效率.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">struct LlistNode</span><br><span class="line">&#123;</span><br><span class="line">	ListNode* _next;</span><br><span class="line">	ListNode* _prev;</span><br><span class="line">	int _data;</span><br><span class="line"></span><br><span class="line">	void* operator new(size_t n)</span><br><span class="line">	&#123;</span><br><span class="line">		void* p = nullptr;</span><br><span class="line">		p = allocator&lt;ListNode&gt;().allocate(1);</span><br><span class="line">		cout &lt;&lt; &quot;memory pool allocate&quot; &lt;&lt; endl;</span><br><span class="line">		return p;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	void operator delete(void* p)</span><br><span class="line">	&#123;</span><br><span class="line">		allocator&lt;ListNode&gt;().deallocate((ListNode*)p, 1);</span><br><span class="line">		cout &lt;&lt; &quot;memory pool deallocate&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class List</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	List()</span><br><span class="line">	&#123;</span><br><span class="line">		_head = new ListNode;</span><br><span class="line">		_head-&gt;next = _head;</span><br><span class="line">		_head-&gt;prev = _head;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~List()</span><br><span class="line">	&#123;</span><br><span class="line">		ListNode* cur = _head-&gt;next;</span><br><span class="line">		while(cur != _head)</span><br><span class="line">		&#123;</span><br><span class="line">			ListNode* next = cur-&gt;_next;</span><br><span class="line">			delete cur;</span><br><span class="line">			cur = next;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		delete _head;</span><br><span class="line">		_head = nullptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	ListNode* _head;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	List l;</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-new和delete的实现原理"><a href="#5-new和delete的实现原理" class="headerlink" title="5.new和delete的实现原理"></a>5.new和delete的实现原理</h2><p><strong>5.1 内置类型</strong><br>如果申请的是内置类型空间，new和malloc，delete和free基本类似，不同的地方是：new/delete申请和释放的是单个元素的空间，new[]和delete[]申请的是连续空间，而且new在申请空间失败时就会抛异常，malloc会返回NULL。<br><strong>5.2 自定义类型</strong></p>
-<ul>
-<li><p><strong>new的原理</strong></p>
-<pre><code>1. 调用operator new函数申请空间
-2. 在申请的空间上执行构造函数，完成对象的构造
-</code></pre></li>
-<li><p><strong>delete的原理</strong></p>
-<pre><code>1. 在空间上执行析构函数，完成对象中的资源清理工作
-2. 调用operator delete函数释放对象的空间
-</code></pre></li>
-<li><p><strong>new T[N]的原理</strong></p>
-<pre><code>1. 调用operator new[]函数，在operator new[]中实际调用operator new函数完成N个对象空间的申请
-2. 在申请的空间上执行N此构造函数
-</code></pre></li>
-<li><p><strong>delete[]的原理</strong></p>
-<pre><code>1. 在释放的对象空间上执行N次析构函数，完成N个对象中资源的清理
-2. 调用operator delete[]释放空间，实际在operator delete[]中调用operator delete来释放空间
-</code></pre></li>
-</ul>
-<h2 id="6-内存泄漏"><a href="#6-内存泄漏" class="headerlink" title="6. 内存泄漏"></a>6. 内存泄漏</h2><p><strong>6.1 什么是内存泄漏</strong><br><strong>内存泄漏指因为疏忽或错误造成程序未能释放已经不再使用的内存的情况。内存泄露并不是指内存在物理上的消失，而是应用程序分配某段内存后，因为设计错误，失去了对该段内存的控制，因而造成了内存的浪费</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void MemoryLeaks()</span><br><span class="line">&#123;</span><br><span class="line">	// 1.内存申请了忘记释放</span><br><span class="line">	int *p1 = (int*)malloc(sizeof(int));</span><br><span class="line">	int* p2 = new int;</span><br><span class="line"></span><br><span class="line">	// 2.异常安全问题</span><br><span class="line">	int* p2 = new int[10];</span><br><span class="line"></span><br><span class="line">	Func(); // 这里Func函数抛异常导致delete[] p3未执行，p3没有被释放</span><br><span class="line">	delete[] p3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>6.2 内存泄漏分类</strong></p>
-<ol>
-<li><p><strong>堆内存泄漏（Heap leak）</strong><br>  堆内存指的是程序执行中依据须要分配通过malloc/calloc/realloc/new等从堆中分配的一块内存，用完后必须通过调用相应的free或delete删掉，加入程序的设计错误导致这部分内存没有被释放，那么以后这部分空间将无法再被使用，就会产生内存泄漏。</p>
-</li>
-<li><p><strong>系统资源泄漏</strong><br>   指程序使用系统分配的资源，比方套接字、文件描述符、管道等没有使用对应的函数释放掉，导致系统资源的浪费，严重可导致系统效能减少，系统执行不稳定。 </p>
-</li>
-</ol>
-<p><strong>6.3 如何避免内存泄漏</strong></p>
-<ol>
-<li>工程前期良好的设计规范，养成良好的编码规范，申请的内存空间记着匹配的去释放。ps: 这个理想状态。但是如果碰上异常时，就算注意释放了，还是可能会出现问题。需要下一条智能指针来管理才有保证。</li>
-<li>采用RAII思想或者只能指针来管理资源。</li>
-<li>有些公司内部规范使用内部实现的私有内存管理库，这套库自带内存泄漏检测的功能选项。</li>
-<li>出问题了使用内存泄漏工具检测。ps: 不过很多工具都不够靠谱，或者收费昂贵。</li>
-</ol>
-<p><strong>【总结】</strong><br>内存泄漏非常常见，解决方案分为两种：1.事先预防型，如智能指针等。2.事后查错型。如泄漏检测工具。</p>
+        <h1 id="Linux目录结构和作用"><a href="#Linux目录结构和作用" class="headerlink" title="Linux目录结构和作用"></a>Linux目录结构和作用</h1><h2 id="【常见目录说明】"><a href="#【常见目录说明】" class="headerlink" title="【常见目录说明】"></a>【常见目录说明】</h2><table>
+<thead>
+<tr>
+<th>目录</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bin</td>
+<td>存放二进制可执行文件(ls,cat,mkdir等),常用命令一般都在这里</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>存放系统管理和配置文件</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>存放所有用户文件的根目录</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>用于存放系统应用程序，比较重要的目录/usr/local本地系统管理员软件安装目录(安装系统级的应用)。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录<br>/usr/x11r6 存放x window的目录<br>/usr/bin 众多的应用程序<br>/usr/sbin 超级用户的一些管理程序<br>/usr/doc Linux文档<br>/usr/include linux下开发和编译应用程序所需要的头文件<br>/usr/lib 常用的动态链接库和软件包的配置文件<br>/usr/man 帮助文档<br>/usr/src 源代码，linux内核的源代码就放在/usr/src/linux里<br>/usr/local/bin 本地增加的命令<br>/usr/local/lib 本地增加的库</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>额外安装的可选应用程序包所放置的位置。一般情况下，我们可以把tomcat等都安装到这里</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td>虚拟文件系统目录，是系统内存的映射，可直接访问这个目录来获取系统信息</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>超级用户(系统管理员)的主目录</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>存放二进制可执行文件，只有root才能访问。这里存放的是系统管理员使用的系统级别的管理命令和程序，如ifconfig等</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>用于存放设备文件</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>系统管理员安装临时文件系统的安装点，系统提供这个目录是让用户临时挂载其他文件系统</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>存放用于系统引导时使用的各种文件</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>存放跟文件系统中的程序运行所需要的共享库及内核模块。共享库又叫动态链接共享库，作用类似windows里的.dll文件，存放了根文件系统程序运行所需的共享文件</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>用于存放各种临时文件，是公用的临时文件存储点</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>用于存放运行时需要改变数据的文件，也是某些大文件的溢出区，比方说各种服务的日志文件(系统启动日志等)</td>
+</tr>
+<tr>
+<td>/lost+found</td>
+<td>这个目录平时是空的，系统非正常关机而留下”无家可归”的文件在这里</td>
+</tr>
+</tbody>
+</table>
+<p>Linux目录和Windows目录有着很大的不同，Linux目录类似一个树，最顶层是其根目录，如下图：</p>
+<p><img src="/2019/04/27/Linux目录结构/Linux.PNG" alt></p>
+<p>通常情况下，根文件系统所占空间一般应该比较小，因为其中的绝大多数文件都不需要经常改动，而且包括严格的文件和一个小的不经常改变的文件系统不容易损坏。</p>
+<h2 id="etc文件系统"><a href="#etc文件系统" class="headerlink" title="etc文件系统"></a>etc文件系统</h2><p>/etc目录包含各种系统配置文件，下面说明其中的一些。其他的你应该知道它们属于哪个程序，并阅读该程序的man页。许多网络配置文件也在/etc中。</p>
+<h3 id="etc-rc或-etc-rc-d或-etc-rc-d"><a href="#etc-rc或-etc-rc-d或-etc-rc-d" class="headerlink" title="/etc/rc或/etc/rc.d或/etc/rc?.d"></a>/etc/rc或/etc/rc.d或/etc/rc?.d</h3><p>启动、或改变运行级时运行的脚本或脚本的目录</p>
+<h3 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h3><p>用户数据库，其中的域给出了用户名、真实姓名、用户起始目录、加密口令和用户的其他信息。</p>
+<h3 id="etc-fdprm"><a href="#etc-fdprm" class="headerlink" title="/etc/fdprm"></a>/etc/fdprm</h3><p>软盘参数表，用以说明不同的软盘格式。可用setfdprm进行设置。更多的信息见setfdprm</p>
+<h3 id="etc-fstab"><a href="#etc-fstab" class="headerlink" title="/etc/fstab"></a>/etc/fstab</h3><p>指定启动时需要自动安装的文件系统列表。也包括用swapon -a启用的swap区的信息。</p>
+<h3 id="etc-group"><a href="#etc-group" class="headerlink" title="/etc/group"></a>/etc/group</h3><p>类似/etc/passwd,但说明的不是用户信息而是组的信息。包括组的各种数据</p>
+<h3 id="etc-inittab"><a href="#etc-inittab" class="headerlink" title="/etc/inittab"></a>/etc/inittab</h3><p>init的配置文件</p>
+<h3 id="etc-issue"><a href="#etc-issue" class="headerlink" title="/etc/issue"></a>/etc/issue</h3><p>包括用户再登陆提示符前的输出信息。通常包括系统的一段短说明或欢迎信息。具体内容由系统管理员确定</p>
+<h3 id="etc-magic"><a href="#etc-magic" class="headerlink" title="/etc/magic"></a>/etc/magic</h3><p>“file”的配置文件。包含不同文件格式的说明，”file”基于它猜测文件类型</p>
+<h3 id="etc-motd"><a href="#etc-motd" class="headerlink" title="/etc/motd"></a>/etc/motd</h3><p>motd是message of the day的缩写，用户成功登录后自动输出，内容由系统管理员确定。常用于通告信息，如计划关机时间的警告等</p>
+<h3 id="etc-mtab"><a href="#etc-mtab" class="headerlink" title="/etc/mtab"></a>/etc/mtab</h3><p>当前安装的文件系统列表。由脚本(script)初始化，并由mount命令自动更新，当需要一个当前安装的文件系统的列表时使用(例如df命令)</p>
+<h3 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h3><p>在安装了影子(shadow)口令软件的系统上的影子口令文件。影子口令文件将/etc/passwd文件中的加密口令移动到/etc/shadow中，而后者只对超级用户(root)可读。这使破译口令更困难，以此增加系统的安全性</p>
+<h3 id="etc-login-defs"><a href="#etc-login-defs" class="headerlink" title="/etc/login.defs"></a>/etc/login.defs</h3><p>login命令的配置文件</p>
+<h3 id="etc-printcap"><a href="#etc-printcap" class="headerlink" title="/etc/printcap"></a>/etc/printcap</h3><p>类似/etc/termcap,但针对打印机。语法不同</p>
+<h3 id="etc-profile、-etc-csh-login、-etc-csh-cshrc"><a href="#etc-profile、-etc-csh-login、-etc-csh-cshrc" class="headerlink" title="/etc/profile、/etc/csh.login、/etc/csh.cshrc"></a>/etc/profile、/etc/csh.login、/etc/csh.cshrc</h3><p>登陆或启动时bourne或c.shells执行的文件。这允许系统管理员为所有用户建立全局缺省环境</p>
+<h3 id="etc-securetty"><a href="#etc-securetty" class="headerlink" title="/etc/securetty"></a>/etc/securetty</h3><p>确认安全终端，即哪个终端允许超级用户(root)登录。一般只列出虚拟控制台，这样就不可能(至少很困难)通过调制解调器(modem)或网络闯入系统并得到超级用户特权</p>
+<h3 id="etc-shells"><a href="#etc-shells" class="headerlink" title="/etc/shells"></a>/etc/shells</h3><p>列出可以使用的shell。chsh命令允许用户在本文件指定范围内改变登录的shell。提供一台机器ftp服务的服务进程ftpd检查用户shell是否列在/etc/shells文件中，如果不是，将不允许该用户登录</p>
+<h3 id="etc-termcap"><a href="#etc-termcap" class="headerlink" title="/etc/termcap"></a>/etc/termcap</h3><p>终端性能数据库。说明不同的终端用什么”转义序列”控制。写程序时不直接输出转义序列(这样只能工作于特定品牌的终端)，而是从/etc/termcap中查找要做的工作的正确序列。这样，多数的程序可以在多数终端上运行。</p>
+<h2 id="dev文件系统"><a href="#dev文件系统" class="headerlink" title="/dev文件系统"></a>/dev文件系统</h2><p>/dev目录包括所有设备的设备文件。设备文件用特定的约定命名，这在设备列表中说明。设备文件在安装时由系统产生，以后可以用/dev/makedev描述。/dev/makedev.local是系统管理员为本地设备文件(或连接)写的描述文稿(即如一些非标准设备驱动不是标准makedev的一部分)。下面简要介绍/dev下一些常用文件。</p>
+<h3 id="dev-console"><a href="#dev-console" class="headerlink" title="/dev/console"></a>/dev/console</h3><p>系统控制台，也就是直接和系统连接的监视器</p>
+<h3 id="dev-hd"><a href="#dev-hd" class="headerlink" title="/dev/hd"></a>/dev/hd</h3><p>ide硬盘驱动程序接口。如:/dev/hda指的是第一个硬盘，had1则是指/dev/hda的第一个分区。如系统中有其他的硬盘，则依次为/dev/hdb、/dev/hdc、……;如有多个分区依次为hda1、hda2……</p>
+<h3 id="dev-sd"><a href="#dev-sd" class="headerlink" title="/dev/sd"></a>/dev/sd</h3><p>scsi硬盘驱动程序接口，如有系统有scsi硬盘，就不会访问/dev/hah,而会访问/dev/sda。</p>
+<h3 id="dev-fd"><a href="#dev-fd" class="headerlink" title="/dev/fd"></a>/dev/fd</h3><p>软驱设备驱动程序。如：/dev/fd0指系统的第一个软盘，也就是通常所说的a:盘，/dev/fd1指第二个软盘，……而/dev/fd1h1440则表示访问驱动器1中的4，5高密盘。</p>
+<h3 id="dev-st"><a href="#dev-st" class="headerlink" title="/dev/st"></a>/dev/st</h3><p>scsi磁带驱动器驱动程序</p>
+<h3 id="dev-tty"><a href="#dev-tty" class="headerlink" title="/dev/tty"></a>/dev/tty</h3><p>提供虚拟控制台支持。如：/dev/tty1指的是系统的第一个虚拟控制台，/dev/tty2则是系统的第二个虚拟控制台</p>
+<h3 id="dev-pty"><a href="#dev-pty" class="headerlink" title="/dev/pty"></a>/dev/pty</h3><p>提供远程登录伪终端支持。在进行telnet登陆时需要用到</p>
+<h3 id="dev-ttys"><a href="#dev-ttys" class="headerlink" title="/dev/ttys"></a>/dev/ttys</h3><p>计算机串行接口，对于dos来说就是”com1”口</p>
+<h3 id="dev-cua"><a href="#dev-cua" class="headerlink" title="/dev/cua"></a>/dev/cua</h3><p>计算机串行接口，与调制控制器一起食用的设备</p>
+<h3 id="dev-null"><a href="#dev-null" class="headerlink" title="/dev/null"></a>/dev/null</h3><p>“黑洞”，所有写入该设备的信息都将消失。例如：当想要将屏幕上的输出信息隐藏起来时，只要将输出信息输入到/dev/null中即可</p>
+<h2 id="usr文件系统"><a href="#usr文件系统" class="headerlink" title="/usr文件系统"></a>/usr文件系统</h2><p>/usr是个很重要的目录，通常这一文件系统很大，因为所有程序安装在这里。/usr里的所有文件一般来自linux发行版(distribution)；本地安装的程序和其他东西在/usr/local下，因为这样可以在升级新版或新发行版时无须重新安装全部程序。/usr目录下的许多内容是可选的，但这些功能会使用户使用系统更加有效。/usr可容纳许多大型的软件包和它们的配置文件。下面列出一些重要的目录(一些不太重要的目录被省略了)。</p>
+<h3 id="usr-x11r6"><a href="#usr-x11r6" class="headerlink" title="/usr/x11r6"></a>/usr/x11r6</h3><p>包含x wi n d o w系统的所有可执行程序、配置文件和支持文件。为简化x的开发和安装，x的文件没有集成到系统中。x wi n d o w系统是一个功能强大的图形环境，提供了大量的图形工具程序。用户如果对microsoft wi n d o w s或m a c h i n t o s h比较熟悉的话，就不会对x win d o w系统感到束手无策了。</p>
+<h3 id="usr-bin"><a href="#usr-bin" class="headerlink" title="/usr/bin"></a>/usr/bin</h3><p>集中了几乎所有用户命令，是系统的软件库。另有些命令在/bin或/usr/local/bin中</p>
+<h3 id="usr-sbin"><a href="#usr-sbin" class="headerlink" title="/usr/sbin"></a>/usr/sbin</h3><p>包括了根文件系统不必要的系统管理命令，例如多数服务程序</p>
+<h3 id="usr-include"><a href="#usr-include" class="headerlink" title="/usr/include"></a>/usr/include</h3><p>包含了c语言的头文件，这些文件多以.h结尾。用来表述c语言程序中用到的数据结构、子过程和常量。为了保持一致性，这实际上应该放在/usr/lib下，但习惯上一直沿用了这个名字</p>
+<h3 id="usr-lib"><a href="#usr-lib" class="headerlink" title="/usr/lib"></a>/usr/lib</h3><p>包含了程序或子系统的不变的数据文件，包含一些site-wide配置文件。名字lib来源于库(library);编程的原始库也存在/usr/lib里。当编译程序时，程序便会和其中的库进行连接。也有许多程序把配置文件存入其中</p>
+<h3 id="usr-local"><a href="#usr-local" class="headerlink" title="/usr/local"></a>/usr/local</h3><p>本地安装的软件和其他文件放在这里。这与/usr很相似。用户可能会在这发现一些比较大的软件包，如tex、emacs等。</p>
+<h2 id="var文件系统"><a href="#var文件系统" class="headerlink" title="/var文件系统"></a>/var文件系统</h2><p>/var 包含系统一般运行时要改变的数据。通常这些数据所在的目录的大小是要经常变化或扩充的。原来/ v a r目录中有些内容是在/ u s r中的，但为了保持/ u s r目录的相对稳定，就把那些需要经常改变的目录放到/ v a r中了。每个系统是特定的，即不通过网络与其他计算机共享。下面列出一些重要的目录(一些不太重要的目录省略了)。</p>
+<h3 id="var-catman"><a href="#var-catman" class="headerlink" title="/var/catman"></a>/var/catman</h3><p>包括了格式化过的帮助(man)页。帮助页的源文件一般存在/usr/man/man中；有些man页可能有预格式化的版本，存在/usr/man/cat中。而其他的man页在第一次看时都需要格式化，格式化完的版本存在/var/man中，这样其他人再看相同的页时就无须等待格式化了。(/var/catman经常被清除，就像清除临时目录一样)</p>
+<h3 id="var-lib"><a href="#var-lib" class="headerlink" title="/var/lib"></a>/var/lib</h3><p>存放系统正常运行时要改变的文件</p>
+<h3 id="var-local"><a href="#var-local" class="headerlink" title="/var/local"></a>/var/local</h3><p>存放/usr/local中安装的程序的可变数据(即系统管理员安装的程序)。注意：如果必要，即使本地安装的程序也会使用其他/var目录，例如/var/lock</p>
+<h3 id="var-lock"><a href="#var-lock" class="headerlink" title="/var/lock"></a>/var/lock</h3><p>锁定文件。许多程序遵循在/var/lock中产生一个锁定文件的约定，以用来支持他们正在使用某个特定的设备或文件。其他程序注意到这个锁定文件时，就不会再使用这个设备或文件。</p>
+<h3 id="var-log"><a href="#var-log" class="headerlink" title="/var/log"></a>/var/log</h3><p>各种程序的日志(log)文件，尤其是login(/var/log/wtmp log记录所有到系统的登录和注销)和syslog(/var/log/message记录存储所有核心和系统程序信息)。/var/log里的文件经常不确定地增长，应该定期清除。</p>
+<h3 id="var-run"><a href="#var-run" class="headerlink" title="/var/run"></a>/var/run</h3><p>保存在下一次系统引导前有效的关于系统的信息文件。例如，/var/run/utmp包含当前登录的用户的信息</p>
+<h3 id="var-tmp"><a href="#var-tmp" class="headerlink" title="/var/tmp"></a>/var/tmp</h3><p>比/tmp允许更大的或需要存在较长时间的临时文件。注意系统管理员可能不允许/var/tmp有很久的文件</p>
+<h2 id="proc文件系统"><a href="#proc文件系统" class="headerlink" title="/proc文件系统"></a>/proc文件系统</h2><p>/proc文件系统是一个伪的文件系统，就是说它是一个实际上不存在的目录，因而这是一个非常特殊的目录。它并不存在于某个磁盘上，而是由核心在内存中产生。这个目录用于提供关于系统的信息。</p>
+<h3 id="proc-x"><a href="#proc-x" class="headerlink" title="/proc/x"></a>/proc/x</h3><p>关于进程x的信息目录，这里x是这一进程的标识号。每个进程在/proc下有一个名为自己进程号的目录</p>
+<h3 id="proc-cpuinfo"><a href="#proc-cpuinfo" class="headerlink" title="/proc/cpuinfo"></a>/proc/cpuinfo</h3><p>存放处理器(cpu)的信息，如cpu的类型、制造商、型号和性能等。</p>
+<h3 id="proc-devices"><a href="#proc-devices" class="headerlink" title="/proc/devices"></a>/proc/devices</h3><p>当前运行的核心配置的设备驱动的列表</p>
+<h3 id="proc-dma"><a href="#proc-dma" class="headerlink" title="/proc/dma"></a>/proc/dma</h3><p>显示当前使用的dma通道</p>
+<h3 id="proc-filesystems"><a href="#proc-filesystems" class="headerlink" title="/proc/filesystems"></a>/proc/filesystems</h3><p>核心配置的文件系统信息</p>
+<h3 id="proc-interrupts"><a href="#proc-interrupts" class="headerlink" title="/proc/interrupts"></a>/proc/interrupts</h3><p>显示被占用的中断信息和占用者的信息，以及被占用的数量</p>
+<h3 id="proc-ioports"><a href="#proc-ioports" class="headerlink" title="/proc/ioports"></a>/proc/ioports</h3><p>当前使用的i/o接口</p>
+<h3 id="proc-ksyms"><a href="#proc-ksyms" class="headerlink" title="/proc/ksyms"></a>/proc/ksyms</h3><p>核心符号表</p>
+<h3 id="proc-net"><a href="#proc-net" class="headerlink" title="/proc/net"></a>/proc/net</h3><p>网络协议状态信息</p>
+<h3 id="proc-uptime"><a href="#proc-uptime" class="headerlink" title="/proc/uptime"></a>/proc/uptime</h3><p>系统启动的时间长度</p>
+<h3 id="proc-version"><a href="#proc-version" class="headerlink" title="/proc/version"></a>/proc/version</h3><p>核心版本</p>
 
       
     </div>
@@ -558,8 +633,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/16/理解static、内部类、友元函数/" rel="next" title="理解static、内部类、友元函数">
-                <i class="fa fa-chevron-left"></i> 理解static、内部类、友元函数
+              <a href="/2019/04/23/继承的概念及定义/" rel="next" title="继承的概念及定义">
+                <i class="fa fa-chevron-left"></i> 继承的概念及定义
               </a>
             
           </div>
@@ -567,10 +642,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/19/函数模板、类模板/" rel="prev" title="函数模板、类模板">
-                函数模板、类模板 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -770,7 +841,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-C-C-内存分布"><span class="nav-number">1.</span> <span class="nav-text">1.C/C++内存分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-C语言中动态内存管理方式"><span class="nav-number">2.</span> <span class="nav-text">2.C语言中动态内存管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-C-内存管理方式"><span class="nav-number">3.</span> <span class="nav-text">3.C++内存管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-new和delete的实现原理"><span class="nav-number">4.</span> <span class="nav-text">5.new和delete的实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-内存泄漏"><span class="nav-number">5.</span> <span class="nav-text">6. 内存泄漏</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux目录结构和作用"><span class="nav-number">1.</span> <span class="nav-text">Linux目录结构和作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【常见目录说明】"><span class="nav-number">1.1.</span> <span class="nav-text">【常见目录说明】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#etc文件系统"><span class="nav-number">1.2.</span> <span class="nav-text">etc文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-rc或-etc-rc-d或-etc-rc-d"><span class="nav-number">1.2.1.</span> <span class="nav-text">/etc/rc或/etc/rc.d或/etc/rc?.d</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-passwd"><span class="nav-number">1.2.2.</span> <span class="nav-text">/etc/passwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-fdprm"><span class="nav-number">1.2.3.</span> <span class="nav-text">/etc/fdprm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-fstab"><span class="nav-number">1.2.4.</span> <span class="nav-text">/etc/fstab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-group"><span class="nav-number">1.2.5.</span> <span class="nav-text">/etc/group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-inittab"><span class="nav-number">1.2.6.</span> <span class="nav-text">/etc/inittab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-issue"><span class="nav-number">1.2.7.</span> <span class="nav-text">/etc/issue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-magic"><span class="nav-number">1.2.8.</span> <span class="nav-text">/etc/magic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-motd"><span class="nav-number">1.2.9.</span> <span class="nav-text">/etc/motd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-mtab"><span class="nav-number">1.2.10.</span> <span class="nav-text">/etc/mtab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-shadow"><span class="nav-number">1.2.11.</span> <span class="nav-text">/etc/shadow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-login-defs"><span class="nav-number">1.2.12.</span> <span class="nav-text">/etc/login.defs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-printcap"><span class="nav-number">1.2.13.</span> <span class="nav-text">/etc/printcap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-profile、-etc-csh-login、-etc-csh-cshrc"><span class="nav-number">1.2.14.</span> <span class="nav-text">/etc/profile、/etc/csh.login、/etc/csh.cshrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-securetty"><span class="nav-number">1.2.15.</span> <span class="nav-text">/etc/securetty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-shells"><span class="nav-number">1.2.16.</span> <span class="nav-text">/etc/shells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-termcap"><span class="nav-number">1.2.17.</span> <span class="nav-text">/etc/termcap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dev文件系统"><span class="nav-number">1.3.</span> <span class="nav-text">/dev文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-console"><span class="nav-number">1.3.1.</span> <span class="nav-text">/dev/console</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-hd"><span class="nav-number">1.3.2.</span> <span class="nav-text">/dev/hd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-sd"><span class="nav-number">1.3.3.</span> <span class="nav-text">/dev/sd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-fd"><span class="nav-number">1.3.4.</span> <span class="nav-text">/dev/fd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-st"><span class="nav-number">1.3.5.</span> <span class="nav-text">/dev/st</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-tty"><span class="nav-number">1.3.6.</span> <span class="nav-text">/dev/tty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-pty"><span class="nav-number">1.3.7.</span> <span class="nav-text">/dev/pty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-ttys"><span class="nav-number">1.3.8.</span> <span class="nav-text">/dev/ttys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-cua"><span class="nav-number">1.3.9.</span> <span class="nav-text">/dev/cua</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dev-null"><span class="nav-number">1.3.10.</span> <span class="nav-text">/dev/null</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#usr文件系统"><span class="nav-number">1.4.</span> <span class="nav-text">/usr文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#usr-x11r6"><span class="nav-number">1.4.1.</span> <span class="nav-text">/usr/x11r6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usr-bin"><span class="nav-number">1.4.2.</span> <span class="nav-text">/usr/bin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usr-sbin"><span class="nav-number">1.4.3.</span> <span class="nav-text">/usr/sbin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usr-include"><span class="nav-number">1.4.4.</span> <span class="nav-text">/usr/include</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usr-lib"><span class="nav-number">1.4.5.</span> <span class="nav-text">/usr/lib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usr-local"><span class="nav-number">1.4.6.</span> <span class="nav-text">/usr/local</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#var文件系统"><span class="nav-number">1.5.</span> <span class="nav-text">/var文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#var-catman"><span class="nav-number">1.5.1.</span> <span class="nav-text">/var/catman</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-lib"><span class="nav-number">1.5.2.</span> <span class="nav-text">/var/lib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-local"><span class="nav-number">1.5.3.</span> <span class="nav-text">/var/local</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-lock"><span class="nav-number">1.5.4.</span> <span class="nav-text">/var/lock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-log"><span class="nav-number">1.5.5.</span> <span class="nav-text">/var/log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-run"><span class="nav-number">1.5.6.</span> <span class="nav-text">/var/run</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var-tmp"><span class="nav-number">1.5.7.</span> <span class="nav-text">/var/tmp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proc文件系统"><span class="nav-number">1.6.</span> <span class="nav-text">/proc文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-x"><span class="nav-number">1.6.1.</span> <span class="nav-text">/proc/x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-cpuinfo"><span class="nav-number">1.6.2.</span> <span class="nav-text">/proc/cpuinfo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-devices"><span class="nav-number">1.6.3.</span> <span class="nav-text">/proc/devices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-dma"><span class="nav-number">1.6.4.</span> <span class="nav-text">/proc/dma</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-filesystems"><span class="nav-number">1.6.5.</span> <span class="nav-text">/proc/filesystems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-interrupts"><span class="nav-number">1.6.6.</span> <span class="nav-text">/proc/interrupts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-ioports"><span class="nav-number">1.6.7.</span> <span class="nav-text">/proc/ioports</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-ksyms"><span class="nav-number">1.6.8.</span> <span class="nav-text">/proc/ksyms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-net"><span class="nav-number">1.6.9.</span> <span class="nav-text">/proc/net</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-uptime"><span class="nav-number">1.6.10.</span> <span class="nav-text">/proc/uptime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proc-version"><span class="nav-number">1.6.11.</span> <span class="nav-text">/proc/version</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -976,9 +1047,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://MyGloria.com/2019/04/18/C-内存管理/';
-          this.page.identifier = '2019/04/18/C-内存管理/';
-          this.page.title = 'C++内存管理';
+          this.page.url = 'http://MyGloria.com/2019/04/27/Linux目录结构/';
+          this.page.identifier = '2019/04/27/Linux目录结构/';
+          this.page.title = 'Linux目录结构';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
