@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="导航,分享,">
 
 
 
@@ -96,17 +96,18 @@
 
 
 
-<meta name="description" content="Forever! Forever! Forever! How Deep Is Your Love 启窗以望，星瀚凌凌。望无路兮，无以所归。 昔既难忆，企留我心。抬首对穹，平嗓来歌。 裹卷相思，寄我爱人。孤孑一身。泪染两襟。 此出一曲，银河往替。凝眸流火，遥寄千里。 所落之处，记为老故。所思之疆，亦已焉哉。 没于黑弥，不得所终。凝空对唱，此歌凄哀。 告我所爱，知我所爱，可得故思，于此起风。">
+<meta name="description" content="结构体 及其内存对齐相关问题结构体结构体的声明1234struct tag&amp;#123;    number-list;&amp;#125;variable-list; 例如描述一个学生 1234567struct stu&amp;#123;  	char name[20]; //名字  	int age; //年龄  	char sex[5]; //性别    char id[20]; //学号&amp;#125;;//">
+<meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Love You Forever">
-<meta property="og:url" content="http://MyGloria.com/2019/04/03/hello-world/index.html">
+<meta property="og:title" content="结构体 以及内存对齐相关问题">
+<meta property="og:url" content="http://MyGloria.com/2019/05/04/结构体-以及内存对齐相关问题/index.html">
 <meta property="og:site_name" content="MyGloria">
-<meta property="og:description" content="Forever! Forever! Forever! How Deep Is Your Love 启窗以望，星瀚凌凌。望无路兮，无以所归。 昔既难忆，企留我心。抬首对穹，平嗓来歌。 裹卷相思，寄我爱人。孤孑一身。泪染两襟。 此出一曲，银河往替。凝眸流火，遥寄千里。 所落之处，记为老故。所思之疆，亦已焉哉。 没于黑弥，不得所终。凝空对唱，此歌凄哀。 告我所爱，知我所爱，可得故思，于此起风。">
+<meta property="og:description" content="结构体 及其内存对齐相关问题结构体结构体的声明1234struct tag&amp;#123;    number-list;&amp;#125;variable-list; 例如描述一个学生 1234567struct stu&amp;#123;  	char name[20]; //名字  	int age; //年龄  	char sex[5]; //性别    char id[20]; //学号&amp;#125;;//">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-05T17:19:35.180Z">
+<meta property="og:updated_time" content="2019-05-04T13:32:33.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Love You Forever">
-<meta name="twitter:description" content="Forever! Forever! Forever! How Deep Is Your Love 启窗以望，星瀚凌凌。望无路兮，无以所归。 昔既难忆，企留我心。抬首对穹，平嗓来歌。 裹卷相思，寄我爱人。孤孑一身。泪染两襟。 此出一曲，银河往替。凝眸流火，遥寄千里。 所落之处，记为老故。所思之疆，亦已焉哉。 没于黑弥，不得所终。凝空对唱，此歌凄哀。 告我所爱，知我所爱，可得故思，于此起风。">
+<meta name="twitter:title" content="结构体 以及内存对齐相关问题">
+<meta name="twitter:description" content="结构体 及其内存对齐相关问题结构体结构体的声明1234struct tag&amp;#123;    number-list;&amp;#125;variable-list; 例如描述一个学生 1234567struct stu&amp;#123;  	char name[20]; //名字  	int age; //年龄  	char sex[5]; //性别    char id[20]; //学号&amp;#125;;//">
 
 
 
@@ -136,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://MyGloria.com/2019/04/03/hello-world/">
+  <link rel="canonical" href="http://MyGloria.com/2019/05/04/结构体-以及内存对齐相关问题/">
 
 
 
 
 
-  <title>Love You Forever | MyGloria</title>
+  <title>结构体 以及内存对齐相关问题 | MyGloria</title>
   
 
 
@@ -324,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/05/04/结构体-以及内存对齐相关问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -341,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Love You Forever
+          <h1 class="post-title" itemprop="name headline">结构体 以及内存对齐相关问题
               
             
           </h1>
@@ -366,12 +367,30 @@
                 
               
 
-              <time title="创建于：2019-04-03 20:23:40" itemprop="dateCreated datePublished" datetime="2019-04-03T20:23:40+08:00">2019-04-03</time>
+              <time title="创建于：2019-05-04 20:28:21" itemprop="dateCreated datePublished" datetime="2019-05-04T20:28:21+08:00">2019-05-04</time>
             
 
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/c语言/" itemprop="url" rel="index"><span itemprop="name">c语言</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -381,9 +400,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/03/hello-world/#comments" itemprop="discussionUrl">
+                <a href="/2019/05/04/结构体-以及内存对齐相关问题/#comments" itemprop="discussionUrl">
                 
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/03/hello-world/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/04/结构体-以及内存对齐相关问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -411,17 +430,106 @@
       
 
       
-        <p>Forever! Forever! Forever!</p>
-<h2 id="How-Deep-Is-Your-Love"><a href="#How-Deep-Is-Your-Love" class="headerlink" title="How Deep Is Your Love"></a>How Deep Is Your Love</h2><p> 启窗以望，星瀚凌凌。望无路兮，无以所归。<br> 昔既难忆，企留我心。抬首对穹，平嗓来歌。<br> 裹卷相思，寄我爱人。孤孑一身。泪染两襟。<br> 此出一曲，银河往替。凝眸流火，遥寄千里。<br> 所落之处，记为老故。所思之疆，亦已焉哉。<br> 没于黑弥，不得所终。凝空对唱，此歌凄哀。<br> 告我所爱，知我所爱，可得故思，于此起风。</p>
- <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="结构体-及其内存对齐相关问题"><a href="#结构体-及其内存对齐相关问题" class="headerlink" title="结构体 及其内存对齐相关问题"></a>结构体 及其内存对齐相关问题</h1><h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="结构体的声明"><a href="#结构体的声明" class="headerlink" title="结构体的声明"></a>结构体的声明</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tag</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    number-<span class="built_in">list</span>;</span><br><span class="line">&#125;variable-<span class="built_in">list</span>;</span><br></pre></td></tr></table></figure>
+<p>例如描述一个学生</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  	<span class="keyword">char</span> name[<span class="number">20</span>]; <span class="comment">//名字</span></span><br><span class="line">  	<span class="keyword">int</span> age; <span class="comment">//年龄</span></span><br><span class="line">  	<span class="keyword">char</span> sex[<span class="number">5</span>]; <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">char</span> id[<span class="number">20</span>]; <span class="comment">//学号</span></span><br><span class="line">&#125;;<span class="comment">//分号不能没有</span></span><br></pre></td></tr></table></figure>
+<h3 id="特殊的声明："><a href="#特殊的声明：" class="headerlink" title="特殊的声明："></a>特殊的声明：</h3><p>在声明结构体的时候，可以不完全的声明</p>
+<p>比如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//匿名结构体类型</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">char</span> b;</span><br><span class="line">    <span class="keyword">float</span> c;</span><br><span class="line">&#125;x;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">char</span> b;</span><br><span class="line">    <span class="keyword">float</span> c;</span><br><span class="line">&#125;a[<span class="number">20</span>],*p;</span><br></pre></td></tr></table></figure>
+<p><strong>警告：</strong>编译器会把上面的两个声明当成完全不同的两个类型。所以是非法的</p>
+<h3 id="结构体的自引用"><a href="#结构体的自引用" class="headerlink" title="结构体的自引用"></a>结构体的自引用</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  	<span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;Node;</span><br></pre></td></tr></table></figure>
+<h3 id="结构体变量的定义和初始化"><a href="#结构体变量的定义和初始化" class="headerlink" title="结构体变量的定义和初始化"></a>结构体变量的定义和初始化</h3><p>有了结构体类型，则如下定义变量</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;p1;		<span class="comment">//声明类型的同时定义变量p1;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p2</span>;</span>	<span class="comment">//定义结构体变量p2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化：定义变量的同时赋初值</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> <span class="title">p3</span> = &#123;</span>x,y&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span>	//类型声明</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">15</span>];	<span class="comment">//名字</span></span><br><span class="line">	<span class="keyword">int</span> age;	<span class="comment">//年龄</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span> <span class="title">s</span> = &#123;</span><span class="string">"zhangsan"</span>,<span class="number">20</span>&#125;;<span class="comment">//初始化</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Point</span> <span class="title">p</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;n1 = &#123;<span class="number">10</span>,&#123;<span class="number">4</span>,<span class="number">5</span>&#125;,<span class="literal">NULL</span>&#125;;	<span class="comment">//结构体嵌套初始化</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">n2</span> = &#123;</span><span class="number">20</span>,&#123;<span class="number">5</span>,<span class="number">6</span>&#125;,<span class="literal">NULL</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>结构体只能整体初始化，不能被整体赋值</strong></p>
+<h2 id="结构体内存对齐"><a href="#结构体内存对齐" class="headerlink" title="结构体内存对齐"></a>结构体内存对齐</h2><h3 id="为什么要有结构体内存对齐"><a href="#为什么要有结构体内存对齐" class="headerlink" title="为什么要有结构体内存对齐?"></a>为什么要有结构体内存对齐?</h3><h4 id="平台原因"><a href="#平台原因" class="headerlink" title="平台原因"></a>平台原因</h4><p>不是所有的硬件都能随意的访问任意地址处的任意数据，有的CPU只能从内存上地址为4的倍数的地址处读取数据，而为了可以读取结构体数据，结构体的起始位置的地址理所应当的为4的倍数，而在结构体内部维护内存对齐是为了迎合硬件的这一特性</p>
+<h4 id="性能原因"><a href="#性能原因" class="headerlink" title="性能原因"></a>性能原因</h4><p>因为为了CPU能够快速访问，提高访问效率，变量的起始地址应该具有这些特性，这就是所谓的”对齐”。例如在32位平台上，CPU一个只可以读取出4字节的内容，且只可以在4的整数倍位置进行访问，而当结构体中存放一个int类型变量时，结构体的起始位置一定是4的倍数，此时若在结构体内部不维护内存对齐，则取出一个整型的4字节，若该int变量的偏移量为3，则就需要先读取偏移量为0向后的4个字节，将最后一个字节中属于int成员变量的数据保存下来，再读取偏移量为4向后的4字节，将前这4字节中属于int成员变量的前3字节的数据再次保存，之后将这两段数据进行拼接，才能得到完整的int成员变量</p>
+<h2 id="结构体内存对齐规则"><a href="#结构体内存对齐规则" class="headerlink" title="结构体内存对齐规则"></a>结构体内存对齐规则</h2><ol>
+<li><p><strong>第一个成员在与结构体变量偏移量为0的地址处</strong></p>
+<ul>
+<li>当程序要存储一个结构体时，会在内存上的某一个地址处开始存储这个结构体，这时不论这个结构体的第一个成员是什么，都要从该地址的0偏移量处开始存储</li>
+</ul>
+</li>
+<li><p><strong>其他成员变量要对齐到某个数字（对齐数）的整数倍的偏移量的地址处。对齐数 = 编译器的默认的对齐数与该成员大小的较小值</strong></p>
+<ul>
+<li>对齐数 = 编译器默认对齐数 &lt; 成员大小 ? 编译器默认对齐数 : 成员大小。</li>
+</ul>
+</li>
+</ol>
+<pre><code>这里使用例子来帮助理解:
+</code></pre><p>   ​                假如第一个成员使用了1个字节的内存，这时按照道理应该就从偏移量为1的地方开始存放第一个成员（假设第二个成员大小为4），但是编译器并不是这样的，编译器先计算出对于第二个成员变量的对齐数（vs默认对齐数为8，Linux默认对齐数为4）为4，检测到偏移量为1，但1并不是4的整数倍，那么就要继续向后找，直到找到偏移量为4，偏移量为4恰好是4的整数倍，那么就可以从偏移量为4的位置开始存储第二个成员变量了。</p>
+<p>   ​                这时紧接着又要存放第三个成员变量（假设第三个成员变量的大小为1），这时候编译器先要计算出属于第三个成员变量的默认对齐数为1，接下来编译器就来看看下一个位置的偏移量符不符合要求，下一个位置的偏移量为9，9是1的整数倍，所以第三个成员变量就从偏移量为9的位置开始存放了</p>
+<ul>
+<li>Linux默认偏移量为4</li>
+<li>vs默认对齐数是8</li>
+</ul>
+<ol start="3">
+<li><p><strong>结构体的总大小为最大对齐数（每个成员变量都有一个对齐数）的整数倍</strong></p>
+<ul>
+<li>当编译器将结构体的成员数据都存储完成之后，接下来就会计算出这些成员变量中的最大对齐数（在本例中为4），得知最大的对齐数为4，编译器就会查看当前结构体的总大小，发现当前结构体的总大小为9，9并不是4的整数倍，那么编译器就继续占用空间，占到12时就会停止，因为12是4的整数倍</li>
+</ul>
+</li>
+<li><p><strong>如果结构体内部嵌套了别的结构体，嵌套结构体的对齐到自己的最大对齐数的整数倍处，结构体的整体大小就是所有最大对齐数（含嵌套结构体的所有成员的对齐数）的整数倍</strong></p>
+<ul>
+<li>也就是说，当一个结构体内嵌套了另外一个结构体时，被嵌套的结构体成员变量存放完成时要计算最大对齐数只需要从自己的成员变量对齐数中选出最大的即可，但是外部的结构体成员变量存放完成之后计算最大结构体时，<strong>要从自己的成员变量的对齐数和嵌套的结构提的成员变量的对齐数</strong>中挑选出一个最大的对齐数。</li>
+</ul>
+</li>
+</ol>
+<h2 id="编译器存储一个结构体的过程"><a href="#编译器存储一个结构体的过程" class="headerlink" title="编译器存储一个结构体的过程"></a>编译器存储一个结构体的过程</h2><p>当一个结构体要存储在内存中时，编译器会做如下的事情：</p>
+<ol>
+<li>首先一个结构体要存储到内存中时，编译器首先会分配一个地址，作为该结构体的起始位置</li>
+<li>编译器先拿到结构体的第一个成员变量，直接从相对起始位置0偏移量的位置开始存放第一个成员变量</li>
+<li>第N（N = 1，2，3，…）成员变量存放完成之后，编译器又拿到第N + 1成员变量，此时编译器就要计算第N + 1个成员变量的大小（用来计算该成员变量的对齐数），使用该成员变量的大小与编译器的默认对齐数比较，较小的即就是该成员变量的对齐数，拿到对齐数之后，检测当前的偏移量是否为对齐数的整数倍。<ul>
+<li>如果是，编译器从当前偏移量位置开始存放第N + 1个成员变量</li>
+<li>如果不是，编译器向后偏移（占用空间），直到偏移量为该成员变量对齐数的整数倍之后，开始从当前偏移量位置存放第N + 1个成员变量</li>
+</ul>
+</li>
+<li>当所有的结构体成员存放完成之后，编译器会回想出成员变量中最大的对齐数，之后检测当前结构体大小是否为最大对齐数的整数倍。<ul>
+<li>如果是，则结构体存放全部完成</li>
+<li>如果不是，编译器继续向后偏移（占用空间），直到当前结构体大小为最大对齐数的整数倍，则结构体存放全部完成</li>
+</ul>
+</li>
+</ol>
+<h3 id="查看结构体中变量相对起始位置的偏移量"><a href="#查看结构体中变量相对起始位置的偏移量" class="headerlink" title="查看结构体中变量相对起始位置的偏移量"></a>查看结构体中变量相对起始位置的偏移量</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stddef.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">size_t</span> offsetof(type,member);</span><br><span class="line"></span><br><span class="line"><span class="comment">//源码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> offsetof(s, m)(size_t)&amp;(((s*)0)-&gt;m)</span></span><br></pre></td></tr></table></figure>
+<p>参数</p>
+<ul>
+<li>type：结构体类型</li>
+<li>member：结构体的成员</li>
+</ul>
+<p>返回值</p>
+<ul>
+<li>结构体成员相对与结构体起始位置的偏移量</li>
+</ul>
+<h3 id="改变结构体的默认对齐数"><a href="#改变结构体的默认对齐数" class="headerlink" title="改变结构体的默认对齐数"></a>改变结构体的默认对齐数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack(N)</span></span><br></pre></td></tr></table></figure>
+<p>使用N来改变编译器的默认对齐数为N</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack()</span></span><br></pre></td></tr></table></figure>
+<p>恢复编译器的默认对齐数</p>
+<h2 id="位段"><a href="#位段" class="headerlink" title="位段"></a>位段</h2><p><strong>位段不跨平台</strong></p>
+<h3 id="位段与结构体的区别"><a href="#位段与结构体的区别" class="headerlink" title="位段与结构体的区别"></a>位段与结构体的区别</h3><ol>
+<li>位段的成员必须是<strong>int,usigned int,signed int</strong></li>
+<li>位段的成员名之后必须要有一个冒号和一个数字</li>
+</ol>
+<h3 id="位段的例子"><a href="#位段的例子" class="headerlink" title="位段的例子"></a>位段的例子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  	<span class="keyword">int</span> a:<span class="number">2</span>;<span class="comment">//a成员只需要2个比特位</span></span><br><span class="line">    <span class="keyword">int</span> b:<span class="number">4</span>;<span class="comment">//b成员只需要4个比特位</span></span><br><span class="line">    <span class="keyword">int</span> c:<span class="number">8</span>;<span class="comment">//c成员只需要8个比特位</span></span><br><span class="line">    <span class="keyword">int</span> d:<span class="number">20</span>;<span class="comment">//d成员需要20个比特位</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="位段存放成员的方式"><a href="#位段存放成员的方式" class="headerlink" title="位段存放成员的方式"></a>位段存放成员的方式</h3><p>不同的编译器存放位段的方式是不同的，所以位段是不跨平台的。但主要有以下两种方式，这里使用一个简单的位段来描述这个问题</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a:<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> b:<span class="number">8</span>;</span><br><span class="line">    <span class="keyword">int</span> c:<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> d:<span class="number">30</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编译器先开辟一个（int）4字节用来存放位段，位段的第一个成员使用2个比特位，则编译器将开辟好的字节的前两个比特位分配给第一个成员，此时还是=剩下30个比特位，第二个成员需要8个比特位，则编译器又分配了8个比特位给第二个成员，此时还剩下22个比特位，第三个成员需要10个比特位，则编译器又分配10个比特位给第三个成员，此时开辟好的空间只剩下12个比特位，但此时第四个成员需要30个比特位，在此时不同的编译器就会有不同的处理方式:<ul>
+<li>一种编译器会直接浪费掉剩下的12个字节，为第四个成员重新开辟一个(int)4字节的内存来存放</li>
+<li>零一种编译器会将第四个成员变量的前12个字节存进剩下的空间中，为剩余的成员重新开辟内存存放</li>
+</ul>
+</li>
+</ul>
+<h3 id="位段存在的问题"><a href="#位段存在的问题" class="headerlink" title="位段存在的问题"></a>位段存在的问题</h3><ul>
+<li>不可移植性，位段在不同的系统中会出现不同的结果</li>
+<li>int位段被当作有符号数还是无符号数是不可预计的</li>
+<li>位段中最大位的数目是不确定的</li>
+<li>位段中的成员在内存中从左向右分配，还是从右向左分配是没有经过定义的</li>
+</ul>
+<h2 id="联合体（共用体）"><a href="#联合体（共用体）" class="headerlink" title="联合体（共用体）"></a>联合体（共用体）</h2><p>联合体也是一种特殊的自定义类型，这种类型定义的变量也包含一系列的成员，特征是这些成员公用同一块内存空间</p>
+<h3 id="联合体的内存分配规则"><a href="#联合体的内存分配规则" class="headerlink" title="联合体的内存分配规则"></a>联合体的内存分配规则</h3><ol>
+<li>联合体分配的大小位成员变量中最大的成员大小</li>
+<li>联合体的总大小必须是联合体成员中最大对齐数的整数倍</li>
+</ol>
+<h3 id="联合体的特性"><a href="#联合体的特性" class="headerlink" title="联合体的特性"></a>联合体的特性</h3><p>判断机器的大小端存储</p>
 
       
     </div>
@@ -477,6 +585,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/导航/" rel="tag"># 导航</a>
+          
+            <a href="/tags/分享/" rel="tag"># 分享</a>
+          
+        </div>
+      
 
       
       
@@ -486,15 +602,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/03/多态/" rel="next" title="多态">
+                <i class="fa fa-chevron-left"></i> 多态
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/04/The-first-blog/" rel="prev" title="The_first_blog">
-                The_first_blog <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -694,7 +810,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-Deep-Is-Your-Love"><span class="nav-number">1.</span> <span class="nav-text">How Deep Is Your Love</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">2.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">2.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">2.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">2.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">2.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#结构体-及其内存对齐相关问题"><span class="nav-number">1.</span> <span class="nav-text">结构体 及其内存对齐相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体"><span class="nav-number">1.1.</span> <span class="nav-text">结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构体的声明"><span class="nav-number">1.1.1.</span> <span class="nav-text">结构体的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊的声明："><span class="nav-number">1.1.2.</span> <span class="nav-text">特殊的声明：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构体的自引用"><span class="nav-number">1.1.3.</span> <span class="nav-text">结构体的自引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构体变量的定义和初始化"><span class="nav-number">1.1.4.</span> <span class="nav-text">结构体变量的定义和初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体内存对齐"><span class="nav-number">1.2.</span> <span class="nav-text">结构体内存对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要有结构体内存对齐"><span class="nav-number">1.2.1.</span> <span class="nav-text">为什么要有结构体内存对齐?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#平台原因"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">平台原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性能原因"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">性能原因</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体内存对齐规则"><span class="nav-number">1.3.</span> <span class="nav-text">结构体内存对齐规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译器存储一个结构体的过程"><span class="nav-number">1.4.</span> <span class="nav-text">编译器存储一个结构体的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看结构体中变量相对起始位置的偏移量"><span class="nav-number">1.4.1.</span> <span class="nav-text">查看结构体中变量相对起始位置的偏移量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变结构体的默认对齐数"><span class="nav-number">1.4.2.</span> <span class="nav-text">改变结构体的默认对齐数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位段"><span class="nav-number">1.5.</span> <span class="nav-text">位段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位段与结构体的区别"><span class="nav-number">1.5.1.</span> <span class="nav-text">位段与结构体的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位段的例子"><span class="nav-number">1.5.2.</span> <span class="nav-text">位段的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位段存放成员的方式"><span class="nav-number">1.5.3.</span> <span class="nav-text">位段存放成员的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位段存在的问题"><span class="nav-number">1.5.4.</span> <span class="nav-text">位段存在的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#联合体（共用体）"><span class="nav-number">1.6.</span> <span class="nav-text">联合体（共用体）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#联合体的内存分配规则"><span class="nav-number">1.6.1.</span> <span class="nav-text">联合体的内存分配规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联合体的特性"><span class="nav-number">1.6.2.</span> <span class="nav-text">联合体的特性</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -900,9 +1016,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://MyGloria.com/2019/04/03/hello-world/';
-          this.page.identifier = '2019/04/03/hello-world/';
-          this.page.title = 'Love You Forever';
+          this.page.url = 'http://MyGloria.com/2019/05/04/结构体-以及内存对齐相关问题/';
+          this.page.identifier = '2019/05/04/结构体-以及内存对齐相关问题/';
+          this.page.title = '结构体 以及内存对齐相关问题';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
