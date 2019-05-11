@@ -96,20 +96,26 @@
 
 
 
-<meta name="description" content="为什么在调试的时候需要在编译选项中加上 -g 选项默认编译生成的可执行文件是无法使用gdb来进行跟踪或调试的，因为可执行程序中没有可供gdb调试使用的特殊信息，为了将必要的调试信息整合到可执行文件中，我们便需要用到-g选项，这样生成的可执行程序，倘若出现问题，便可以使用gdb找出问题具体出现的位置，便于问题的解决 方法如下  “-g” 标志是对程序进行调试性编译时常用的选项。我们需要给每一个需要调">
+<meta name="description" content="进程状态和控制所有多道程序操作系统，从Windows这种单用户系统到IBM z/OS这种支持成千上万用户的主机系统都是围绕进程这一概念创建的。因此，操作系统须满足的多数需求都设计进程：  操作系统与普通计算机软件的作用相同，即它是由处理器执行的一段程序或一组程序 操作系统必须交替执行多个进程，在合理的响应时间范围内使处理器的利用率最大 操作系统必须按照特定的策略（如某些函数或应用程序具有较高的优先">
 <meta name="keywords" content="导航,分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么在调试的时候需要在编译选项中加上-g选项">
-<meta property="og:url" content="http://MyGloria.com/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/index.html">
+<meta property="og:title" content="进程状态及控制">
+<meta property="og:url" content="http://MyGloria.com/2019/05/11/进程状态及控制/index.html">
 <meta property="og:site_name" content="MyGloria">
-<meta property="og:description" content="为什么在调试的时候需要在编译选项中加上 -g 选项默认编译生成的可执行文件是无法使用gdb来进行跟踪或调试的，因为可执行程序中没有可供gdb调试使用的特殊信息，为了将必要的调试信息整合到可执行文件中，我们便需要用到-g选项，这样生成的可执行程序，倘若出现问题，便可以使用gdb找出问题具体出现的位置，便于问题的解决 方法如下  “-g” 标志是对程序进行调试性编译时常用的选项。我们需要给每一个需要调">
+<meta property="og:description" content="进程状态和控制所有多道程序操作系统，从Windows这种单用户系统到IBM z/OS这种支持成千上万用户的主机系统都是围绕进程这一概念创建的。因此，操作系统须满足的多数需求都设计进程：  操作系统与普通计算机软件的作用相同，即它是由处理器执行的一段程序或一组程序 操作系统必须交替执行多个进程，在合理的响应时间范围内使处理器的利用率最大 操作系统必须按照特定的策略（如某些函数或应用程序具有较高的优先">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://mygloria.com/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/proc.PNG">
-<meta property="og:updated_time" content="2019-05-09T10:02:02.890Z">
+<meta property="og:image" content="http://mygloria.com/2019/05/11/进程状态及控制/PCB.png">
+<meta property="og:image" content="http://mygloria.com/2019/05/11/进程状态及控制/僵尸进程3.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/11/进程状态及控制/僵尸进程2.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/11/进程状态及控制/僵尸进程.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/11/进程状态及控制/孤儿进程3.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/11/进程状态及控制/孤儿进程.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/11/进程状态及控制/孤儿进程2.PNG">
+<meta property="og:updated_time" content="2019-05-11T13:01:19.587Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么在调试的时候需要在编译选项中加上-g选项">
-<meta name="twitter:description" content="为什么在调试的时候需要在编译选项中加上 -g 选项默认编译生成的可执行文件是无法使用gdb来进行跟踪或调试的，因为可执行程序中没有可供gdb调试使用的特殊信息，为了将必要的调试信息整合到可执行文件中，我们便需要用到-g选项，这样生成的可执行程序，倘若出现问题，便可以使用gdb找出问题具体出现的位置，便于问题的解决 方法如下  “-g” 标志是对程序进行调试性编译时常用的选项。我们需要给每一个需要调">
-<meta name="twitter:image" content="http://mygloria.com/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/proc.PNG">
+<meta name="twitter:title" content="进程状态及控制">
+<meta name="twitter:description" content="进程状态和控制所有多道程序操作系统，从Windows这种单用户系统到IBM z/OS这种支持成千上万用户的主机系统都是围绕进程这一概念创建的。因此，操作系统须满足的多数需求都设计进程：  操作系统与普通计算机软件的作用相同，即它是由处理器执行的一段程序或一组程序 操作系统必须交替执行多个进程，在合理的响应时间范围内使处理器的利用率最大 操作系统必须按照特定的策略（如某些函数或应用程序具有较高的优先">
+<meta name="twitter:image" content="http://mygloria.com/2019/05/11/进程状态及控制/PCB.png">
 
 
 
@@ -139,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://MyGloria.com/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/">
+  <link rel="canonical" href="http://MyGloria.com/2019/05/11/进程状态及控制/">
 
 
 
 
 
-  <title>为什么在调试的时候需要在编译选项中加上-g选项 | MyGloria</title>
+  <title>进程状态及控制 | MyGloria</title>
   
 
 
@@ -327,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/">
+    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/05/11/进程状态及控制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -344,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">为什么在调试的时候需要在编译选项中加上-g选项
+          <h1 class="post-title" itemprop="name headline">进程状态及控制
               
             
           </h1>
@@ -369,7 +375,7 @@
                 
               
 
-              <time title="创建于：2019-05-09 17:27:27" itemprop="dateCreated datePublished" datetime="2019-05-09T17:27:27+08:00">2019-05-09</time>
+              <time title="创建于：2019-05-11 20:56:11" itemprop="dateCreated datePublished" datetime="2019-05-11T20:56:11+08:00">2019-05-11</time>
             
 
             
@@ -402,9 +408,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/#comments" itemprop="discussionUrl">
+                <a href="/2019/05/11/进程状态及控制/#comments" itemprop="discussionUrl">
                 
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/11/进程状态及控制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -432,14 +438,169 @@
       
 
       
-        <h1 id="为什么在调试的时候需要在编译选项中加上-g-选项"><a href="#为什么在调试的时候需要在编译选项中加上-g-选项" class="headerlink" title="为什么在调试的时候需要在编译选项中加上 -g 选项"></a>为什么在调试的时候需要在编译选项中加上 -g 选项</h1><p>默认编译生成的可执行文件是无法使用gdb来进行跟踪或调试的，因为可执行程序中没有可供gdb调试使用的特殊信息，为了将必要的调试信息整合到可执行文件中，我们便需要用到-g选项，这样生成的可执行程序，倘若出现问题，便可以使用gdb找出问题具体出现的位置，便于问题的解决</p>
-<p>方法如下</p>
-<p><img src="/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/proc.PNG" alt></p>
-<p>“-g” 标志是对程序进行调试性编译时常用的选项。我们需要给每一个需要调试的源文件都加上这个选项。它将使用特殊版本的C语言标准库完成编译和链接操作，给库函数加上程序调试方面的支持。编译器会把这些标志自动传给链接器。</p>
-<p>加上-g 选项以后，gcc在编译是会做出一下额外的操作</p>
+        <h1 id="进程状态和控制"><a href="#进程状态和控制" class="headerlink" title="进程状态和控制"></a>进程状态和控制</h1><p>所有多道程序操作系统，从Windows这种单用户系统到IBM z/OS这种支持成千上万用户的主机系统都是围绕进程这一概念创建的。因此，操作系统须满足的多数需求都设计进程：</p>
+<ul>
+<li>操作系统与普通计算机软件的作用相同，即它是由处理器执行的一段程序或一组程序</li>
+<li>操作系统必须交替执行多个进程，在合理的响应时间范围内使处理器的利用率最大</li>
+<li>操作系统必须按照特定的策略（如某些函数或应用程序具有较高的优先级）给进程分配资源，同时避免死锁</li>
+<li>操作系统须为有助于构建应用的进程间通信和用户进程创建提供支持</li>
+</ul>
+<h2 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>先介绍一下计算机相关概念</p>
 <ol>
-<li>创建符号表，符号表包含了程序中使用的变量名称的列表</li>
-<li>关闭所有的优化机制，以便程序执行过程中严格按照原来的C代码进行</li>
+<li>计算机平台由一组硬件资源组成，如处理器、内存、I/O模块、定时器和磁盘驱动器等</li>
+<li>计算机程序是为执行某些任务而开发的。典型情况下，它们接受外来的输入，做一些处理后，输出结果</li>
+<li>直接根据给定的硬件平台写应用程序的效率底下，主要原因如下：<ol>
+<li>针对相同的平台可以开发出很多应用程序，所以开发出这些应用程序访问计算机资源的通用例程很有意义</li>
+<li>处理器本身只能对多道程序设计提供有限的支持，需要用软件去管理处理器和被多个程序共享的其他资源</li>
+<li>若多个程序在同一时间都是活跃的，则需要保护每个程序的数据、I/O使用和不被其它程序占用的资源</li>
+</ol>
+</li>
+<li>开发操作系统是为了给应用程序提供方便、安全和一致的接口。操作系统是计算机硬件和应用程序之间的一层软件，它为应用程序和工具提供支持</li>
+<li>操作系统可想象为资源的统一抽象表示，它可被应用程序请求和访问。资源包括内存、网络接口和文件系统等。操作系统为应用程序创建这些资源的抽象表示后，就须管理它们的使用，例如操作系统既可允许资源共享，也可允许资源保护</li>
+</ol>
+<p>有了应用程序、系统软件和资源的概念，就可讨论操作系统有序管理应用程序的执行的方式，进而达到如下目标：</p>
+<ul>
+<li>资源对多个应用程序是可用的</li>
+<li>物理处理器在多个应用程序间切换，以保证所有程序都在执行中</li>
+<li>处理器和I/O设备能得到充分利用</li>
+</ul>
+<p>所有现代操作系统采用的方法都依赖于一个模型，在该模型中，应用程序的执行对应于存在的一个或多个进程</p>
+<h3 id="进程和进程控制块"><a href="#进程和进程控制块" class="headerlink" title="进程和进程控制块"></a>进程和进程控制块</h3><p><strong>进程的定义</strong></p>
+<ul>
+<li>一个正在执行的程序</li>
+<li>一个正在计算机上执行的实例</li>
+<li>能分配给处理器并由处理器执行的实体</li>
+<li>由一组执行的指令、一个当前状态和一组相关的系统资源表征的活动单元</li>
+</ul>
+<p>也可把进程视为由一组元素组成的实体，进程的两个基本元素是<strong>程序代码</strong>（program code，可能被执行相同程序的其他进程共享）和与代码相关联的<strong>数据集</strong>（set of data）。假设处理器开始执行这个程序代码，并且我们把这个执行实体称为进程。进程执行的任意时刻，都可由如下元素来表征：</p>
+<ul>
+<li><strong>标识符：</strong>与进程相关的唯一标识符，用来区分其他进程</li>
+<li><strong>状态</strong>：若进程正在执行，则进程处于运行态</li>
+<li><strong>优先级</strong>：相对于其他进程的优先顺序</li>
+<li><strong>程序计数器</strong>：程序中即将执行的下一条指令的地址</li>
+<li><strong>内存指针</strong>：包括程序代码和进程相关数据的指针，以及与其他进程共享内存块的指针</li>
+<li><strong>上下文数据</strong>：进程执行时处理器的寄存器中的数据</li>
+<li><strong>I/O状态信息</strong>：包括显式 I/O 请求、分配给进程的I/O设备（如磁盘驱动器）和被进程使用的文件列表等。</li>
+<li><strong>记账信息</strong>：包括处理器时间总和、使用的时钟数总和、时间限制、记账号等</li>
+</ul>
+<p>上述列表信息存放在一个称为<strong>进程控制块（process control block）</strong>的数据结构中，控制块由操作系统创建和管理。比较有意义的一点是，进程控制块包含了充分的信息，因此可以中断一个进程的执行，并在后来恢复进程的执行，就好像进程未被中断过那样。进程控制块是操作系统为支持多进程并提供多重处理技术的关键工具。进程中断时，操作系统会把程序计数器和处理器寄存器（上下文数据）保存到进程控制块中的相应位置，进程状态相应地改为其他值，如阻塞态或就绪态（后面将讲述）。现代操作系统可以随意将其它进程置为运行态，并把它的程序计数器和进程上下文数据加载到处理器寄存器中，进而执行这一进程</p>
+<p><img src="/2019/05/11/进程状态及控制/PCB.png" alt></p>
+<p>因此，我们可以说进程由程序代码和相关数据及进程控制块组成。单处理器计算机在任何时刻最多都只能执行一个进程，而正在运行的进程的状态为运行态</p>
+<h4 id="通过系统调用获取进程提示符"><a href="#通过系统调用获取进程提示符" class="headerlink" title="通过系统调用获取进程提示符"></a>通过系统调用获取进程提示符</h4><ul>
+<li>进程id（PID）</li>
+<li>父进程（PPID）</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pid:%d\n"</span>,getpid());<span class="comment">//获取当前进程的PID</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"ppid:%d\n"</span>,getppid());<span class="comment">//获取当前进程的父进程的PID</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h2><p>操作系统会为待执行程序创建进程或任务。处理器以某种顺序执行指令序列中的指令，这种顺序由程序计数器寄存器中不断变化的值给出，因为程序计数器可能会指向不同进程的不同代码部分，程序的执行则涉及其内部的一系列指令。</p>
+<p>列出为进程执行的指令序列，可描述单个进程的行为，这样的序列称为进程<strong>轨迹（trace）</strong>。给出各个进程轨迹的交替方式，就可描述处理器的行为。</p>
+<p>通过观察可知，在任何时刻，一个进程要么正在执行，要么未执行，因此进程可以处于以下两种状态之一：运行态或未运行态。操作系统创建一个新进程时，它将该进程以未运行态加入系统，操作系统知道这个进程的存在，并正在等待执行机会。时而不时的，当前正在运行的进程会被中断，此时操作系统的分派器部分将选择一个新进程运行，前一个进程从运行态转换为未运行态，后一个进程则转换为运行态。</p>
+<p>一个进程可以有几个状态（在Linux内赫里，进程有时候也叫做任务）。下面的状态kernel源代码里定义：</p>
+<ul>
+<li>R运行状态（running）：并不意味着进程一定在运行中，它表明进程要么是在运行中要么在运行队列里</li>
+<li>S睡眠状态（sleeping）：意味着进程在等待事件完成（这里的睡眠有时候也叫做可中断睡眠（inerruptible sleep））</li>
+<li>D磁盘休眠状态（stopped）：可以通过发送SIGSTOP信号给进程来停止（T）进程。这个被暂停的进程可以通过发送SIGCONT信号让进程继续运行</li>
+<li>X死亡状态（dead）：这个状态只是一个返回状态，你不会在任务列表里看到这个状态</li>
+</ul>
+<p>使用ps aux / ps axj命令来查看进程状态</p>
+<h3 id="Z（zombie）-僵尸进程"><a href="#Z（zombie）-僵尸进程" class="headerlink" title="Z（zombie）-僵尸进程"></a>Z（zombie）-僵尸进程</h3><ul>
+<li>僵尸状态（Zombies）是一个比较特殊的状态。当进程退出并且父进程没有读取到子进程退出返回代码时就会产生僵死（尸）进程</li>
+<li>僵尸进程会以终止状态保持在进程表中，并且会一直在等待父进程读取退出状态代码</li>
+<li>所以，只要子进程退出，父进程还在运行，但父进程没有读取子进程状态，子进程进入Z状态</li>
+</ul>
+<h4 id="僵尸进程代码实现"><a href="#僵尸进程代码实现" class="headerlink" title="僵尸进程代码实现"></a>僵尸进程代码实现</h4><p><img src="/2019/05/11/进程状态及控制/僵尸进程3.PNG" alt></p>
+<p>我们运行该段程序，然后发现该进程的运行结果如下：</p>
+<p><img src="/2019/05/11/进程状态及控制/僵尸进程2.PNG" alt></p>
+<p>然后查看子进程状态如下：</p>
+<p><img src="/2019/05/11/进程状态及控制/僵尸进程.PNG" alt></p>
+<h4 id="僵尸进程危害"><a href="#僵尸进程危害" class="headerlink" title="僵尸进程危害"></a>僵尸进程危害</h4><ul>
+<li>进程的退出状态必须被维持下去，因为他要告诉关心它的进程（父进程），可父进程如果一直不读取，那么子进程就一直处于Z状态</li>
+<li>维护退出状态本身就是要用数据维护，也属于进程基本信息，所以保存在task_struct(PCB)中，换句话说，Z状态一直不退出，PCB一直都要维护</li>
+<li>那一个父进程创建了很多子进程，就是不回收，就会造成内存资源的浪费，因为数据结构对象本身就要占用内存。</li>
+<li>会造成内存泄漏</li>
+</ul>
+<h4 id="僵尸进程的处理"><a href="#僵尸进程的处理" class="headerlink" title="僵尸进程的处理"></a>僵尸进程的处理</h4><p>直接kill僵尸进程是不行的，可以直接kill僵尸进程的父进程</p>
+<p>更加科学的处理：进程等待</p>
+<p>为什么kill掉父进程僵尸进程就没了？</p>
+<ul>
+<li>当kill掉父进程之后，子进程就成了孤儿进程，孤儿进程会被1号进程收养，从而释放资源</li>
+</ul>
+<h3 id="孤儿进程"><a href="#孤儿进程" class="headerlink" title="孤儿进程"></a>孤儿进程</h3><ul>
+<li>父进程先退出，子进程就称之为“孤儿进程”</li>
+<li>孤儿进程被1号init进程领养，当然由init进程回收</li>
+</ul>
+<h4 id="孤儿进程代码："><a href="#孤儿进程代码：" class="headerlink" title="孤儿进程代码："></a>孤儿进程代码：</h4><p><img src="/2019/05/11/进程状态及控制/孤儿进程3.PNG" alt></p>
+<p>运行可执行程序，得到如下结果：</p>
+<p><img src="/2019/05/11/进程状态及控制/孤儿进程.PNG" alt></p>
+<p>由结果可见该进程被1号进程领养，我们再来看看该进程的状态</p>
+<p><img src="/2019/05/11/进程状态及控制/孤儿进程2.PNG" alt></p>
+<h3 id="进程的创建和终止"><a href="#进程的创建和终止" class="headerlink" title="进程的创建和终止"></a>进程的创建和终止</h3><p>无论使用哪种进程行为模型，进程的生存期都围绕着进程的创建和终止。</p>
+<h4 id="进程的创建"><a href="#进程的创建" class="headerlink" title="进程的创建"></a>进程的创建</h4><p>将一个新进程添加到正被管理的进程集时，操作系统需要建立用于管理该进程的数据结构，并在内存中给它分配地址空间，这些行为构成了一个新进程的创建过程。</p>
+<p>触发进程创建的事件通常有4个，在批处理环境中，响应作业提交时会创建进程：在交互环境中，当新用户试图登陆时会创建进程，不论哪种情况，操作系统都负责新进程的创建工作。操作系统也可能会代表应用程序创建进程。例如，如果用户请求打印一个文件，则操作系统可以创建一个管理打印的进程，进而使请求进程可以继续执行，与完成打印任务的时间无关。</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新的批处理作业</td>
+<td>磁带或磁盘中的批处理作业控制流通常会提供给操作系统，当操作系统准备接受新工作时，将读取下一个作业控制命令</td>
+</tr>
+<tr>
+<td>交互登陆</td>
+<td>终端用户登录到系统</td>
+</tr>
+<tr>
+<td>为提供服务而由操作系统创建</td>
+<td>操作系统可以创建一个进程，代表用户程序执行一个功能，使用户无须等待（如控制打印的进程）</td>
+</tr>
+<tr>
+<td>由现有进程派生</td>
+<td>基于模块化的考虑或开发并行性，用户程序可以指示创建多个进程</td>
+</tr>
+</tbody>
+</table>
+<p>传统上，操作系统会以对用户或应用程序透明的方式来创建所有进程，这在许多现代操作系统中仍很常见。但是，允许一个进程引发另一个进程的创建很有用。例如，一个应用程序进程可以产生另一个进程，以接收应用程序产生的数据，并将数据组织成适合于后续分析的格式。新程序与应用程序并行运行，并在得到新数据时激活。这种方案对构造应用程序非常有用，例如，服务器进程（如打印服务器、文件服务器）可以为它处理的每个请求产生一个新进程。当操作系统为另一个进程的显示请求创建一个进程时，这个动作就称为<strong>进程派生</strong>。</p>
+<p>当一个进程派生另一个进程时，前一个称为<strong>父进程（parent process）</strong>，被派生的进程称为<strong>子进程（child process）</strong>。典型情况下，相关进程需要相互之间的通信和合作。对程序员来说，合作是一项非常困难的任务。</p>
+<h5 id="fork函数"><a href="#fork函数" class="headerlink" title="fork函数"></a>fork函数</h5><p>在Linux中fork函数是非常重要的函数，它从已存在进程中创建一个新进程。新进程为子进程，而原进程为父进程</p>
+<h6 id="fork的运行规则"><a href="#fork的运行规则" class="headerlink" title="fork的运行规则"></a>fork的运行规则</h6><p>以父进程为模板，创建子进程</p>
+<ol>
+<li>会把父进程的PCB拷贝一份，稍加修改，成为子进程的PCB</li>
+<li>会把父进程的虚拟地址空间拷贝一份，作为子进程的地址空间<ol>
+<li>写时拷贝 = &gt; 父子进程共用一份代码，各自有一份数据</li>
+<li>由于大部分的内存空间可能被拷贝，创建进程开销仍然比较高（和线程相比）</li>
+<li>在有些场景下，线程的创建也会被认为开销比较高（和协程相比）</li>
+</ol>
+</li>
+<li>fork()返回值会在父子进程中分别返回<ol>
+<li>父进程中返回子进程的PID</li>
+<li>子进程中返回0</li>
+<li>失败返回-1（原因：<strong>1）内存不够  2）进程太多</strong>）</li>
+<li>在fork()后面继续往下执行</li>
+</ol>
+</li>
+<li>父子进程执行顺序没有先后关系，全靠调度器来实现</li>
+</ol>
+<h4 id="进程终止"><a href="#进程终止" class="headerlink" title="进程终止"></a>进程终止</h4><h5 id="进程退出场景"><a href="#进程退出场景" class="headerlink" title="进程退出场景"></a>进程退出场景</h5><ul>
+<li>代码运行完毕，结果正确</li>
+<li>代码运行完毕，结果不正确</li>
+<li>代码没执行完，异常终止</li>
+</ul>
+<h5 id="进程常见退出方法"><a href="#进程常见退出方法" class="headerlink" title="进程常见退出方法"></a>进程常见退出方法</h5><p>正常终止（可以通过echo $? 查看进程退出码）<strong>$?这是bash中的一个特殊变量，表示上个命令对应的进程的退出码</strong></p>
+<ol>
+<li>从main函数返回，返回值叫做进程的退出码，通过这个退出码表示运行结果是否正确（也能刷新缓冲区）<ol>
+<li>退出码为0，表示结果正确</li>
+<li>退出码非0表示结果不正确</li>
+</ol>
+</li>
+<li>调用exit函数（库函数调用）<strong>exit本质上也是调用_exit</strong><ol>
+<li>exit关闭流并刷新缓冲区</li>
+<li>exit还多调用了结束函数</li>
+</ol>
+</li>
+<li>调用_exit函数（系统调用）</li>
 </ol>
 
       
@@ -513,8 +674,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/09/常用的编译器有哪些/" rel="next" title="常用的编译器有哪些">
-                <i class="fa fa-chevron-left"></i> 常用的编译器有哪些
+              <a href="/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/" rel="next" title="为什么在调试的时候需要在编译选项中加上-g选项">
+                <i class="fa fa-chevron-left"></i> 为什么在调试的时候需要在编译选项中加上-g选项
               </a>
             
           </div>
@@ -522,10 +683,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/11/进程状态及控制/" rel="prev" title="进程状态及控制">
-                进程状态及控制 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -725,7 +882,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么在调试的时候需要在编译选项中加上-g-选项"><span class="nav-number">1.</span> <span class="nav-text">为什么在调试的时候需要在编译选项中加上 -g 选项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程状态和控制"><span class="nav-number">1.</span> <span class="nav-text">进程状态和控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是进程"><span class="nav-number">1.1.</span> <span class="nav-text">什么是进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程和进程控制块"><span class="nav-number">1.1.2.</span> <span class="nav-text">进程和进程控制块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过系统调用获取进程提示符"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">通过系统调用获取进程提示符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程状态"><span class="nav-number">1.2.</span> <span class="nav-text">进程状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Z（zombie）-僵尸进程"><span class="nav-number">1.2.1.</span> <span class="nav-text">Z（zombie）-僵尸进程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#僵尸进程代码实现"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">僵尸进程代码实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#僵尸进程危害"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">僵尸进程危害</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#僵尸进程的处理"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">僵尸进程的处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#孤儿进程"><span class="nav-number">1.2.2.</span> <span class="nav-text">孤儿进程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#孤儿进程代码："><span class="nav-number">1.2.2.1.</span> <span class="nav-text">孤儿进程代码：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程的创建和终止"><span class="nav-number">1.2.3.</span> <span class="nav-text">进程的创建和终止</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程的创建"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">进程的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#fork函数"><span class="nav-number">1.2.3.1.1.</span> <span class="nav-text">fork函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#fork的运行规则"><span class="nav-number">1.2.3.1.1.1.</span> <span class="nav-text">fork的运行规则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程终止"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">进程终止</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程退出场景"><span class="nav-number">1.2.3.2.1.</span> <span class="nav-text">进程退出场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进程常见退出方法"><span class="nav-number">1.2.3.2.2.</span> <span class="nav-text">进程常见退出方法</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -931,9 +1088,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://MyGloria.com/2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/';
-          this.page.identifier = '2019/05/09/为什么在调试的时候需要在编译选项中加上-g选项/';
-          this.page.title = '为什么在调试的时候需要在编译选项中加上-g选项';
+          this.page.url = 'http://MyGloria.com/2019/05/11/进程状态及控制/';
+          this.page.identifier = '2019/05/11/进程状态及控制/';
+          this.page.title = '进程状态及控制';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
