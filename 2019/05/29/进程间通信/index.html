@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="导航,分享,">
+  <meta name="keywords" content="进程间,匿名管道,命名管道,共享内存,">
 
 
 
@@ -96,18 +96,28 @@
 
 
 
-<meta name="description" content="Linux是什么Linux是一个操作系统内核（操作系统 =&amp;gt; 内核 + 一组配套的应用程序），而内核是用来负责对于软件资源和硬件设备的管理。 Linux发行版：CentOs,Android,Ubuntu,Debain,Kali,Mint …… Redhat(大部分公司中使用的发行版) Xshell:远程终端程序 Linux：全世界市场份额最高的操作系统，任何一名程序员都会用到的操作系统 1.">
-<meta name="keywords" content="导航,分享">
+<meta name="description" content="进程间的通信进程间通信介绍进程间通信目的 数据传输：一个进程需要将它的数据发送给另一个进程 资源共享：多个进程之间共享同样的资源 通知事件：一个进程需要向另一个或一组进程发送消息，通知它（它们）发生了某种事件（如进程终止时要通知父进程） 进程控制：有些进程希望完全控制另一个进程的执行（如Debug进程），此时控制进程希望能够拦截另一个进城的所有陷入和异常，并能够及时知道它的状态改变  进程间通信分">
+<meta name="keywords" content="进程间,匿名管道,命名管道,共享内存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux是什么及其常见指令">
-<meta property="og:url" content="http://MyGloria.com/2019/04/22/Linux是什么及其常见指令/index.html">
+<meta property="og:title" content="进程间通信">
+<meta property="og:url" content="http://MyGloria.com/2019/05/29/进程间通信/index.html">
 <meta property="og:site_name" content="MyGloria">
-<meta property="og:description" content="Linux是什么Linux是一个操作系统内核（操作系统 =&amp;gt; 内核 + 一组配套的应用程序），而内核是用来负责对于软件资源和硬件设备的管理。 Linux发行版：CentOs,Android,Ubuntu,Debain,Kali,Mint …… Redhat(大部分公司中使用的发行版) Xshell:远程终端程序 Linux：全世界市场份额最高的操作系统，任何一名程序员都会用到的操作系统 1.">
+<meta property="og:description" content="进程间的通信进程间通信介绍进程间通信目的 数据传输：一个进程需要将它的数据发送给另一个进程 资源共享：多个进程之间共享同样的资源 通知事件：一个进程需要向另一个或一组进程发送消息，通知它（它们）发生了某种事件（如进程终止时要通知父进程） 进程控制：有些进程希望完全控制另一个进程的执行（如Debug进程），此时控制进程希望能够拦截另一个进城的所有陷入和异常，并能够及时知道它的状态改变  进程间通信分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-22T07:02:17.607Z">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/pipe.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/pipe代码.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/命名管道写.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/命名管道读.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/共享内存.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/Create.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/Myshared.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/reader.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/writer.PNG">
+<meta property="og:updated_time" content="2019-05-29T07:52:17.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux是什么及其常见指令">
-<meta name="twitter:description" content="Linux是什么Linux是一个操作系统内核（操作系统 =&amp;gt; 内核 + 一组配套的应用程序），而内核是用来负责对于软件资源和硬件设备的管理。 Linux发行版：CentOs,Android,Ubuntu,Debain,Kali,Mint …… Redhat(大部分公司中使用的发行版) Xshell:远程终端程序 Linux：全世界市场份额最高的操作系统，任何一名程序员都会用到的操作系统 1.">
+<meta name="twitter:title" content="进程间通信">
+<meta name="twitter:description" content="进程间的通信进程间通信介绍进程间通信目的 数据传输：一个进程需要将它的数据发送给另一个进程 资源共享：多个进程之间共享同样的资源 通知事件：一个进程需要向另一个或一组进程发送消息，通知它（它们）发生了某种事件（如进程终止时要通知父进程） 进程控制：有些进程希望完全控制另一个进程的执行（如Debug进程），此时控制进程希望能够拦截另一个进城的所有陷入和异常，并能够及时知道它的状态改变  进程间通信分">
+<meta name="twitter:image" content="http://mygloria.com/2019/05/29/进程间通信/pipe.PNG">
 
 
 
@@ -137,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://MyGloria.com/2019/04/22/Linux是什么及其常见指令/">
+  <link rel="canonical" href="http://MyGloria.com/2019/05/29/进程间通信/">
 
 
 
 
 
-  <title>Linux是什么及其常见指令 | MyGloria</title>
+  <title>进程间通信 | MyGloria</title>
   
 
 
@@ -325,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/04/22/Linux是什么及其常见指令/">
+    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/05/29/进程间通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -342,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux是什么及其常见指令
+          <h1 class="post-title" itemprop="name headline">进程间通信
               
             
           </h1>
@@ -367,7 +377,7 @@
                 
               
 
-              <time title="创建于：2019-04-22 15:00:11" itemprop="dateCreated datePublished" datetime="2019-04-22T15:00:11+08:00">2019-04-22</time>
+              <time title="创建于：2019-05-29 15:47:42" itemprop="dateCreated datePublished" datetime="2019-05-29T15:47:42+08:00">2019-05-29</time>
             
 
             
@@ -400,9 +410,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/22/Linux是什么及其常见指令/#comments" itemprop="discussionUrl">
+                <a href="/2019/05/29/进程间通信/#comments" itemprop="discussionUrl">
                 
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/22/Linux是什么及其常见指令/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/29/进程间通信/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,228 +440,194 @@
       
 
       
-        <h2 id="Linux是什么"><a href="#Linux是什么" class="headerlink" title="Linux是什么"></a>Linux是什么</h2><p>Linux是一个操作系统内核（操作系统 =&gt; 内核 + 一组配套的应用程序），而内核是用来负责对于软件资源和硬件设备的管理。</p>
-<p><strong>Linux发行版：</strong>CentOs,Android,Ubuntu,Debain,Kali,Mint ……</p>
-<p>Redhat(大部分公司中使用的发行版)</p>
-<p>Xshell:远程终端程序</p>
-<p>Linux：全世界市场份额最高的操作系统，任何一名程序员都会用到的操作系统</p>
-<pre><code>1. 移动端领域（安卓）
-2. 服务器领域（90%的服务器都用Linux）
-3. 嵌入式领域
-4. 桌面领域（Linux在桌面领域表现不佳）
-</code></pre><h2 id="Linux下基本指令"><a href="#Linux下基本指令" class="headerlink" title="Linux下基本指令"></a>Linux下基本指令</h2><ol>
-<li><p><strong>ls指令</strong></p>
-<p><strong>语法</strong>：ls 【选项】【目录或文件】</p>
-<p><strong>功能：</strong>对于目录，该命令列出该目录下的所有子目录与文件，对于文件，将列出文件名以及其他信息。</p>
-<p><strong>常用选项</strong></p>
+        <h1 id="进程间的通信"><a href="#进程间的通信" class="headerlink" title="进程间的通信"></a>进程间的通信</h1><h2 id="进程间通信介绍"><a href="#进程间通信介绍" class="headerlink" title="进程间通信介绍"></a>进程间通信介绍</h2><h3 id="进程间通信目的"><a href="#进程间通信目的" class="headerlink" title="进程间通信目的"></a>进程间通信目的</h3><ul>
+<li>数据传输：一个进程需要将它的数据发送给另一个进程</li>
+<li>资源共享：多个进程之间共享同样的资源</li>
+<li>通知事件：一个进程需要向另一个或一组进程发送消息，通知它（它们）发生了某种事件（如进程终止时要通知父进程）</li>
+<li>进程控制：有些进程希望完全控制另一个进程的执行（如Debug进程），此时控制进程希望能够拦截另一个进城的所有陷入和异常，并能够及时知道它的状态改变</li>
+</ul>
+<h3 id="进程间通信分类"><a href="#进程间通信分类" class="headerlink" title="进程间通信分类"></a>进程间通信分类</h3><p>管道</p>
+<blockquote>
 <ul>
-<li>-a 列出目录下的所有文件，包括以.开头的隐藏文件</li>
-<li>-d 将目录像文件一样显示，而不是显示其下的文件。如：ls -d 指定目录</li>
-<li>-i 输出文件的i节点的索引信息。如ls -ai 指定文件</li>
-<li>-k 以k字节的形式表示文件的大小。ls -alk指定文件</li>
-<li>-l 列出文件的详细信息</li>
-<li>-n 用数字的UID,GID代替名称。</li>
-<li>-F 在每个文件名后附上一个字符以说明该文件的类型，“*”表示可执行的普通文件；“/”表示目录；“@”表示符号链接；“|”表示FIFOs；“=”表示套接字（socket）。（目录类型识别）</li>
-<li>-r 对目录反向排序</li>
-<li>-t 以时间排序</li>
-<li>-R 列出所有子目录下的文件。（递归）</li>
-<li>-1 一行只输出一个文件</li>
+<li>匿名管道pipe</li>
+<li>命名管道</li>
+</ul>
+</blockquote>
+<p>System V IPC</p>
+<blockquote>
+<ul>
+<li>System V 消息队列</li>
+<li>System V 共享内存</li>
+<li>System V 信号量</li>
+</ul>
+</blockquote>
+<p>POSIX IPC</p>
+<blockquote>
+<ul>
+<li>消息队列</li>
+<li>共享内存</li>
+<li>信号量</li>
+<li>互斥量</li>
+<li>条件变量</li>
+<li>读写锁</li>
+</ul>
+</blockquote>
+<h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><h3 id="什么是管道"><a href="#什么是管道" class="headerlink" title="什么是管道"></a>什么是管道</h3><blockquote>
+<ul>
+<li>管道是Unix中最古老的进程间通信的形式</li>
+<li>我们把从一个进程连接到另一个进程的一个数据流称为一个”管道“</li>
+</ul>
+</blockquote>
+<p><img src="/2019/05/29/进程间通信/pipe.PNG" alt></p>
+<h3 id="匿名管道"><a href="#匿名管道" class="headerlink" title="匿名管道"></a>匿名管道</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="comment">//功能：创建一个无名管道</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pipe</span><span class="params">(<span class="keyword">int</span> fd[<span class="number">2</span>])</span></span>;</span><br><span class="line"><span class="comment">//参数</span></span><br><span class="line"><span class="comment">//fd：文件描述符数组，其中fd[0]表示读端，fd[1]表示写端</span></span><br><span class="line"><span class="comment">//返回值：成功返回0，失败返回错误代码</span></span><br></pre></td></tr></table></figure>
+<h3 id="匿名管道代码"><a href="#匿名管道代码" class="headerlink" title="匿名管道代码"></a>匿名管道代码</h3><p><img src="/2019/05/29/进程间通信/pipe代码.PNG" alt></p>
+<h3 id="管道读写规则"><a href="#管道读写规则" class="headerlink" title="管道读写规则"></a>管道读写规则</h3><ul>
+<li>当没有数据可读时</li>
+</ul>
+<blockquote>
+<ul>
+<li>O_NONBLOCK disable：read调用阻塞，即进程暂停执行，一直等到有数据来到为止</li>
+<li>O_NONBLOCK enable：read调用返回-1，errno值为EAGAIN</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 当管道满的时候</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>O_NONBLOCK disable：write调用阻塞，直到有进程读走数据</li>
+<li>O_NONBLOCK enable：调用返回-1，errno值为EAGAIN</li>
+</ul>
+</blockquote>
+<ul>
+<li>如果所有管道写端对应的文件描述符被关闭，则read返回0</li>
+<li>如果所有管道读端对应的文件描述符被关闭，则write操作会产生信号SIGPIPE,进而可能导致write进程退出</li>
+<li>当要写入的数据量不大于PIPE_BUF时，Linux将保证写入的原子性</li>
+<li>当要写入的数据量大于PIPE_BUF时，Linux将不在保证写入的原子性</li>
+</ul>
+<h3 id="管道的特点"><a href="#管道的特点" class="headerlink" title="管道的特点"></a>管道的特点</h3><blockquote>
+<ul>
+<li>只能用于具有共同祖先的进程（具有亲缘关系的进程）之间进行通信；通常，一个管道由一个进程创建，然后该进程调用fork，此后父、子进程之间就可应用该管道</li>
+<li>管道提供流式服务</li>
+<li>一般而言，进程退出，管道释放，所以管道的生命周期随进程</li>
+<li>一般而言，内核会对管道操作进行同步与互斥</li>
+<li>管道是半双工的，数据只能向一个方向流动；需要双方通信时，需要建立起两个管道</li>
+</ul>
+</blockquote>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
+<ul>
+<li><p>管道中的数据一旦被读了之后，就相当于出队列了，假设有多个进程同时去尝试读，只有一个进程能读到数据，其他进程就读不到</p>
+</li>
+<li><p>管道内置了同步互斥机制，不会出现两个管道一人读一半数据的情况</p>
+<ul>
+<li>多个进程同时去读写管道，数据不会发生错乱</li>
+<li>如果管道为空尝试读，就会在read函数处阻塞</li>
+</ul>
+<p>如果管道满了，尝试写，就会在write函数处阻塞</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>管道的大小（Centos7下）：64kb</li>
+<li>两个没有亲缘关系的进程，无法共用一个管道，无法利用管道进行通信，所有引用该管道的进程都结束，管道才会释放</li>
+</ul>
+</blockquote>
+<h2 id="命名管道"><a href="#命名管道" class="headerlink" title="命名管道"></a>命名管道</h2><blockquote>
+<ul>
+<li>管道应用的一个限制就是只能在具有共同祖先（具有亲缘关系）的进程间通信</li>
+<li>如果我们想在不相关的进程之间交换数据，可以使用FIFO文件来做这项工作，它经常被称为命名管道</li>
+<li>命名管道是一种特殊类型的文件</li>
+</ul>
+</blockquote>
+<h3 id="创建一个命名管道"><a href="#创建一个命名管道" class="headerlink" title="创建一个命名管道"></a>创建一个命名管道</h3><blockquote>
+<ul>
+<li>命名管道可以从命令行上创建，命令行方法是使用下面这个命令</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfifo filename</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>命名管道也可以从程序里创建，相关函数有：</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mkfifo</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename, <span class="keyword">mode_t</span> mode)</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>创建命名管道</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    mkfifo(<span class="string">"p2"</span>,<span class="number">0644</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="匿名管道与命名管道的区别"><a href="#匿名管道与命名管道的区别" class="headerlink" title="匿名管道与命名管道的区别"></a>匿名管道与命名管道的区别</h3><blockquote>
+<ul>
+<li>匿名管道由pipe函数创建并打开</li>
+<li>命名管道由mkfifo函数创建、打开用open</li>
+<li>FIFO（命名管道）与pipe（匿名管道）之间唯一的区别在他们创建与打开的方式不同，一旦这些工作完成之后，它们具有相同的语义</li>
+</ul>
+</blockquote>
+<h3 id="命名管道的打开规则"><a href="#命名管道的打开规则" class="headerlink" title="命名管道的打开规则"></a>命名管道的打开规则</h3><blockquote>
+<ul>
+<li>如果当前打开操作是为读而打开FIFO时<ul>
+<li>O_NONBLOCK disable：阻塞直到有相应进程为写而打开该FIFO</li>
+<li>O_NONBLOCK enable：立刻返回成功</li>
 </ul>
 </li>
-<li><p><strong>pwd命令</strong></p>
-<p><strong>语法</strong>：pwd</p>
-<p><strong>功能：</strong>显示用户当前所在的目录</p>
-</li>
-<li><p><strong>cd指令</strong></p>
-<p><strong>语法：</strong>cd 目录名</p>
-<p><strong>功能</strong>： 改变工作目录。将当前工作目录改变到指定的目录下</p>
-<p><strong>举例</strong>：</p>
-<ul>
-<li><p>cd .. ：返回上级目录 </p>
-</li>
-<li><p>cd /home/hanhaodong/My_code/: 绝对路径</p>
-</li>
-<li><p>cd ../Linux/: 相对路径 (谈到相对路径，必须明确当前路径)</p>
-</li>
-<li><p>cd~:进入用户的home目录</p>
-</li>
-<li><p>cd-：返回最近访问目录         </p>
-</li>
+<li>如果当前打开操作是为写而打开FIFO时<ul>
+<li>O_NONBLOCK disable：阻塞直到有相应进程为读而打开该FIFO</li>
 </ul>
 </li>
-<li><p><strong>touch指令</strong></p>
-<p><strong>语法：</strong>touch [选项]… 文件…</p>
-<p><strong>功能：</strong>touch命令参数可更改文档或目录的日期时间，包括存取时间和更改时间，或者新建一个不存在的空文件。</p>
-<p><strong>常用选项</strong></p>
-<ul>
-<li>-a 或 –time=atime或–time=access或–time=use只更改存取时间</li>
-<li>-c 或-no-create 不建立任何文档</li>
-<li>-d 使用指定的日期时间，而非现在的时间</li>
-<li>-f 此参数将忽略不予处理，仅负责解决BSD版本touch指令的兼容性问题</li>
-<li>-m 或–time=mtime或–time=modify 只更改变动时间</li>
-<li>-r 把指定文档或目录的日期时间，统统设成和参考文档或目录的日期时间相同</li>
-<li>-t 使用指定的日期时间，而非现在的时间</li>
+<li>O_NONBLOCK enable：立刻返回失败，错误码为ENXIO</li>
 </ul>
-</li>
-<li><p><strong>mkdir指令</strong></p>
-<p><strong>语法：</strong>mkdir [选项] dirname</p>
-<p><strong>功能：</strong>在当前目录下创建一个名为”dirname”的目录</p>
-<p><strong>常用选项：</strong></p>
+</blockquote>
+<h3 id="运用命名管道实现读写操作"><a href="#运用命名管道实现读写操作" class="headerlink" title="运用命名管道实现读写操作"></a>运用命名管道实现读写操作</h3><p><img src="/2019/05/29/进程间通信/命名管道写.PNG" alt></p>
+<p><img src="/2019/05/29/进程间通信/命名管道读.PNG" alt></p>
+<h3 id="命名管道补充"><a href="#命名管道补充" class="headerlink" title="命名管道补充"></a>命名管道补充</h3><blockquote>
 <ul>
-<li>-p,–parents 可以是一个路径名称。此时若路径中的某些目录尚不存在，加上此选项后，系统将自动建立好那些尚不存在的目录，即一次可以建立多个目录</li>
+<li>对命名管道的操作和对文件的操作一模一样</li>
+<li>read的返回值等于0：所有写端关闭，此时读端的read才返回0</li>
+<li>命名管道的生命周期也是跟随进程，myfifo这个文件仅仅是一个入口，管道本体仍然是内核中的一块内存，生命周期其实是围绕着内核中的内存来讨论的</li>
 </ul>
-</li>
-<li><p><strong>rmdir指令&amp;&amp;rm指令</strong></p>
-<p><strong>rmdir是一个与mkdir相对应的命令，mkdir是建立目录，而rmdir是删除命令</strong></p>
-<p><strong>语法：</strong>rmdir [-p][dirName]</p>
-<p><strong>适用对象：</strong>具有当前目录操作仅限的所有使用者</p>
-<p><strong>功能</strong>：删除空目录</p>
-<p><strong>常用选项：</strong></p>
+</blockquote>
+<h2 id="System-V共享"><a href="#System-V共享" class="headerlink" title="System V共享"></a>System V共享</h2><p>共享内存区是最快的IPC格式。一旦这样的内存映射到共享它的进程的地址空间，这些进程间数据传递不再涉及到内核，换句话说是进程不再通过执行进入内核的系统调用来传递彼此的数据</p>
+<p><img src="/2019/05/29/进程间通信/共享内存.PNG" alt></p>
+<h3 id="共享内存函数"><a href="#共享内存函数" class="headerlink" title="共享内存函数"></a>共享内存函数</h3><blockquote>
+<p>shmget函数</p>
+<p>功能：用来创建共享内存</p>
+<p>原型</p>
+<p>​    int shmget(key_t key, size_t size, int shmflg);</p>
+<p>参数：</p>
+<p>​    key：这个共享内存段名字</p>
+<p>​    size：共享内存大小</p>
+<p>​    shmflg：由九个权限标志构成，它们的用法和创建文件时使用的mode模式标志是一样的</p>
+<p>返回值：成功返回一个非负整数，即该共享内存段的标识码；失败返回-1</p>
+</blockquote>
+<blockquote>
+<p>shmat函数</p>
+<p>功能：将共享内存段连接到进程地址空间</p>
+<p>原型：</p>
+<p>​    void <em>shmat(int shmid, const void </em>shmaddr, int shmflg);</p>
+<p>参数：</p>
+<p>​    shmid：共享内存标识</p>
+<p>​    shmaddr：指定连续的地址</p>
+<p>​    shmflg：它的两个可能取值是SHM_RND和SHM_RDONLY</p>
+<p>返回值：成功返回一个指针，指向共享内存第一个节；失败返回-1</p>
+</blockquote>
+<h3 id="创建共享内存完成读写"><a href="#创建共享内存完成读写" class="headerlink" title="创建共享内存完成读写"></a>创建共享内存完成读写</h3><p><img src="/2019/05/29/进程间通信/Create.PNG" alt></p>
+<p><img src="/2019/05/29/进程间通信/Myshared.PNG" alt></p>
+<p><img src="/2019/05/29/进程间通信/reader.PNG" alt></p>
+<p><img src="/2019/05/29/进程间通信/writer.PNG" alt></p>
+<h3 id="共享内存的使用方式"><a href="#共享内存的使用方式" class="headerlink" title="共享内存的使用方式"></a>共享内存的使用方式</h3><blockquote>
 <ul>
-<li>-p 当子目录被删除后如果父目录也变成空目录的话，就连带父目录一起删除</li>
+<li>在内核中先创建出共享内存对象</li>
+<li>多个进程附加到这个共享内存对象上</li>
+<li>就可以直接读写这个共享内存了</li>
 </ul>
-<p><strong>rm命令可以同时删除文件或目录</strong></p>
-<p><strong>语法：</strong> rm [-f -i -r -v][dirName/dir]</p>
-<p><strong>适用对象：</strong>所有使用者</p>
-<p><strong>功能：</strong>删除文件或目录</p>
-<p><strong>常用选项：</strong></p>
+<p>在内核中可以同时包含很多共享内存对象，使用不同的key进行区分</p>
+</blockquote>
+<h3 id="共享内存补充"><a href="#共享内存补充" class="headerlink" title="共享内存补充"></a>共享内存补充</h3><blockquote>
 <ul>
-<li>-f 即使文件属性为只读(即写保护)，亦直接删除</li>
-<li>-i 删除前逐一询问确认</li>
-<li>-r 删除目录及其下所有文件</li>
+<li>ipcs -m 查看系统中的共享内存</li>
+<li>共享内存生命周期随内核，共享内存会一直存在到手动释放，或者系统重启</li>
 </ul>
-</li>
-<li><p><strong>man指令（重要）</strong></p>
-<p>Linux的命令有很多参数，我们可以通过查看联机手册获取帮助。访问Linux手册页的命令时man</p>
-<p><strong>语法：</strong>man [选项] 命令</p>
-<p><strong>常用选项：</strong></p>
-<ul>
-<li>-k 根据关键字搜索联机帮助</li>
-<li>num 只在第num章节找</li>
-<li>-a 将所有章节的都显示出来，比如man printf 它缺省从第一章开始搜素，知道就停止，用a选项，当按下q退出，他会继续往后面搜索，直到所有章节都搜索完毕</li>
-</ul>
-<p>man手册分为八章：</p>
-<pre><code>1. 是普通命令
-2. 是系统调用，如open，write之类
-3. 是库函数，如printf,fread4是特殊文件，也就是/dev下的各种设备文件
-4. 是指文件的格式，比如passwd，就会说明这个文件中各个字段的含义
-5. 是给游戏留用，由各个游戏自己定义
-6. 是附件还有一些变量，比如像environ这种全局变量在这里就有说明
-7. 是系统管理用的命令，这些命令只能由root使用，如ifconfig
-</code></pre></li>
-<li><p><strong>cp指令</strong></p>
-<p><strong>语法：</strong> cp [选项] 原文件或目录 目标文件或目录</p>
-<p><strong>功能：</strong>复制文件或目录</p>
-<p><strong>说明：</strong>cp指令用于复制文件或目录，如同时指定两个以上的文件或目录，且最后的目的地是一个已经存在的目录，则它会把前面指定的所有文件或目录复制到此目录中。若同时指定多个文件或目录，而最后的目的地并非一个已存在的目录，则会出现错误信息</p>
-<p><strong>常用选项：</strong></p>
-<ul>
-<li>-f 或 -force强行复制文件或目录，不论目的文件或目录是否已经存在</li>
-<li>-i 或 -interactive 覆盖文件之前先询问用户</li>
-<li>-r 递归处理，将指定目录下的文件与子目录一并处理。若源文件或目录的形态，不属于目录或符号链接，则一律视为普通文件处理</li>
-<li>-R 或 -recursive递归处理，将指定目录下的文件及子目录一并处理</li>
-</ul>
-</li>
-<li><p><strong>mv指令</strong></p>
-<p>mv命令是move的缩写，可以用来移动文件或者将文件改名(move (rename) files)，是Linux系统下常用的命令，经常用来备份文件或者目录</p>
-<p><strong>语法：</strong>mv [选项] 源文件或目录 目标文件或目录</p>
-<p><strong>功能：</strong></p>
-<ul>
-<li>视mv命令中第二个参数类型的不同(是目标文件还是目标目录)，mv命令将文件重命名或将其移至一个新的目录中</li>
-<li>当第二个参数类型是文件时，mv命令完成文件重命名，此时，源文件只能有一个(也可以是源目录名)，它将所给的源文件或目录重命名为给定的目标文件名</li>
-<li>当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中</li>
-</ul>
-<p><strong>常用选项</strong></p>
-<ul>
-<li>-f : force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖</li>
-<li>-i : 若目标文件(destination)已经存在时，就会询问是否覆盖！</li>
-</ul>
-</li>
-<li><p><strong>cat</strong></p>
-<p><strong>语法：</strong>cat [选项][文件]</p>
-<p><strong>功能：</strong>查看目标文件的内容</p>
-<p><strong>常用选项：</strong></p>
-<ul>
-<li>-b 对非空输出行编号</li>
-<li>-n 对输出的所有行编号</li>
-<li>-s 不输出多行空行</li>
-</ul>
-</li>
-<li><p><strong>less指令</strong></p>
-<ul>
-<li>less工具也是对文件或其它输出进行分页显示的工具，应该说是linux正统查看文件内容的工具，功能极其强大</li>
-<li>less的用法比起more更加的有弹性。在more的时候，我们并没有办法向前面翻，只能往后面看</li>
-<li>但若使用了less时，就可以使用 [pageup][pagedown]等按键的功能来往前往后翻看文件，更容易用来查看一个文件的内容</li>
-<li>除此之外，在less里头可以拥有更多的搜索功能，不止可以向下搜，也可以向上搜</li>
-</ul>
-<p><strong>语法：</strong>less [参数] 文件</p>
-<p><strong>功能：</strong></p>
-<p>less与more相似，<strong>但使用less可以随意浏览文件，而more仅能向前移动，却不能向后移动，而且less在查看之前不会加载整个文件，而大部分编辑器都是直接把整个文件都加载(延时加载/懒加载)</strong></p>
-<p><strong>选项：</strong></p>
-<ul>
-<li>-i 忽略搜索时的大小写</li>
-<li>-N 显示每行的行号</li>
-<li>/字符串：向下搜索”字符串”的功能</li>
-<li>?字符串：向上搜索”字符串”的功能</li>
-<li>n: 重复前一个搜索(与/或?有关)</li>
-<li>N：反向重复前一个搜索(与/或?有关)</li>
-<li>q:quit</li>
-</ul>
-</li>
-<li><p><strong>时间相关的指令</strong></p>
-<p><strong>date显示</strong></p>
-<p>date指定格式显示时间：date +%Y:%m:%d</p>
-<p>date用法：date [OPTION]…[+FORMAT]</p>
-<p><strong>在显示方面，使用者可以设定欲显示的格式，格式设定为一个加号后接数个标记，其中常用的标记列表如下</strong></p>
-<ul>
-<li>%H: 小时(00…23)</li>
-<li>%M: 分钟(00…59)</li>
-<li>%S: 秒(00..61)</li>
-<li>%X: 相当于 %H:%M:%S</li>
-<li>%d: 日(01…31)</li>
-<li>%m: 月份(01…12)</li>
-<li>%Y: 完整年份(0000…9999)</li>
-<li>%F: 相当于 %Y-%m-%d</li>
-</ul>
-<p><strong>在设定时间方面</strong></p>
-<ul>
-<li>date -s //设置当前时间，只有root权限才能设置，其它只能查看</li>
-<li>date -s 20080523 //设置成20080523，这样会把具体时间设置成空00:00:00</li>
-<li>date -s 01:01:01 //设置具体时间，不会对日期做更改</li>
-<li>date -s “01:01:01 2008-5-23” //这样可以设置全部时间</li>
-<li>date -s “01:01:01 20080523” //这样可以设置全部时间</li>
-<li>date -s “2008-5-23 01:01:01” //这样可以设置全部时间</li>
-<li>date -s “20080523 01:01:01” //这样可以设置全部时间</li>
-</ul>
-<p><strong>时间戳</strong></p>
-<p>时间 -&gt; 时间戳: date +%s</p>
-<p>时间戳 -&gt; 时间: date -d@1558749502</p>
-<p>Unix时间戳(英文为Unix epoch,Unix time,POSIX time 或 Unix timestamp) 是从1970年1月1日(UTC/GMT的午夜)开始所经过的秒数，不考虑闰秒</p>
-</li>
-<li><p><strong>find指令： -name</strong></p>
-<ul>
-<li>Linux下find命令在目录结构中搜素文件，并执行指定的操作</li>
-<li>Linux下find命令提供了相当多的查找条件，功能很强大，由于find具有强大的功能，所以它的选项也很多</li>
-<li>即使系统中含有网络文件系统(NFS),find命令在该文件系统中同样有效，只要你具有相应的权限</li>
-<li>在运行一个非常消耗资源的find命令时，很多人都倾向于把它放在后台执行，因为遍历一个大的文件系统可能会花费很长的时间(指30G字节以上的文件系统)</li>
-</ul>
-<p><strong>语法：</strong>find pathname -options</p>
-<p><strong>功能：</strong>用于在文件树种查找文件，并作出相应的处理(可能访问磁盘)</p>
-<p><strong>常用选项：</strong></p>
-<ul>
-<li>-name 按照文件名查找文件</li>
-</ul>
-</li>
-<li><p><strong>grep指令</strong></p>
-<p><strong>语法：</strong>grep [选项]搜寻字符串文件</p>
-<p><strong>功能：</strong>在文件中搜索字符串，将找到的行打印出来</p>
-<p><strong>常用选项：</strong></p>
-<ul>
-<li>-i :忽略大小写的不同，所以大小写视为相同</li>
-<li>-n：顺便输出行号</li>
-<li>-v: 反向选择，亦即显示出没有’搜寻字符串’内容的那一行</li>
-</ul>
-</li>
-</ol>
+</blockquote>
 
       
     </div>
@@ -709,9 +685,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/导航/" rel="tag"># 导航</a>
+            <a href="/tags/进程间/" rel="tag"># 进程间</a>
           
-            <a href="/tags/分享/" rel="tag"># 分享</a>
+            <a href="/tags/匿名管道/" rel="tag"># 匿名管道</a>
+          
+            <a href="/tags/命名管道/" rel="tag"># 命名管道</a>
+          
+            <a href="/tags/共享内存/" rel="tag"># 共享内存</a>
           
         </div>
       
@@ -724,8 +704,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/string类/" rel="next" title="string类">
-                <i class="fa fa-chevron-left"></i> string类
+              <a href="/2019/05/21/C-内联函数详解/" rel="next" title="C++内联函数详解">
+                <i class="fa fa-chevron-left"></i> C++内联函数详解
               </a>
             
           </div>
@@ -733,10 +713,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/23/继承的概念及定义/" rel="prev" title="继承的概念及定义">
-                继承的概念及定义 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -936,7 +912,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux是什么"><span class="nav-number">1.</span> <span class="nav-text">Linux是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下基本指令"><span class="nav-number">2.</span> <span class="nav-text">Linux下基本指令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程间的通信"><span class="nav-number">1.</span> <span class="nav-text">进程间的通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程间通信介绍"><span class="nav-number">1.1.</span> <span class="nav-text">进程间通信介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程间通信目的"><span class="nav-number">1.1.1.</span> <span class="nav-text">进程间通信目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程间通信分类"><span class="nav-number">1.1.2.</span> <span class="nav-text">进程间通信分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道"><span class="nav-number">1.2.</span> <span class="nav-text">管道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是管道"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名管道"><span class="nav-number">1.2.2.</span> <span class="nav-text">匿名管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名管道代码"><span class="nav-number">1.2.3.</span> <span class="nav-text">匿名管道代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道读写规则"><span class="nav-number">1.2.4.</span> <span class="nav-text">管道读写规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道的特点"><span class="nav-number">1.2.5.</span> <span class="nav-text">管道的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">1.2.6.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名管道"><span class="nav-number">1.3.</span> <span class="nav-text">命名管道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个命名管道"><span class="nav-number">1.3.1.</span> <span class="nav-text">创建一个命名管道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名管道与命名管道的区别"><span class="nav-number">1.3.2.</span> <span class="nav-text">匿名管道与命名管道的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名管道的打开规则"><span class="nav-number">1.3.3.</span> <span class="nav-text">命名管道的打开规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运用命名管道实现读写操作"><span class="nav-number">1.3.4.</span> <span class="nav-text">运用命名管道实现读写操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命名管道补充"><span class="nav-number">1.3.5.</span> <span class="nav-text">命名管道补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-V共享"><span class="nav-number">1.4.</span> <span class="nav-text">System V共享</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共享内存函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">共享内存函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建共享内存完成读写"><span class="nav-number">1.4.2.</span> <span class="nav-text">创建共享内存完成读写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共享内存的使用方式"><span class="nav-number">1.4.3.</span> <span class="nav-text">共享内存的使用方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共享内存补充"><span class="nav-number">1.4.4.</span> <span class="nav-text">共享内存补充</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1142,9 +1118,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://MyGloria.com/2019/04/22/Linux是什么及其常见指令/';
-          this.page.identifier = '2019/04/22/Linux是什么及其常见指令/';
-          this.page.title = 'Linux是什么及其常见指令';
+          this.page.url = 'http://MyGloria.com/2019/05/29/进程间通信/';
+          this.page.identifier = '2019/05/29/进程间通信/';
+          this.page.title = '进程间通信';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
