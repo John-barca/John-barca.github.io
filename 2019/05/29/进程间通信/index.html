@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/Myshared.PNG">
 <meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/reader.PNG">
 <meta property="og:image" content="http://mygloria.com/2019/05/29/进程间通信/writer.PNG">
-<meta property="og:updated_time" content="2019-05-29T07:52:17.900Z">
+<meta property="og:updated_time" content="2019-05-30T04:55:29.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进程间通信">
 <meta name="twitter:description" content="进程间的通信进程间通信介绍进程间通信目的 数据传输：一个进程需要将它的数据发送给另一个进程 资源共享：多个进程之间共享同样的资源 通知事件：一个进程需要向另一个或一组进程发送消息，通知它（它们）发生了某种事件（如进程终止时要通知父进程） 进程控制：有些进程希望完全控制另一个进程的执行（如Debug进程），此时控制进程希望能够拦截另一个进城的所有陷入和异常，并能够及时知道它的状态改变  进程间通信分">
@@ -572,9 +572,9 @@
 </li>
 <li>如果当前打开操作是为写而打开FIFO时<ul>
 <li>O_NONBLOCK disable：阻塞直到有相应进程为读而打开该FIFO</li>
+<li>O_NONBLOCK enable：立刻返回失败，错误码为ENXIO</li>
 </ul>
 </li>
-<li>O_NONBLOCK enable：立刻返回失败，错误码为ENXIO</li>
 </ul>
 </blockquote>
 <h3 id="运用命名管道实现读写操作"><a href="#运用命名管道实现读写操作" class="headerlink" title="运用命名管道实现读写操作"></a>运用命名管道实现读写操作</h3><p><img src="/2019/05/29/进程间通信/命名管道写.PNG" alt></p>
@@ -619,8 +619,8 @@
 <li>在内核中先创建出共享内存对象</li>
 <li>多个进程附加到这个共享内存对象上</li>
 <li>就可以直接读写这个共享内存了</li>
+<li>在内核中可以同时包含很多共享内存对象，使用不同的key进行区分</li>
 </ul>
-<p>在内核中可以同时包含很多共享内存对象，使用不同的key进行区分</p>
 </blockquote>
 <h3 id="共享内存补充"><a href="#共享内存补充" class="headerlink" title="共享内存补充"></a>共享内存补充</h3><blockquote>
 <ul>
@@ -1513,6 +1513,21 @@ var jiathis_config={
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
