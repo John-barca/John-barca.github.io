@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="进程,信号捕捉,可重入函数,">
 
 
 
@@ -96,16 +96,28 @@
 
 
 
-<meta name="description" content="Love You Forever">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MyGloria">
-<meta property="og:url" content="http://MyGloria.com/tags/命名管道/index.html">
+<meta name="description" content="进程信号信号概念  信号是进程之间事件异步通知的一种方式，属于软中断   使用kill -l命令可以查看系统定义的信号列表   每个信号都有一个编号和一个宏定义名称，这些宏定义可以在signal.h中找到，例如其中有定义#define SIGINT 2 编号34以上的是实时信号，我们暂时只关注编号34以下的实时信号。   我们用man  [编号] signal的方式查看该信号在man手册中的具体说">
+<meta name="keywords" content="进程,信号捕捉,可重入函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进程信号">
+<meta property="og:url" content="http://MyGloria.com/2019/06/08/进程信号/index.html">
 <meta property="og:site_name" content="MyGloria">
-<meta property="og:description" content="Love You Forever">
+<meta property="og:description" content="进程信号信号概念  信号是进程之间事件异步通知的一种方式，属于软中断   使用kill -l命令可以查看系统定义的信号列表   每个信号都有一个编号和一个宏定义名称，这些宏定义可以在signal.h中找到，例如其中有定义#define SIGINT 2 编号34以上的是实时信号，我们暂时只关注编号34以下的实时信号。   我们用man  [编号] signal的方式查看该信号在man手册中的具体说">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/kill.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/1.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/2.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/4.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/3.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/Core%20dump.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/5.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/6.PNG">
+<meta property="og:image" content="http://mygloria.com/2019/06/08/进程信号/无标题1.png">
+<meta property="og:updated_time" content="2019-06-08T13:39:32.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyGloria">
-<meta name="twitter:description" content="Love You Forever">
+<meta name="twitter:title" content="进程信号">
+<meta name="twitter:description" content="进程信号信号概念  信号是进程之间事件异步通知的一种方式，属于软中断   使用kill -l命令可以查看系统定义的信号列表   每个信号都有一个编号和一个宏定义名称，这些宏定义可以在signal.h中找到，例如其中有定义#define SIGINT 2 编号34以上的是实时信号，我们暂时只关注编号34以下的实时信号。   我们用man  [编号] signal的方式查看该信号在man手册中的具体说">
+<meta name="twitter:image" content="http://mygloria.com/2019/06/08/进程信号/kill.PNG">
 
 
 
@@ -135,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://MyGloria.com/tags/命名管道/">
+  <link rel="canonical" href="http://MyGloria.com/2019/06/08/进程信号/">
 
 
 
 
 
-  <title>标签: 命名管道 | MyGloria</title>
+  <title>进程信号 | MyGloria</title>
   
 
 
@@ -160,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/John-barca" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -307,52 +319,352 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>命名管道<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://MyGloria.com/2019/06/08/进程信号/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/05/29/进程间通信/" itemprop="url">
-              
-                <span itemprop="name">进程间通信</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">进程信号
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-29T15:47:42+08:00" content="2019-05-29">
-          05-29
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2019-06-08 21:34:10" itemprop="dateCreated datePublished" datetime="2019-06-08T21:34:10+08:00">2019-06-08</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/08/进程信号/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/08/进程信号/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="进程信号"><a href="#进程信号" class="headerlink" title="进程信号"></a>进程信号</h1><h2 id="信号概念"><a href="#信号概念" class="headerlink" title="信号概念"></a>信号概念</h2><blockquote>
+<ul>
+<li>信号是进程之间事件异步通知的一种方式，属于软中断</li>
+</ul>
+</blockquote>
+<h3 id="使用kill-l命令可以查看系统定义的信号列表"><a href="#使用kill-l命令可以查看系统定义的信号列表" class="headerlink" title="使用kill -l命令可以查看系统定义的信号列表"></a>使用kill -l命令可以查看系统定义的信号列表</h3><p><img src="/2019/06/08/进程信号/kill.PNG" alt></p>
+<blockquote>
+<ul>
+<li>每个信号都有一个编号和一个宏定义名称，这些宏定义可以在signal.h中找到，例如其中有定义#define SIGINT 2</li>
+<li>编号34以上的是实时信号，我们暂时只关注编号34以下的实时信号。</li>
+</ul>
+</blockquote>
+<p>我们用man  [编号] signal的方式查看该信号在man手册中的具体说明</p>
+<p><img src="/2019/06/08/进程信号/1.PNG" alt></p>
+<p><img src="/2019/06/08/进程信号/2.PNG" alt></p>
+<h2 id="信号常见处理方式概览"><a href="#信号常见处理方式概览" class="headerlink" title="信号常见处理方式概览"></a>信号常见处理方式概览</h2><p>可选的处理动作有以下三种</p>
+<blockquote>
+<ol>
+<li>忽略此信号</li>
+<li>执行该信号的默认处理动作</li>
+<li>提供一个信号处理函数，要求内核在处理该信号时切换到用户态执行这个处理函数，这种方式称为捕捉（Catch）一个信号</li>
+</ol>
+</blockquote>
+<h2 id="产生信号"><a href="#产生信号" class="headerlink" title="产生信号"></a>产生信号</h2><h3 id="通过终端按键产生信号"><a href="#通过终端按键产生信号" class="headerlink" title="通过终端按键产生信号"></a>通过终端按键产生信号</h3><p>SIGINT的默认处理动作是终止进程，SIGQUIT的默认处理动作是终止进程并且Core Dump，我们可以用程序验证一下</p>
+<h3 id="调用系统函数向进程发信号"><a href="#调用系统函数向进程发信号" class="headerlink" title="调用系统函数向进程发信号"></a>调用系统函数向进程发信号</h3><p><img src="/2019/06/08/进程信号/4.PNG" alt></p>
+<p><img src="/2019/06/08/进程信号/3.PNG" alt></p>
+<blockquote>
+<ul>
+<li>指定发送某种信号的kill命令可以有多种写法，上面的命令还可以写成kill -SIGSEGV 19745或kill -11 19745，11是信号SIGSEGV的编号。以往遇到的段错误都是由非法内存访问产生的，而这个程序本身没错，给它发送SIGSEGV也能产生段错误。 </li>
+</ul>
+</blockquote>
+<p>下面一段代码是我们常见的段错误产生</p>
+<p><img src="/2019/06/08/进程信号/Core dump.PNG" alt></p>
+<p>kill命令是调用kill函数实现的。kill函数可以给一个指定的进程发送指定的信号。false函数可以给当前进程发送指定的信号（自己给自己发送信号）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;signal.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kill</span><span class="params">(<span class="keyword">pid_t</span> pid, <span class="keyword">int</span> signo)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">raise</span><span class="params">(<span class="keyword">int</span> signo)</span></span>;</span><br><span class="line"><span class="comment">//这两个函数都是成功返回0.错误返回-1</span></span><br></pre></td></tr></table></figure>
+<p>abort函数使当前进程接收到信号而异常终止</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">abort</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="comment">//就像exit函数一样,abort函数总是会成功的，所以没有返回值</span></span><br></pre></td></tr></table></figure>
+<h3 id="由软件条件产生信号"><a href="#由软件条件产生信号" class="headerlink" title="由软件条件产生信号"></a>由软件条件产生信号</h3><p>SIGPIPE是一种由软件条件产生的信号，我们可以用gdb调试该程序，看到这个信号</p>
+<h3 id="硬件异常产生信号"><a href="#硬件异常产生信号" class="headerlink" title="硬件异常产生信号"></a>硬件异常产生信号</h3><p>硬件异常被硬件以某种方式被硬件检测到并通知内核，然后内核向当前进程发送适当的信号。例如当前进程执行了除以0的指令，CPU的运算单元会产生异常，内核将这个异常解释为SIGPIPE信号发送给进程。再比如当前进程访问了非法内存地址，MMU会产生异常，内核将这个异常解释为SIGSEGV信号发送给进程</p>
+<h2 id="信号捕捉"><a href="#信号捕捉" class="headerlink" title="信号捕捉"></a>信号捕捉</h2><p><strong>代码如下</strong></p>
+<p><img src="/2019/06/08/进程信号/5.PNG" alt></p>
+<p><img src="/2019/06/08/进程信号/6.PNG" alt></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<ul>
+<li>所有信号的产生，由于OS是进程的管理者，最终都要由OS来进行执行</li>
+<li>信号的处理是在合适的时候进行处理</li>
+<li>信号的默认处理行为：大部分信号的默认行为，都是终止进程</li>
+<li>信号处理函数是一个独立的执行流，和原来的用户代码之间没有相互调用关系</li>
+<li>信号处理函数执行过程中，原有的执行流就在等待</li>
+<li>signal替换了信号原有的处理方式（就会通过signal的返回值来返回）</li>
+</ul>
+</blockquote>
+<h2 id="阻塞信号"><a href="#阻塞信号" class="headerlink" title="阻塞信号"></a>阻塞信号</h2><h3 id="信号其他相关常见概念"><a href="#信号其他相关常见概念" class="headerlink" title="信号其他相关常见概念"></a>信号其他相关常见概念</h3><blockquote>
+<ul>
+<li>实际执行信号的处理动作成为信号递达(Delivery)</li>
+<li>信号从产生到递达之间的状态，成为信号未决(Pending)</li>
+<li>进程可以选择阻塞(Block)某个信号</li>
+<li>被阻塞的信号产生时将保持在未决状态，直到进程解除对此信号的阻塞，才执行递达的动作</li>
+<li>注意，阻塞和忽略是不同的，只要信号被阻塞，就不会递达，而忽略是在递达之后可选的一种处理动作</li>
+</ul>
+</blockquote>
+<h4 id="task-struct"><a href="#task-struct" class="headerlink" title="task_struct"></a>task_struct</h4><blockquote>
+<ul>
+<li>未决信号集：操作系统给进程发信号，本质上就是在未决信号集中写一个信号的信息（几号信号）</li>
+<li>阻塞信号集：标识哪些信号不立刻处理，通过一些函数来操作阻塞信号集</li>
+<li>信号处理函数集：函数指针数组</li>
+</ul>
+</blockquote>
+<p><strong>【重要】</strong></p>
+<blockquote>
+<ul>
+<li>同一时刻一个进程收到了大量的某个信号，极有可能只处理一次</li>
+</ul>
+</blockquote>
+<p><img src="/2019/06/08/进程信号/无标题1.png" alt></p>
+<blockquote>
+<ul>
+<li>每个信号都有两个标志位分别表示阻塞(block)和未决(pending)，还有一个函数指针表示处理动作，信号产生时，内核在进程控制块中设置该信号的未决标志，直到信号递达才清除该标志。在上图的例子中，SIGHUP信号未阻塞也未产生过，当它递达时执行默认处理动作</li>
+<li>SIGINT信号产生过，但正在被阻塞，所以暂时不能递达。虽然它的处理动作是忽略，但在没有解除阻塞之前不能忽略这个信号，因为进程仍有机会改变处理动作之后再解除阻塞</li>
+<li>SIGQUIT信号未产生过，一旦产生SIGQUIT信号将被阻塞，它的处理动作是用户自定义函数sighandler。如果在进程解除对某信号的阻塞之前这种信号产生过多次，将如何处理？POSIX.1允许系统递送该信号一次或多次。Linux是这样实现的：常规信号在递达之前产生多次只记一次，而实时信号在递达之前产生多次可以依次放在一个队列里</li>
+</ul>
+</blockquote>
+<h2 id="捕捉信号"><a href="#捕捉信号" class="headerlink" title="捕捉信号"></a>捕捉信号</h2><h3 id="内核如何实现信号的捕捉"><a href="#内核如何实现信号的捕捉" class="headerlink" title="内核如何实现信号的捕捉"></a>内核如何实现信号的捕捉</h3><p>如果信号的处理动作是用户自定义函数，在信号递达时就调用这个函数，这称为捕捉信号。由于信号处理函数的代码是在用户空间的，处理过程比较复杂。举例如下：用户程序注册了SIGQUIT信号的处理函数sighandler。当前正在执行main函数，这时发生中断或异常切换到内核态。在中断处理完毕后要返回用户态的main函数之前检查到有信号SIGQUIT递达。内核决定返回用户态后不是恢复main函数的上下文继续执行，而是执行sighandler函数，sighandler和main函数使用不同的堆栈空间，它们之间不存在调用和被调用关系，是两个独立的控制流程。sighandler函数返回后自动执行特殊的系统调用sigreturn两次进入内核态，如果没有新的信号要递达，这次要返回用户态就是恢复main函数的下文继续执行</p>
+<h3 id="信号捕捉函数signal"><a href="#信号捕捉函数signal" class="headerlink" title="信号捕捉函数signal"></a>信号捕捉函数signal</h3><blockquote>
+<p>man 2 signal</p>
+</blockquote>
+<h2 id="可重入函数"><a href="#可重入函数" class="headerlink" title="可重入函数"></a>可重入函数</h2><blockquote>
+<ul>
+<li>一个函数如果在多个执行流中被调用，可能会出现问题</li>
+<li>一个函数可重入，就意味着在多个执行流中调用是没问题的</li>
+<li>一个函数如果不可重入，在多个执行流中调用就是有问题的</li>
+<li>一个函数使用了全局变量，静态变量，不可重入</li>
+<li>一个函数调用了malloc，不可重入</li>
+<li>一个函数调用了不可重入函数，也是不可重入</li>
+</ul>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat.png" alt="HaoDong wechat" style="width: 200px; max-width: 100%;">
+    <div>你的赏识是我的荣幸</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果你喜欢它的话，可以打赏一下哦！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="HaoDong 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="HaoDong 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/进程/" rel="tag"># 进程</a>
+          
+            <a href="/tags/信号捕捉/" rel="tag"># 信号捕捉</a>
+          
+            <a href="/tags/可重入函数/" rel="tag"># 可重入函数</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/29/进程间通信/" rel="next" title="进程间通信">
+                <i class="fa fa-chevron-left"></i> 进程间通信
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -360,6 +672,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -380,8 +706,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -473,6 +808,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程信号"><span class="nav-number">1.</span> <span class="nav-text">进程信号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信号概念"><span class="nav-number">1.1.</span> <span class="nav-text">信号概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用kill-l命令可以查看系统定义的信号列表"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用kill -l命令可以查看系统定义的信号列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号常见处理方式概览"><span class="nav-number">1.2.</span> <span class="nav-text">信号常见处理方式概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生信号"><span class="nav-number">1.3.</span> <span class="nav-text">产生信号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过终端按键产生信号"><span class="nav-number">1.3.1.</span> <span class="nav-text">通过终端按键产生信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用系统函数向进程发信号"><span class="nav-number">1.3.2.</span> <span class="nav-text">调用系统函数向进程发信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#由软件条件产生信号"><span class="nav-number">1.3.3.</span> <span class="nav-text">由软件条件产生信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件异常产生信号"><span class="nav-number">1.3.4.</span> <span class="nav-text">硬件异常产生信号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号捕捉"><span class="nav-number">1.4.</span> <span class="nav-text">信号捕捉</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.4.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻塞信号"><span class="nav-number">1.5.</span> <span class="nav-text">阻塞信号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信号其他相关常见概念"><span class="nav-number">1.5.1.</span> <span class="nav-text">信号其他相关常见概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#task-struct"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">task_struct</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#捕捉信号"><span class="nav-number">1.6.</span> <span class="nav-text">捕捉信号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内核如何实现信号的捕捉"><span class="nav-number">1.6.1.</span> <span class="nav-text">内核如何实现信号的捕捉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信号捕捉函数signal"><span class="nav-number">1.6.2.</span> <span class="nav-text">信号捕捉函数signal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可重入函数"><span class="nav-number">1.7.</span> <span class="nav-text">可重入函数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -642,6 +993,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -659,6 +1014,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://MyGloria.com/2019/06/08/进程信号/';
+          this.page.identifier = '2019/06/08/进程信号/';
+          this.page.title = '进程信号';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
@@ -678,6 +1045,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1061,26 +1439,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
