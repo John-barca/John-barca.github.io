@@ -1958,7 +1958,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #57c814;
+  background: #774546;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2797,16 +2797,7 @@ embed {
   display: inline-block;
 }
 body {
-  background: url("/images/background3.jpg");
+  background: url("/images/background4.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
-}
-.main-inner {
-  background: #fff;
-  opacity: 0.7;
-}
-.header-inner {
-  opacity: 0.9;
 }
