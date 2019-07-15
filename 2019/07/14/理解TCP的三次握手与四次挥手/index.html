@@ -110,7 +110,11 @@
 <meta property="og:image" content="http://mygloria.com/2019/07/14/理解TCP的三次握手与四次挥手/确认应答丢包.PNG">
 <meta property="og:image" content="http://mygloria.com/2019/07/14/理解TCP的三次握手与四次挥手/三次握手四次挥手.PNG">
 <meta property="og:image" content="http://mygloria.com/2019/07/14/理解TCP的三次握手与四次挥手/三次握手四次挥手2.PNG">
-<meta property="og:updated_time" content="2019-07-13T16:37:46.264Z">
+<meta property="og:image" content="http://mygloria.com/2019/07/14/理解TCP的三次握手与四次挥手/无标题.png">
+<meta property="og:image" content="http://mygloria.com/2019/07/14/理解TCP的三次握手与四次挥手/滑动窗口.png">
+<meta property="og:image" content="http://mygloria.com/2019/07/14/理解TCP的三次握手与四次挥手/滑动窗口1.png">
+<meta property="og:image" content="http://mygloria.com/2019/07/14/理解TCP的三次握手与四次挥手/拥塞控制.png">
+<meta property="og:updated_time" content="2019-07-15T08:26:35.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解TCP的三次握手与四次挥手">
 <meta name="twitter:description" content="TCP的三次握手与四次挥手TCP协议段格式   序列号seq：占4个字节，用来标记数据段的顺序，TCP把连接中发送的所有数据字节都编上一个序号，第一个字节的编号由本地随机产生；给字节编上序号后，就给每一个报文段指派一个序号；序列号seq就是这个报文段中的第一个字节的数据编号。 确认号ack：占4个字节，期待收到对方下一个报文段的第一个数据字节的序号；序列号表示报文段携带数据的第一个字节的编号；而确">
@@ -595,7 +599,112 @@
 <li>同时也是在理论上保证最后一个报文可靠到达（假设最后一个ACK丢失，那么服务器会再重发一个FIN，这时虽然客户端的进程不在了，但是TCP连接还在，仍然可以重发LAST_ACK）;</li>
 </ul>
 </blockquote>
-<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2>
+<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><p>对每一个发送的数据段，都要给一个ACK确认应答，收到ACK后再发送下一个数据段，这样做有一个比较大的缺点，就是性能较差，尤其是数据往返时间较长的时候</p>
+<p><img src="/2019/07/14/理解TCP的三次握手与四次挥手/无标题.png" alt></p>
+<p>既然这样一发一收的方式性能较低。那么我们一次发送多条数据，就可以大大的提高性能（其实是将多个段的等待时间重叠在一起了）</p>
+<p><img src="/2019/07/14/理解TCP的三次握手与四次挥手/滑动窗口.png" alt></p>
+<blockquote>
+<ul>
+<li>窗口大小指的是无需等待确认应答而可以继续发送数据的最大值，上图的窗口大小就是4000个字节（四个段）</li>
+<li>发送前四个段的时候，不需要等待任何ACK，直接发送；</li>
+<li>收到第一个ACK后，滑动窗口向后移动，继续发送第五个段的数据；依次类推；</li>
+<li>操作系统内核为了维护这个滑动窗口，需要开辟<strong>发送缓冲区</strong>来记录当前还有哪些数据没有应答；只有确认应答过的数据，才能从缓冲区删掉；</li>
+<li>窗口越大，则网络的吞吐率就越高；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>窗口也不能无限大<ul>
+<li>发送方如果发的太快，接收方可能处理不过来<ul>
+<li>发送方发送的数据先到达接收方的网卡，然后放到内核中的接收缓冲区中</li>
+<li>接收方的用户代码从接收缓冲区中取数据(recv/read)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><p>接收端处理数据的速度是有限的，如果发送端发的太快，导致接收端的缓冲区被打满，这个时候如果发送端继续发送，就会造成丢包，继而引起丢包重传等等一系列连锁反应</p>
+<p>因此TCP支持根据接收端的处理能力，来决定发送端的发送速度，这个机制就叫做<strong>流量控制</strong></p>
+<blockquote>
+<ul>
+<li>接收端将自己可以接受的缓冲区大小放入TCP首部中的“窗口大小”字段，通过ACK端通知发送端；</li>
+<li>窗口大小字段越大，说明网络的吞吐量越高</li>
+<li>接收端一旦发现自己的缓冲区快满了，就会将窗口大小设置成一个更小的值通知给发送端</li>
+<li>发送端接受到这个窗口之后，就会减慢自己的发送速度</li>
+<li>如果接收端缓冲区满了，就会将窗口置为0；这时发送方不再发送数据，但是需要定期发送一个窗口探测数据段，使接收端把窗口大小告诉发送端</li>
+<li>TCP协议报头中有一个窗口大小字段，这个字段是和接收缓冲区的空余空间大小相关联的</li>
+</ul>
+</blockquote>
+<p><img src="/2019/07/14/理解TCP的三次握手与四次挥手/滑动窗口1.png" alt></p>
+<h2 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h2><blockquote>
+<ul>
+<li>根据丢包情况作为判定依据；<ul>
+<li>如果出现丢包，认为网络比较拥堵，如果没有丢包，认为网络比较畅通</li>
+</ul>
+</li>
+<li>TCP引入<strong>慢启动</strong>机制，先发少量的数据，开始的时候照一个比较小的窗口来发送数据<ul>
+<li>如果没有丢包，就按照指数形式提升窗口大小</li>
+<li>如果窗口大小达到指定的阈值之后，变成线性增长</li>
+<li>当窗口达到一定的大小之后，就会发生丢包，一旦丢包，认为网络拥堵，就把窗口大小一下就设回一个非常小的值，重复慢开始的过程</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><img src="/2019/07/14/理解TCP的三次握手与四次挥手/拥塞控制.png" alt></p>
+<blockquote>
+<ul>
+<li>当TCP开始启动的时候，慢启动阈值等于窗口最大值</li>
+<li>在每次超时重发的时候，慢启动阈值会变成原来的一半，同时拥塞窗口置回1</li>
+<li>少量的丢包，我们仅仅是触发超时重传；大量的丢包，我们就认为网络拥塞</li>
+<li>当TCP通信开始后，网络吞吐量会逐渐上升；随着网络发生拥堵，吞吐量就会立刻下降</li>
+<li>拥塞控制，是TCP协议想尽可能快的把数据传输给对方，但是又要避免给网络造成太大压力的折中方案</li>
+</ul>
+</blockquote>
+<h2 id="延迟应答"><a href="#延迟应答" class="headerlink" title="延迟应答"></a>延迟应答</h2><blockquote>
+<ul>
+<li>和滑动窗口密切相关，想办法在可靠性的前提下，尽量让窗口大（提高传输效率）</li>
+<li>如果接收数据的主机立刻返回ACK应答，这时候返回的窗口可能比较小</li>
+</ul>
+</blockquote>
+<h2 id="捎带应答"><a href="#捎带应答" class="headerlink" title="捎带应答"></a>捎带应答</h2><blockquote>
+<ul>
+<li>延迟应答的基础之上，引入的一个机制</li>
+<li>TCP四次挥手有可能是三次，捎带应答在影响这件事情</li>
+</ul>
+</blockquote>
+<h2 id="面向字节流"><a href="#面向字节流" class="headerlink" title="面向字节流"></a>面向字节流</h2><p><strong>创建一个TCP的socket</strong>，同时会在内核中创建一个<strong>发送缓冲区</strong>和一个<strong>接收缓冲区</strong></p>
+<blockquote>
+<ul>
+<li>调用write时，数据会先写入发送缓冲区中</li>
+<li>如果发送的字节数太长，会被拆分成多个TCP的数据包发出</li>
+<li>如果发送的字节数太短，就会先在缓冲区里等待，等到缓冲区长度差不多了，或者其他合适的时机发送出去</li>
+<li>接收数据的时候，数据也是从网卡驱动程序到达内核的接收缓冲区</li>
+<li>然后应用程序可以调用read从接收缓冲区拿数据</li>
+<li>另一方面，TCP的一个连接，既有发送缓冲区，也有接收缓冲区，那么对于这一个连接，既可以读数据，也可以写数据，这种叫做<strong>全双工</strong></li>
+</ul>
+</blockquote>
+<p>由于缓冲区的存在，TCP程序的读和写不需要一一匹配</p>
+<h2 id="粘包问题"><a href="#粘包问题" class="headerlink" title="粘包问题"></a>粘包问题</h2><blockquote>
+<ul>
+<li>面向字节流相关，应用程序如何能一次取出一个完整的应用层数据报</li>
+<li>从应用层的角度来解决这个问题，只要能够确定数据报的数据报之间的边界就可以了</li>
+<li>确定边界的方式有两个<ul>
+<li>分割符</li>
+<li>指定长度</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="TCP-VS-UDP"><a href="#TCP-VS-UDP" class="headerlink" title="TCP VS UDP"></a>TCP VS UDP</h2><blockquote>
+<ul>
+<li>如果需要可靠性（比如外网复杂的网络环境），优先考虑TCP</li>
+<li>如果网络结构本身比较简单，可靠性比较高（机房内网），对传输效率要求更高，优先考虑UDP</li>
+<li>如果你需要传输的数据包比较大，TCP（UDP的包有最大长度64k）</li>
+<li>如果需要广播的话，只能用UDP，TCP不能广播</li>
+</ul>
+</blockquote>
+
       
     </div>
 
@@ -875,7 +984,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP的三次握手与四次挥手"><span class="nav-number">1.</span> <span class="nav-text">TCP的三次握手与四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP协议段格式"><span class="nav-number">1.1.</span> <span class="nav-text">TCP协议段格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手过程理解"><span class="nav-number">1.2.</span> <span class="nav-text">三次握手过程理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超时重传机制"><span class="nav-number">1.3.</span> <span class="nav-text">超时重传机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接管理机制"><span class="nav-number">1.4.</span> <span class="nav-text">连接管理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重要的TCP状态："><span class="nav-number">1.4.1.</span> <span class="nav-text">重要的TCP状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端状态转化"><span class="nav-number">1.4.2.</span> <span class="nav-text">服务端状态转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端状态转化"><span class="nav-number">1.4.3.</span> <span class="nav-text">客户端状态转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解TIME-WAIT状态"><span class="nav-number">1.4.4.</span> <span class="nav-text">理解TIME_WAIT状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动窗口"><span class="nav-number">1.5.</span> <span class="nav-text">滑动窗口</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP的三次握手与四次挥手"><span class="nav-number">1.</span> <span class="nav-text">TCP的三次握手与四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP协议段格式"><span class="nav-number">1.1.</span> <span class="nav-text">TCP协议段格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手过程理解"><span class="nav-number">1.2.</span> <span class="nav-text">三次握手过程理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超时重传机制"><span class="nav-number">1.3.</span> <span class="nav-text">超时重传机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接管理机制"><span class="nav-number">1.4.</span> <span class="nav-text">连接管理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重要的TCP状态："><span class="nav-number">1.4.1.</span> <span class="nav-text">重要的TCP状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端状态转化"><span class="nav-number">1.4.2.</span> <span class="nav-text">服务端状态转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端状态转化"><span class="nav-number">1.4.3.</span> <span class="nav-text">客户端状态转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解TIME-WAIT状态"><span class="nav-number">1.4.4.</span> <span class="nav-text">理解TIME_WAIT状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动窗口"><span class="nav-number">1.5.</span> <span class="nav-text">滑动窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流量控制"><span class="nav-number">1.6.</span> <span class="nav-text">流量控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拥塞控制"><span class="nav-number">1.7.</span> <span class="nav-text">拥塞控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#延迟应答"><span class="nav-number">1.8.</span> <span class="nav-text">延迟应答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#捎带应答"><span class="nav-number">1.9.</span> <span class="nav-text">捎带应答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面向字节流"><span class="nav-number">1.10.</span> <span class="nav-text">面向字节流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粘包问题"><span class="nav-number">1.11.</span> <span class="nav-text">粘包问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-VS-UDP"><span class="nav-number">1.12.</span> <span class="nav-text">TCP VS UDP</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -909,7 +1018,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.2k</span>
+    <span title="Site words total count">42.7k</span>
   
 </div>
 
